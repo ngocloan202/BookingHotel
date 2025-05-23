@@ -1,0 +1,24 @@
+<div class="container py-5">
+    <h2 class="mb-4">Payment details</h2>
+    <div class="row g-4">
+      <div class="col-md-8">
+        <div class="card p-4 shadow-sm">
+          <h5 class="mb-3">Guest information</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 shadow-sm">
+          <h5>Booking summary</h5>
+          <ul class="list-unstyled">
+            <li><strong><%= nights %></strong> nights</li>
+            <li>Room: <%= room.name %></li>
+            <li>Check-in: <%= checkin %></li>
+            <li>Check-out: <%= checkout %></li>
+            <li class="fw-bold fs-5 mt-2">Total: $<%= total %></li>
+          </ul>
+          <button class="btn btn-success w-100 mt-3">Pay now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
