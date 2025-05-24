@@ -1,0 +1,46 @@
+.search-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: -60px;
+    z-index: 10;
+    position: relative;
+  }
+  .navbar-brand {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .form-select, .form-control {
+    min-width: 120px;
+  }
+  .search-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: -60px;
+    z-index: 10;
+    position: relative;
+  }
+  .section-title {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 40px 0 20px;
+    text-align: center;
+  }
+  .list-unstyled a {
+    text-decoration: none;        
+    color: inherit;               
+  }
+  
+  .list-unstyled a:hover {
+    color: #007bff;               
+    text-decoration: underline;   
+  }
