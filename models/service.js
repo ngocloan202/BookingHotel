@@ -1,7 +1,6 @@
-var DichVuSchema = new mongoose.Schema({
-    dichVuId: { type: Number, required: true, unique: true },
-    tenDichVu: { type: String, required: true },
-    donGia: { type: Number, required: true }
-  });
-  var ServiceModel = mongoose.model('ServiceModel', DichVuSchema);
-  module.exports = ServiceModel;
+const mongoose = require('mongoose');
+const ServiceSchema = new mongoose.Schema({
+  tenDichVu: { type: String, required: true },
+  donGia: { type: Number, required: true }
+});
+module.exports = mongoose.model('ServiceModel', ServiceSchema);

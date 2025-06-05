@@ -1,13 +1,15 @@
-var DatPhongSchema = new mongoose.Schema({
-    datPhongId: { type: Number, required: true, unique: true },
-    khachHangId: { type: Number, required: true },
-    phongId: { type: Number, required: true },
+const mongoose = require('mongoose');
+const BookingSchema = new mongoose.Schema({
+    customer: { type: mongoose.Schema.Types.ObjectId, ref: 'CustomerModel', required: true },
+    room: { type: mongoose.Schema.Types.ObjectId, ref: 'RoomModel', required: true },
     ngayNhanPhong: { type: Date, required: true },
     ngayTraPhong: { type: Date, required: true },
     soNgayThue: { type: Number, required: true },
     trangThai: { type: String, default: 'Chờ xác nhận' },
-    uid: { type: String, required: true },
-    donViId: { type: String, required: true }
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserModel', required: true },
+    soNguoiLon: { type: Number, default: 1 },
+    soTreEm: { type: Number, default: 0 },
+    ngayDat: { type: Date, default: Date.now },
+    tongTien: { type: Number }
   });
-  var BookingModel = mongoose.model('BookingModel', DatPhongSchema);
-  module.exports = BookingModel;
+module.exports = mongoose.model('BookingModel', BookingSchema);

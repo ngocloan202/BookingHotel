@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng Nhập</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+    Đăng Nhập
+  </button>
+  <!-- Đăng Nhập  -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-person-circle"></i> Khách Hàng Đăng Nhập</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email / SĐT</label>
+              <input type="text" class="form-control" id="loginEmail" placeholder="0888131067">
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Mật Khẩu</label>
+              <input type="password" class="form-control" id="loginPassword">
+            </div>
+            <button type="submit" class="btn btn-dark">Đăng Nhập</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
