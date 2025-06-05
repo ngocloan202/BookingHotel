@@ -1,10 +1,9 @@
-var PhongSchema = new mongoose.Schema({
-    phongId: { type: Number, required: true, unique: true },
-    tenPhong: { type: String, required: true },
-    loaiPhongId: { type: Number, required: true },
-    trangThai: { type: String, default: 'Trống' },
-    giaPhong: { type: Number, required: true },
-    ghiChu: { type: String }
-  });
-  var RoomModel = mongoose.model('RoomModel', PhongSchema);
-  module.exports = RoomModel;
+const mongoose = require('mongoose');
+const RoomSchema = new mongoose.Schema({
+  tenPhong: { type: String, required: true },
+  loaiPhong: { type: mongoose.Schema.Types.ObjectId, ref: 'RoomTypeModel', required: true },
+  trangThai: { type: String, default: 'Trống' },
+  giaPhong: { type: Number, required: true },
+  ghiChu: { type: String }
+});
+module.exports = mongoose.model('RoomModel', RoomSchema);

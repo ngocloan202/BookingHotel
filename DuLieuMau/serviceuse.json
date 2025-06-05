@@ -1,0 +1,82 @@
+[
+  {
+    "_id": "67c0fd99-edc3-4e47-83bf-2fe0da2d0403",
+    "suDungId": 1,
+    "datPhongId": 1,
+    "dichVuId": 2,
+    "soLuong": 5,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "5583e78a-c07e-4828-a778-21aa334b6f88",
+    "suDungId": 2,
+    "datPhongId": 2,
+    "dichVuId": 3,
+    "soLuong": 1,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "25e1e965-5094-444c-b710-379a5fa3200b",
+    "suDungId": 3,
+    "datPhongId": 1,
+    "dichVuId": 1,
+    "soLuong": 2,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "740c9107-9fa7-4f57-a0ad-52573d08f53e",
+    "suDungId": 4,
+    "datPhongId": 10,
+    "dichVuId": 1,
+    "soLuong": 1,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "5bfa5152-1666-4462-9595-85c7a350ded9",
+    "suDungId": 5,
+    "datPhongId": 7,
+    "dichVuId": 1,
+    "soLuong": 4,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "cf291c0c-ef3e-4e41-add0-a0aa80fc7893",
+    "suDungId": 6,
+    "datPhongId": 4,
+    "dichVuId": 5,
+    "soLuong": 1,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "3d455581-667b-4922-bc53-52048a6881ee",
+    "suDungId": 7,
+    "datPhongId": 4,
+    "dichVuId": 2,
+    "soLuong": 2,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "18f85b04-5e1e-4618-bf0c-f4499aeb35a8",
+    "suDungId": 8,
+    "datPhongId": 8,
+    "dichVuId": 4,
+    "soLuong": 1,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "23363f1d-8a64-4926-97d7-d75f1973bb36",
+    "suDungId": 9,
+    "datPhongId": 5,
+    "dichVuId": 5,
+    "soLuong": 2,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  },
+  {
+    "_id": "9d4193dc-d70e-4b24-bdee-4ac385c41577",
+    "suDungId": 10,
+    "datPhongId": 1,
+    "dichVuId": 1,
+    "soLuong": 5,
+    "ngaySuDung": "2025-06-01T00:00:00"
+  }
+]

@@ -1,11 +1,11 @@
-var KhachHangSchema = new mongoose.Schema({
-    khachHangId: { type: Number, required: true, unique: true },
+const mongoose = require('mongoose');
+const CustomerSchema = new mongoose.Schema({
     hoVaTen: { type: String, required: true },
     cccd: { type: String, required: true, unique: true },
     soDienThoai: { type: String },
     email: { type: String },
     diaChi: { type: String },
-    quocTichId: { type: Number, required: true }
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserModel', required: true },
+    nationality: { type: mongoose.Schema.Types.ObjectId, ref: 'NationalityModel', required: true }
   });
-  var CustomerModel = mongoose.model('CustomerModel', KhachHangSchema);
-  module.exports = CustomerModel;
+module.exports = mongoose.model('CustomerModel', CustomerSchema);

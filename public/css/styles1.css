@@ -1,0 +1,49 @@
+.navbar{
+  font-family: Arial;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  }
+  a.text-white {
+    text-decoration: none;
+  }
+  a.text-white:hover {
+    text-decoration: none;
+    background-color: #0d6efd;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  details summary {
+    cursor: pointer;
+  }
+  details ul {
+    border: 1px solid #6c757d;
+    border-radius: 6px;
+    background-color: #343a40;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  details ul li {
+    text-align: center;
+  }
+  details ul li a {
+    text-align: center;
+    display: block;
+  }
+  details ul li a.active {
+    background-color: #0d6efd;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .nav-item .nav-link.active {
+      color: white !important;
+      border-radius: 5px; 
+      padding: 8px 12px; 
+  }
+  details ul li:hover {
+      background-color: #0d6efd; 
+      color: white !important;
+      border-radius: 5px; 
+  }
+  
+

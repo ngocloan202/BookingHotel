@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng Nhập / Đăng Ký</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#registerModal">
+    Đăng ký
+</button>
+  <!-- Đăng Ký  -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-person-fill"></i> Khách Hàng Đăng Ký</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Họ và Tên</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Số Điện Thoại</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Ảnh</label>
+                <input type="file" class="form-control">
+              </div>
+              <div class="col-12">
+                <label class="form-label">Địa chỉ</label>
+                <textarea class="form-control" rows="2"></textarea>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Mã Tỉnh</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Ngày Sinh</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Mật Khẩu</label>
+                <input type="password" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Nhập Lại Mật Khẩu</label>
+                <input type="password" class="form-control">
+              </div>
+            </div>
+            <div class="mt-4">
+              <button type="submit" class="btn btn-dark">ĐĂNG KÝ</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

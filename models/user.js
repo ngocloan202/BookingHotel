@@ -1,13 +1,13 @@
-var mongoose = require('mongoose');
-var UserSchema = new mongoose.Schema({
-  uid: { type: String, required: true, unique: true },
+const mongoose = require('mongoose');
+const UserSchema = new mongoose.Schema({
   hoVaTen: { type: String, required: true },
-  hinhAnh: { type: String},
+  hinhAnh: { type: String },
   tenDangNhap: { type: String, required: true, unique: true },
   matKhau: { type: String, required: true },
-  donViId: { type: String, required: true },
-  role: { type: Boolean, default: false },
-  disabled: { type: Boolean, default: false }
+  diaChi: { type: String },
+  ngaySinh: { type: Date },
+  email: { type: String },
+  soDienThoai: { type: String },
+  role: { type: Boolean, default: false }
 });
-var UserModel = mongoose.model('UserModel', UserSchema);
-module.exports = UserModel;
+module.exports = mongoose.model('UserModel', UserSchema);

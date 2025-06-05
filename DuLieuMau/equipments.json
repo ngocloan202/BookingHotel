@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "f20f3bf7-6006-4948-b352-67f644a910ee",
+    "tenThietBi": "Thiết bị 1",
+    "donGia": 100
+  },
+  {
+    "_id": "ecbd393f-8fe0-4382-97aa-279985e2fa01",
+    "tenThietBi": "Thiết bị 2",
+    "donGia": 120
+  },
+  {
+    "_id": "597c9346-7c16-4818-be2e-122553a27c97",
+    "tenThietBi": "Thiết bị 3",
+    "donGia": 140
+  },
+  {
+    "_id": "1f000360-23df-493d-afeb-19b0a1050940",
+    "tenThietBi": "Thiết bị 4",
+    "donGia": 160
+  },
+  {
+    "_id": "5a0b1237-d2c9-4083-b3e9-bbc1e6b794de",
+    "tenThietBi": "Thiết bị 5",
+    "donGia": 180
+  }
+]

@@ -1,6 +1,5 @@
-var QuocTichSchema = new mongoose.Schema({
-    quocTichId: { type: Number, required: true, unique: true },
+const mongoose = require('mongoose');
+const NationalitySchema = new mongoose.Schema({
     tenQuocGia: { type: String, required: true }
   });
-  var NationalityModel = mongoose.model('NationalityModel', QuocTichSchema);
-  module.exports = NationalityModel;
+module.exports = mongoose.model('NationalityModel', NationalitySchema);

@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "39681b84-6a28-4569-af87-57230cd815e5",
+    "hoaDonId": 1,
+    "datPhongId": 1,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 7615989,
+    "trangThaiThanhToan": "Chưa thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "3bb321f0-36e8-497f-8c89-e4bb76720388",
+    "hoaDonId": 2,
+    "datPhongId": 2,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 7888563,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "66f9d7e5-e4df-4ae9-8be2-263d293caf43",
+    "hoaDonId": 3,
+    "datPhongId": 3,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 4177926,
+    "trangThaiThanhToan": "Chưa thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "f07eff85-f747-4a5b-821a-b6d3e4299389",
+    "hoaDonId": 4,
+    "datPhongId": 4,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 3663666,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "c04df319-833f-4df6-becb-182c13197e18",
+    "hoaDonId": 5,
+    "datPhongId": 5,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 4064226,
+    "trangThaiThanhToan": "Chưa thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "ee1dcbf1-0abe-4121-a385-265e61911b3a",
+    "hoaDonId": 6,
+    "datPhongId": 6,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 7752163,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "6cb2bc9a-d510-494b-af91-27f186d1b9e1",
+    "hoaDonId": 7,
+    "datPhongId": 7,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 4804637,
+    "trangThaiThanhToan": "Chưa thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "eb37371c-fdc3-4f30-9588-7a5d0d60392c",
+    "hoaDonId": 8,
+    "datPhongId": 8,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 4039900,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "a77b5730-f6bf-4204-9760-35e011a92e4a",
+    "hoaDonId": 9,
+    "datPhongId": 9,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 5143256,
+    "trangThaiThanhToan": "Chưa thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "28dc64fa-f861-4b24-9d23-b9a6fe9f1673",
+    "hoaDonId": 10,
+    "datPhongId": 10,
+    "ngayLap": "2025-06-01T00:00:00",
+    "tongTien": 6560029,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  }
+]
