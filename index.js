@@ -48,13 +48,11 @@ require('./models/user');
 const indexRouter = require('./routers/index');
 const roomRouter = require('./routers/room');
 const contactRouter = require('./routers/contact');
-const authRouter = require('./routes/auth');
 
 // Use routers
 app.use('/', indexRouter);
 app.use('/room', roomRouter);
 app.use('/contact', contactRouter);
-app.use('/', authRouter);
 
 // Connect to MongoDB
 const uri = 'mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel';
