@@ -4,71 +4,42 @@
   <meta charset="UTF-8">
   <title>Chi Tiết Phòng</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-        <!-- Thanh điều hướng -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-        <div class="container">
-                <a class="navbar-brand fw-bold" href="/">ZentoStay</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/">Trang Chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/room">Phòng</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Tiện Nghi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact">Liên Hệ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Giới Thiệu</a></li>
-            </ul>
-            <div class="d-flex align-items-center" id="auth-section">
-            <!-- Viết script thay thế sử dụng firebase xác thực người dùng -->
-            </div>
-         </div>
-        </div>
-    </nav>
+    <%- include('header') %>
     <div class="container py-5">
-    <h2 class="fw-bold mb-4"></h2>
-    <div class="row">
-        <div class="col-md-6">
-        <img src="" alt="Ảnh phòng" class="img-fluid rounded shadow-sm">
-        <p class="mt-3 fw-semibold">vnd mỗi đêm</p>
+      <% if (room) { %>
+        <h2 class="fw-bold mb-4"><%= room.tenPhong %></h2>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="/images/<%= room.image ? room.image : 'default.jpg' %>" alt="Ảnh phòng" class="img-fluid rounded shadow-sm">
+            <p class="mt-3 fw-semibold text-success fs-4"><%= room.giaPhong.toLocaleString('vi-VN') %> VND mỗi đêm</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="fw-bold">Loại phòng</h5>
+            <p><%= room.loaiPhong ? room.loaiPhong.tenLoaiPhong : 'Chưa xác định' %></p>
+            <h5 class="fw-bold">Mô tả</h5>
+            <p><%= room.loaiPhong ? room.loaiPhong.moTa : '' %></p>
+            <h5 class="fw-bold">Số người tối đa</h5>
+            <p><%= room.loaiPhong ? room.loaiPhong.soNguoiToiDa : '' %></p>
+            <h5 class="fw-bold">Trạng thái</h5>
+            <p><%= room.trangThai %></p>
+            <div class="mt-4">
+              <a href="/booking/confirm/<%= room._id %>" class="btn btn-success w-100">Đặt Ngay</a>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6">
-        <h5 class="fw-bold">Cơ Sở</h5>
-        <p>
-            
-            <span class="badge bg-secondary me-1"></span>
-            
-        </p>
-
-        <h5 class="fw-bold">Tiện Nghi</h5>
-        <p>
-            
-            <span class="badge bg-info text-dark me-1"></span>
-            
-        </p>
-
-        <h5 class="fw-bold">Khách Hàng</h5>
-        <p>
-            <span> Người Lớn</span>
-            <span class="ms-3">Trẻ Em</span>
-        </p>
-
-        <h5 class="fw-bold">Rộng</h5>
-        <p> m²</p>
-
-        <div class="mt-4">
-            <a href="/booking/confirm/" class="btn btn-success w-100">Đặt Ngay</a>
+        <div class="mt-5">
+          <h5 class="fw-bold">Chi Tiết Về Phòng</h5>
+          <p><%= room.ghiChu || '' %></p>
         </div>
-        </div>
-    </div>
-
-    <div class="mt-5">
-        <h5 class="fw-bold">Chi Tiết Về Phòng</h5>
-        <p></p>
-    </div>
+      <% } else { %>
+        <h2 class="fw-bold mb-4 text-danger">Không tìm thấy phòng</h2>
+        <% if (typeof error !== 'undefined') { %>
+          <p class="text-danger"><%= error %></p>
+        <% } %>
+      <% } %>
     </div>
 </body>
 </html>
