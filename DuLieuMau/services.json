@@ -2,26 +2,26 @@
   {
     "_id": "d6ad54ff-2d28-4573-b4a9-b1a72b96b4ba",
     "tenDichVu": "Dịch vụ 1",
-    "donGia": 50
+    "donGia": 50000
   },
   {
     "_id": "e33e0ecb-563b-4bf7-9c87-66e18ee1d0fb",
     "tenDichVu": "Dịch vụ 2",
-    "donGia": 60
+    "donGia": 60000
   },
   {
     "_id": "b1974c54-1fcb-42c3-a58d-88e103dc8651",
     "tenDichVu": "Dịch vụ 3",
-    "donGia": 70
+    "donGia": 70000
   },
   {
     "_id": "374ecc4d-bcb8-4e78-be4f-14e91975b274",
     "tenDichVu": "Dịch vụ 4",
-    "donGia": 80
+    "donGia": 80000
   },
   {
     "_id": "62404c4f-375c-44c3-844d-f214ed885b2a",
     "tenDichVu": "Dịch vụ 5",
-    "donGia": 90
+    "donGia": 90000
   }
 ]

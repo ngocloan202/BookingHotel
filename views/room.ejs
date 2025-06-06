@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    
-  </style>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
@@ -33,70 +32,114 @@
       </div>
     </div>
   </nav>
-<!-- Danh sách phòng -->
-<div class="container">
-  <h2 class="section-title text-center my-4">Phòng</h2>
-  <div class="row">
-    <!-- Cột tìm kiếm -->
-    <div class="col-md-3 mb-4">
-      <div class="card p-3">
-        <h5 class="mb-3">Tìm Kiếm</h5>
-        <div class="mb-3">
-          <label for="checkin" class="form-label">Ngày Nhận Phòng</label>
-          <input type="date" id="checkin" class="form-control">
-        </div>
-        <div class="mb-3">
-          <label for="checkout" class="form-label">Ngày Trả Phòng</label>
-          <input type="date" id="checkout" class="form-control">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Tiện Nghi</label>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="wifi">
-            <label class="form-check-label" for="wifi">Wifi</label>
+
+  <!-- Danh sách phòng -->
+  <div class="container">
+    <h2 class="section-title text-center my-4">Phòng</h2>
+    <div class="row">
+      <!-- Cột tìm kiếm -->
+      <div class="col-md-3 mb-4">
+        <div class="card p-3">
+          <h5 class="mb-3">Tìm Kiếm</h5>
+          <div class="mb-3">
+            <label for="checkin" class="form-label">Ngày Nhận Phòng</label>
+            <input type="date" id="checkin" class="form-control">
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="dieuhoa">
-            <label class="form-check-label" for="dieuhoa">Điều Hoà</label>
+          <div class="mb-3">
+            <label for="checkout" class="form-label">Ngày Trả Phòng</label>
+            <input type="date" id="checkout" class="form-control">
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="tivi">
-            <label class="form-check-label" for="tivi">Tivi</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="spa">
-            <label class="form-check-label" for="spa">Spa</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="maysuoi">
-            <label class="form-check-label" for="maysuoi">Máy Sưởi</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="nonglanh">
-            <label class="form-check-label" for="nonglanh">Nóng Lạnh</label>
-          </div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Khách</label>
-          <div class="row g-2">
-            <div class="col">
-              <input type="number" class="form-control" placeholder="Người lớn">
+          <div class="mb-3">
+            <label class="form-label">Tiện Nghi</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="wifi">
+              <label class="form-check-label" for="wifi">Wifi</label>
             </div>
-            <div class="col">
-              <input type="number" class="form-control" placeholder="Trẻ em">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="dieuhoa">
+              <label class="form-check-label" for="dieuhoa">Điều Hoà</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="tivi">
+              <label class="form-check-label" for="tivi">Tivi</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="spa">
+              <label class="form-check-label" for="spa">Spa</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="maysuoi">
+              <label class="form-check-label" for="maysuoi">Máy Sưởi</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="nonglanh">
+              <label class="form-check-label" for="nonglanh">Nóng Lạnh</label>
             </div>
           </div>
+          <div class="mb-3">
+            <label class="form-label">Khách</label>
+            <div class="row g-2">
+              <div class="col">
+                <input type="number" class="form-control" placeholder="Người lớn">
+              </div>
+              <div class="col">
+                <input type="number" class="form-control" placeholder="Trẻ em">
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-success w-100">Tìm Phòng</button>
         </div>
-        <button class="btn btn-success w-100">Tìm Phòng</button>
       </div>
-    </div>
-    <!-- Cột danh sách phòng -->
-    <div class="col-md-9">
-      <div class="row" id="room-list">
-        <!-- đỗ từ mongoDB -->
+
+      <!-- Cột danh sách phòng -->
+      <div class="col-md-9">
+        <div class="row" id="room-list">
+          <!-- đổ từ mongoDB -->
+          <% if (rooms && rooms.length > 0) { %>
+            <% rooms.forEach(function(r) { %>
+              <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm">
+                  <!-- Hiển thị ảnh -->
+                  <% 
+                    // Xác định đường dẫn ảnh
+                    let imagePath = '/images/default.jpg';
+                    if (r.image && r.image !== 'default.jpg' && r.image !== 'undefined') {
+                      imagePath = '/images/' + r.image;
+                    }
+                  %>
+                  
+                  <img src="<%= imagePath %>" 
+                       class="card-img-top" 
+                       alt="Ảnh phòng <%= r.tenPhong %>"
+                       style="object-fit: cover; width: 100%; height: 200px;"
+                       onerror="this.src='/images/default.jpg';">
+
+                  <div class="card-body">
+                    <h5 class="card-title"><%= r.tenPhong %></h5>
+                    <p>Loại phòng: 
+                      <% if (r.loaiPhong && r.loaiPhong.tenLoaiPhong) { %>
+                        <%= r.loaiPhong.tenLoaiPhong %>
+                      <% } else { %>
+                        Chưa xác định
+                      <% } %>
+                    </p>
+                    <p>Trạng thái: <%= r.trangThai %></p>
+                    <p class="text-success fw-bold">
+                      <%= r.giaPhong.toLocaleString('vi-VN') %> VND / đêm
+                    </p>
+                    <p><small><%= r.ghiChu || '' %></small></p>
+                  </div>
+                </div>
+              </div>
+            <% }); %>
+          <% } else { %>
+            <p class="text-muted">Không có phòng để hiển thị.</p>
+          <% } %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>
