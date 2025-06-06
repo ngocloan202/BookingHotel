@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
     rooms.forEach(room => {
       console.log(`Room ${room.tenPhong}:`, {
         roomId: room._id,
-        loaiPhongId: room.loaiPhong?._id,
-        loaiPhongInfo: room.loaiPhong
+        loaiPhong: room.loaiPhong?._id,
+        tenLoaiPhong: room.loaiPhong
       });
     });
     

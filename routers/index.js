@@ -27,7 +27,6 @@ router.get('/customer_booking', (req, res) => res.render('customer_booking'));
 // Room views
 const roomRouter = require('./room');
 app.use('/room', roomRouter); 
-app.use('/', indexRouter);
 
 router.get('/error', (req, res) => res.render('error', { title: 'Lỗi' }));
 router.get('/success', (req, res) => res.render('success', { title: 'Thành công' }));

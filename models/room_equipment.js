@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const roomEquipmentSchema = new Schema({
   room: {
-    type: String,
+    type: Schema.Types.ObjectId,
     ref: 'RoomModel',
     required: true
   },
   equipment: {
-    type: String,
+    type: Schema.Types.ObjectId,
     ref: 'EquipmentModel',
     required: true
   },
