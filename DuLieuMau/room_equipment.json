@@ -3,60 +3,80 @@
     "_id": "507f1f77bcf86cd799439201",
     "room": "507f1f77bcf86cd799439027",
     "equipment": "507f1f77bcf86cd799439101",
-    "soLuong": 3
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439202",
-    "room": "507f1f77bcf86cd799439028",
+    "room": "507f1f77bcf86cd799439027",
     "equipment": "507f1f77bcf86cd799439102",
-    "soLuong": 1
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439203",
-    "room": "507f1f77bcf86cd799439024",
+    "room": "507f1f77bcf86cd799439027",
     "equipment": "507f1f77bcf86cd799439103",
-    "soLuong": 3
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439204",
-    "room": "507f1f77bcf86cd799439030",
-    "equipment": "507f1f77bcf86cd799439103",
-    "soLuong": 4
+    "room": "507f1f77bcf86cd799439027",
+    "equipment": "507f1f77bcf86cd799439104",
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439205",
-    "room": "507f1f77bcf86cd799439023",
-    "equipment": "507f1f77bcf86cd799439102",
-    "soLuong": 2
+    "room": "507f1f77bcf86cd799439027",
+    "equipment": "507f1f77bcf86cd799439105",
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439206",
-    "room": "507f1f77bcf86cd799439028",
-    "equipment": "507f1f77bcf86cd799439105",
-    "soLuong": 4
+    "room": "507f1f77bcf86cd799439027",
+    "equipment": "507f1f77bcf86cd799439106",
+    "trangThai": true
   },
+
   {
     "_id": "507f1f77bcf86cd799439207",
-    "room": "507f1f77bcf86cd799439023",
-    "equipment": "507f1f77bcf86cd799439103",
-    "soLuong": 3
+    "room": "507f1f77bcf86cd799439028",
+    "equipment": "507f1f77bcf86cd799439101",
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439208",
-    "room": "507f1f77bcf86cd799439029",
-    "equipment": "507f1f77bcf86cd799439105",
-    "soLuong": 1
+    "room": "507f1f77bcf86cd799439028",
+    "equipment": "507f1f77bcf86cd799439102",
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439209",
     "room": "507f1f77bcf86cd799439028",
-    "equipment": "507f1f77bcf86cd799439101",
-    "soLuong": 1
+    "equipment": "507f1f77bcf86cd799439103",
+    "trangThai": true
   },
   {
     "_id": "507f1f77bcf86cd799439210",
-    "room": "507f1f77bcf86cd799439030",
-    "equipment": "507f1f77bcf86cd799439103",
-    "soLuong": 3
+    "room": "507f1f77bcf86cd799439028",
+    "equipment": "507f1f77bcf86cd799439106",
+    "trangThai": true
+  },
+
+  {
+    "_id": "507f1f77bcf86cd799439211",
+    "room": "507f1f77bcf86cd799439029",
+    "equipment": "507f1f77bcf86cd799439101",
+    "trangThai": true
+  },
+  {
+    "_id": "507f1f77bcf86cd799439212",
+    "room": "507f1f77bcf86cd799439029",
+    "equipment": "507f1f77bcf86cd799439102",
+    "trangThai": true
+  },
+  {
+    "_id": "507f1f77bcf86cd799439213",
+    "room": "507f1f77bcf86cd799439029",
+    "equipment": "507f1f77bcf86cd799439106",
+    "trangThai": true
   }
 ]
