@@ -1,36 +1,48 @@
 [
   {
-    "_id": "507f1f77bcf86cd799439101",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439101"
+    },
     "tenThietBi": "Wifi",
     "donGia": 0,
     "moTa": "Internet không dây tốc độ cao"
   },
   {
-    "_id": "507f1f77bcf86cd799439102",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439102"
+    },
     "tenThietBi": "Điều Hoà",
     "donGia": 0,
     "moTa": "Điều hoà nhiệt độ hai chiều"
   },
   {
-    "_id": "507f1f77bcf86cd799439103",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439103"
+    },
     "tenThietBi": "Tivi",
     "donGia": 0,
     "moTa": "Smart TV màn hình phẳng"
   },
   {
-    "_id": "507f1f77bcf86cd799439104",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439104"
+    },
     "tenThietBi": "Spa",
     "donGia": 0,
     "moTa": "Dịch vụ spa và massage"
   },
   {
-    "_id": "507f1f77bcf86cd799439105",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439105"
+    },
     "tenThietBi": "Máy Sưởi",
     "donGia": 0,
     "moTa": "Máy sưởi điện"
   },
   {
-    "_id": "507f1f77bcf86cd799439106",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439106"
+    },
     "tenThietBi": "Nóng Lạnh",
     "donGia": 0,
     "moTa": "Hệ thống nước nóng lạnh"
