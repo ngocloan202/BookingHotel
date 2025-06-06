@@ -1,21 +1,18 @@
-var express = require ( 'express' ) ;
-const session = require('express-session');
+const express = require('express');
 const path = require('path');
-var app = express () ;
-var mongoose = require('mongoose');
-//Import router
-var indexRouter = require('./routers/index'); 
-var roomRouter = require('./routers/room');
-const contactRouter = require('./routers/contact');
-const router = express.Router();
+const mongoose = require('mongoose');
+const session = require('express-session');
 
-// Static folder
-app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, 'public')));
+const app = express();
 
-// Body parser
-app.use(express.urlencoded({ extended: true }));
+// View engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Session config
 app.use(session({
@@ -24,42 +21,41 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// View engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
 // Add session to res.locals
 app.use((req, res, next) => {
   res.locals.session = req.session;
   next();
 });
 
-var uri = 'mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel'; 
-mongoose.connect(uri).catch(err => console.log(err)); 
+// Routes
+const roomRoutes = require('./routes/room');
+const authRoutes = require('./routes/auth');
+const indexRouter = require('./routers/index');
+const contactRouter = require('./routers/contact');
 
-// Tải tất cả các model để MongoDB tạo collection tương ứng
-require('./models/bill');
-require('./models/booking');
-require('./models/customer');
-require('./models/equipment');
-require('./models/national');
-require('./models/review');
-require('./models/room');
-require('./models/room_equipment');
-require('./models/roomtype');
-require('./models/service');
-require('./models/serviceuse');
-require('./models/user');
-
-app.set('views', './views'); 
-app.set('view engine', 'ejs'); 
-app.use(express.json()); 
-app.use(express.urlencoded({ extended: true })); 
-
-app.use('/', indexRouter); 
-app.use('/room', roomRouter);
+app.use('/room', roomRoutes);
+app.use('/', authRoutes);
+app.use('/', indexRouter);
 app.use('/contact', contactRouter);
 
-app.listen (3000, () => {
-console.log ('Server is running at http://127.0.0.1:3000');
+// Home page
+app.get('/', (req, res) => {
+    res.render('index', {
+        path: '/',
+        user: req.user
+    });
 });
+
+// Connect to MongoDB
+mongoose.connect('mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel')
+    .then(() => {
+        console.log('Connected to MongoDB');
+        // Start server
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error);
+    });
