@@ -1,62 +1,62 @@
 [
   {
-    "_id": "6b098385-9de4-4bec-abe2-1c29f9ba3df8",
-    "phongId": 106,
-    "thietBiId": 1,
+    "_id": "507f1f77bcf86cd799439201",
+    "room": "507f1f77bcf86cd799439027",
+    "equipment": "507f1f77bcf86cd799439101",
     "soLuong": 3
   },
   {
-    "_id": "72f924b7-38ed-461a-b106-7c234d399159",
-    "phongId": 107,
-    "thietBiId": 2,
+    "_id": "507f1f77bcf86cd799439202",
+    "room": "507f1f77bcf86cd799439028",
+    "equipment": "507f1f77bcf86cd799439102",
     "soLuong": 1
   },
   {
-    "_id": "349e5d36-7029-4b22-a37e-43ff8d4db04b",
-    "phongId": 103,
-    "thietBiId": 3,
+    "_id": "507f1f77bcf86cd799439203",
+    "room": "507f1f77bcf86cd799439024",
+    "equipment": "507f1f77bcf86cd799439103",
     "soLuong": 3
   },
   {
-    "_id": "7cafecc3-fb7b-40c4-a6df-602ec395d870",
-    "phongId": 110,
-    "thietBiId": 3,
+    "_id": "507f1f77bcf86cd799439204",
+    "room": "507f1f77bcf86cd799439030",
+    "equipment": "507f1f77bcf86cd799439103",
     "soLuong": 4
   },
   {
-    "_id": "674cfd53-a471-4ae8-9ea8-66683f1465c8",
-    "phongId": 102,
-    "thietBiId": 2,
+    "_id": "507f1f77bcf86cd799439205",
+    "room": "507f1f77bcf86cd799439023",
+    "equipment": "507f1f77bcf86cd799439102",
     "soLuong": 2
   },
   {
-    "_id": "c379a017-bd09-4b2c-9952-f780b857a623",
-    "phongId": 107,
-    "thietBiId": 5,
+    "_id": "507f1f77bcf86cd799439206",
+    "room": "507f1f77bcf86cd799439028",
+    "equipment": "507f1f77bcf86cd799439105",
     "soLuong": 4
   },
   {
-    "_id": "947afa42-608e-4ae1-ae57-d7c5d8a5ee86",
-    "phongId": 102,
-    "thietBiId": 3,
+    "_id": "507f1f77bcf86cd799439207",
+    "room": "507f1f77bcf86cd799439023",
+    "equipment": "507f1f77bcf86cd799439103",
     "soLuong": 3
   },
   {
-    "_id": "91c0b7fd-61b1-4430-826e-0d1e55e23cab",
-    "phongId": 108,
-    "thietBiId": 5,
+    "_id": "507f1f77bcf86cd799439208",
+    "room": "507f1f77bcf86cd799439029",
+    "equipment": "507f1f77bcf86cd799439105",
     "soLuong": 1
   },
   {
-    "_id": "4dc5f12a-d015-4e68-b063-d1a36eda3975",
-    "phongId": 107,
-    "thietBiId": 1,
+    "_id": "507f1f77bcf86cd799439209",
+    "room": "507f1f77bcf86cd799439028",
+    "equipment": "507f1f77bcf86cd799439101",
     "soLuong": 1
   },
   {
-    "_id": "04d21678-88ad-457a-b23d-21f446dbe8ff",
-    "phongId": 109,
-    "thietBiId": 3,
+    "_id": "507f1f77bcf86cd799439210",
+    "room": "507f1f77bcf86cd799439030",
+    "equipment": "507f1f77bcf86cd799439103",
     "soLuong": 3
   }
 ]
