@@ -2,80 +2,80 @@
   {
     "_id": "507f1f77bcf86cd799439021",
     "tenPhong": "Room 100",
-    "loaiPhong": "507f1f77bcf86cd799439011",
-    "giaPhong": 800000,
+    "loaiPhong": "6710c33f-e4e6-43c8-acbb-4e11536926c6",
+    "giaPhong": 150000,
     "trangThai": "Trống",
     "image": "phong1.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439022",
     "tenPhong": "Room 101",
-    "loaiPhong": "507f1f77bcf86cd799439011",
-    "giaPhong": 800000,
+    "loaiPhong": "51309c92-d2db-4540-a552-9dd40aad33ae",
+    "giaPhong": 175000,
     "trangThai": "Trống",
     "image": "phong3.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439023",
     "tenPhong": "Room 102",
-    "loaiPhong": "507f1f77bcf86cd799439012",
-    "giaPhong": 1200000,
+    "loaiPhong": "47ce1ff1-96d2-4dd2-91aa-8431531c01d6",
+    "giaPhong": 200000,
     "trangThai": "Trống",
     "image": "phongdon.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439024",
     "tenPhong": "Room 103",
-    "loaiPhong": "507f1f77bcf86cd799439013",
-    "giaPhong": 1600000,
+    "loaiPhong": "3d8db20c-8ddc-413d-85c5-bd734fb2c299",
+    "giaPhong": 225000,
     "trangThai": "Trống",
     "image": "phongdon2.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439025",
     "tenPhong": "Room 104",
-    "loaiPhong": "507f1f77bcf86cd799439014",
-    "giaPhong": 2500000,
+    "loaiPhong": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
+    "giaPhong": 250000,
     "trangThai": "Trống",
     "image": "SUPER-DELUXE2.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439026",
     "tenPhong": "Room 105",
-    "loaiPhong": "507f1f77bcf86cd799439011",
-    "giaPhong": 800000,
+    "loaiPhong": "51309c92-d2db-4540-a552-9dd40aad33ae",
+    "giaPhong": 275000,
     "trangThai": "Trống",
     "image": "phong1.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439027",
     "tenPhong": "Room 106",
-    "loaiPhong": "507f1f77bcf86cd799439013",
-    "giaPhong": 1600000,
+    "loaiPhong": "3d8db20c-8ddc-413d-85c5-bd734fb2c299",
+    "giaPhong": 300000,
     "trangThai": "Trống",
     "image": "phong3.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439028",
     "tenPhong": "Room 107",
-    "loaiPhong": "507f1f77bcf86cd799439015",
-    "giaPhong": 5000000,
+    "loaiPhong": "6710c33f-e4e6-43c8-acbb-4e11536926c6",
+    "giaPhong": 325000,
     "trangThai": "Trống",
     "image": "phongdon.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439029",
     "tenPhong": "Room 108",
-    "loaiPhong": "507f1f77bcf86cd799439014",
-    "giaPhong": 2500000,
+    "loaiPhong": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
+    "giaPhong": 350000,
     "trangThai": "Trống",
     "image": "phongdon2.jpg"
   },
   {
     "_id": "507f1f77bcf86cd799439030",
     "tenPhong": "Room 109",
-    "loaiPhong": "507f1f77bcf86cd799439014",
-    "giaPhong": 2500000,
+    "loaiPhong": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
+    "giaPhong": 375000,
     "trangThai": "Trống",
     "image": "default.jpg"
   }
