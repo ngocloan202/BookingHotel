@@ -5,6 +5,6 @@ const RoomSchema = new mongoose.Schema({
   trangThai: { type: String, default: 'Trống' },
   giaPhong: { type: Number, required: true },
   ghiChu: { type: String },
-  image: {type: String, default: 'default.jpg'}
+  image: { type: String }
 });
 module.exports = mongoose.model('Room', RoomSchema, 'roommodels');
