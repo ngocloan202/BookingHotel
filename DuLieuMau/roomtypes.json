@@ -1,37 +1,66 @@
 [
   {
-    "_id": "51309c92-d2db-4540-a552-9dd40aad33ae",
-    "tenLoaiPhong": "Type 1",
-    "donGia": 100000,
+    "_id": "507f1f77bcf86cd799439011",
+    "tenLoaiPhong": "Phòng Tiêu Chuẩn (Standard Room)",
+    "donGia": 800000,
     "soNguoiToiDa": 2,
-    "soLuong": 5
+    "soLuong": 10,
+    "moTa": "Diện tích 25m², giường Queen, WiFi miễn phí, tivi màn hình LED, điều hòa"  
   },
   {
-    "_id": "47ce1ff1-96d2-4dd2-91aa-8431531c01d6",
-    "tenLoaiPhong": "Type 2",
-    "donGia": 150000,
+    "_id": "507f1f77bcf86cd799439012",
+    "tenLoaiPhong": "Phòng Cao Cấp (Superior Room)",
+    "donGia": 1200000,
+    "soNguoiToiDa": 2,
+    "soLuong": 8,
+    "moTa": "Diện tích 30m², giường King, view thành phố, minibar và trà/cà phê miễn phí"  
+  },
+  {
+    "_id": "507f1f77bcf86cd799439013",
+    "tenLoaiPhong": "Phòng Deluxe",
+    "donGia": 1600000,
     "soNguoiToiDa": 3,
-    "soLuong": 5
+    "soLuong": 6,
+    "moTa": "Diện tích 35m², giường King hoặc 2 giường Queen, ban công hướng sông/biển"  
   },
   {
-    "_id": "3d8db20c-8ddc-413d-85c5-bd734fb2c299",
-    "tenLoaiPhong": "Type 3",
-    "donGia": 200000,
+    "_id": "507f1f77bcf86cd799439014",
+    "tenLoaiPhong": "Suite Junior",
+    "donGia": 2500000,
+    "soNguoiToiDa": 3,
+    "soLuong": 4,
+    "moTa": "Diện tích 45m², phòng ngủ tách biệt, khu vực tiếp khách, bồn tắm cao cấp"  
+  },
+  {
+    "_id": "507f1f77bcf86cd799439015",
+    "tenLoaiPhong": "Suite Tổng Thống (Presidential Suite)",
+    "donGia": 5000000,
     "soNguoiToiDa": 4,
-    "soLuong": 5
+    "soLuong": 2,
+    "moTa": "Diện tích 100m², phòng khách rộng, phòng ăn, phòng làm việc, view toàn cảnh thành phố"  
   },
   {
-    "_id": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
-    "tenLoaiPhong": "Type 4",
-    "donGia": 250000,
+    "_id": "507f1f77bcf86cd799439016",
+    "tenLoaiPhong": "Phòng Gia Đình (Family Room)",
+    "donGia": 1800000,
+    "soNguoiToiDa": 4,
+    "soLuong": 5,
+    "moTa": "Diện tích 40m², 2 giường Queen, phòng thông nhau, thích hợp gia đình"  
+  },
+  {
+    "_id": "507f1f77bcf86cd799439017",
+    "tenLoaiPhong": "Phòng Studio",
+    "donGia": 2000000,
     "soNguoiToiDa": 2,
-    "soLuong": 5
+    "soLuong": 3,
+    "moTa": "Diện tích 50m², giường King, bếp nhỏ (kitchenette), khu vực tiếp khách"  
   },
   {
-    "_id": "6710c33f-e4e6-43c8-acbb-4e11536926c6",
-    "tenLoaiPhong": "Type 5",
-    "donGia": 300000,
-    "soNguoiToiDa": 3,
-    "soLuong": 5
+    "_id": "507f1f77bcf86cd799439018",
+    "tenLoaiPhong": "Phòng Executive",
+    "donGia": 2200000,
+    "soNguoiToiDa": 2,
+    "soLuong": 3,
+    "moTa": "Diện tích 30m², nằm ở tầng Executive, quyền truy cập lounge miễn phí, dịch vụ văn phòng"  
   }
 ]

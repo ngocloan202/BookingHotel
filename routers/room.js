@@ -9,17 +9,6 @@ router.get('/', async (req, res) => {
       .populate('loaiPhong', 'tenLoaiPhong donGia soNguoiToiDa moTa')
       .lean(); 
     
-    rooms.forEach((room, index) => {
-      console.log(`Phòng ${index + 1}:`, {
-        _id: room._id,
-        tenPhong: room.tenPhong,
-        image: room.image,
-        giaPhong: room.giaPhong,
-        trangThai: room.trangThai,
-        loaiPhong: room.loaiPhong
-      });
-    });
-    
     // Xử lý dữ liệu để đảm bảo có giá trị mặc định
     const processedRooms = rooms.map(room => ({
       ...room,
