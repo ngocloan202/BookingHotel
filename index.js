@@ -8,7 +8,6 @@ var indexRouter = require('./routers/index');
 var roomRouter = require('./routers/room');
 const contactRouter = require('./routers/contact');
 const router = express.Router();
-app.use(express.static('public'));
 
 // Static folder
 app.use(express.static('public'));
