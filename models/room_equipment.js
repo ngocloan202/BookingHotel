@@ -1,7 +1,26 @@
 const mongoose = require('mongoose');
-const RoomEquipmentSchema = new mongoose.Schema({
-  room: { type: mongoose.Schema.Types.ObjectId, ref: 'RoomModel', required: true },
-  equipment: { type: mongoose.Schema.Types.ObjectId, ref: 'EquipmentModel', required: true },
-  soLuong: { type: Number, required: true }
+const Schema = mongoose.Schema;
+
+const roomEquipmentSchema = new Schema({
+  room: {
+    type: String,
+    ref: 'RoomModel',
+    required: true
+  },
+  equipment: {
+    type: String,
+    ref: 'EquipmentModel',
+    required: true
+  },
+  trangThai: {
+    type: Boolean,
+    default: true
+  }
+}, {
+  timestamps: true
 });
-module.exports = mongoose.model('RoomEquipmentModel', RoomEquipmentSchema);
+
+// Tạo index cho cặp room-equipment để đảm bảo không trùng lặp
+roomEquipmentSchema.index({ room: 1, equipment: 1 }, { unique: true });
+
+mongoose.model('RoomEquipmentModel', roomEquipmentSchema);
