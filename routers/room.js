@@ -1,11 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var room = require('../models/room');
+const Room = require('../models/room');
 
 // GET /room/
 router.get('/', async (req, res) => {
-  var r = await room.find();
-  res.render('room', { title: 'Danh sách phòng',  room: r });
+  try {
+    const rooms = await Room.find().populate('loaiPhong');
+    res.render('room', { rooms:rooms });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
+
 
 module.exports = router;

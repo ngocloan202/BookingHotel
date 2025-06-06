@@ -1,5 +1,6 @@
 const express = require('express'); 
 const router = express.Router(); 
+var app = express();
 
 // Trang chủ: nếu đã đăng nhập thì chuyển đến dashboard nếu là admin
 router.get('/', (req, res) => { 
@@ -24,7 +25,9 @@ router.get('/historybooking', (req, res) => res.render('historybooking'));
 router.get('/customer_booking', (req, res) => res.render('customer_booking'));
 
 // Room views
-router.get('/room', (req, res) => res.render('room'));
+const roomRouter = require('./room');
+app.use('/room', roomRouter); 
+// router.get('/room', (req, res) => res.render('room'));
 router.get('/room_detail', (req, res) => res.render('room_detail'));
 
 // Optional: các trang thông báo

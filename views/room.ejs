@@ -91,10 +91,30 @@
       </div>
     </div>
     <!-- Cột danh sách phòng -->
-    <div class="col-md-9">
-      <div class="row" id="room-list">
-        <!-- đỗ từ mongoDB -->
-      </div>
+   <div class="col-md-9">
+  <div class="row" id="room-list">
+    <!-- đổ từ mongoDB -->
+    <% if (rooms && rooms.length > 0) { %>
+      <% rooms.forEach(function(r) { %>
+        <div class="col-md-4 mb-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><%= r.tenPhong %></h5>
+              <p>Loại phòng: <%= r.loaiPhong ? r.loaiPhong.toString() : 'Chưa xác định' %></p>
+              <p>Trạng thái: <%= r.trangThai %></p>
+              <p class="text-success fw-bold"><%= r.giaPhong.toLocaleString('vi-VN') %> VND / đêm</p>
+              <p><small><%= r.ghiChu || '' %></small></p>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p class="text-muted">Không có phòng để hiển thị.</p>
+    <% } %>
+  </div>
+</div>
+
+
     </div>
   </div>
 </div>

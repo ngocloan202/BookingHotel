@@ -6,4 +6,4 @@ const RoomSchema = new mongoose.Schema({
   giaPhong: { type: Number, required: true },
   ghiChu: { type: String }
 });
-module.exports = mongoose.model('RoomModel', RoomSchema);
+module.exports = mongoose.model('Room', RoomSchema, 'roommodels');
