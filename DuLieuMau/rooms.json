@@ -4,69 +4,79 @@
     "tenPhong": "Room 100",
     "loaiPhongId": "6710c33f-e4e6-43c8-acbb-4e11536926c6",
     "giaPhong": 150,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "bb152796-7a27-4fbd-9863-4ea9e607a7bf",
     "tenPhong": "Room 101",
     "loaiPhongId": "51309c92-d2db-4540-a552-9dd40aad33ae",
     "giaPhong": 175,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "ac040be8-9fad-47c5-8d10-f23f27f2583f",
     "tenPhong": "Room 102",
     "loaiPhongId": "47ce1ff1-96d2-4dd2-91aa-8431531c01d6",
     "giaPhong": 200,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "b263eff8-164a-4923-815b-84a970995f34",
     "tenPhong": "Room 103",
     "loaiPhongId": "3d8db20c-8ddc-413d-85c5-bd734fb2c299",
     "giaPhong": 225,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "3b95639e-e424-4cf3-be33-fb05d72ef5c0",
     "tenPhong": "Room 104",
     "loaiPhongId": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
     "giaPhong": 250,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "abbdcf80-1870-4e10-97f2-bf69fb90d910",
     "tenPhong": "Room 105",
     "loaiPhongId": "51309c92-d2db-4540-a552-9dd40aad33ae",
     "giaPhong": 275,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "b6a69bf8-a012-4edc-87e7-8dfa02576bd8",
     "tenPhong": "Room 106",
     "loaiPhongId": "3d8db20c-8ddc-413d-85c5-bd734fb2c299",
     "giaPhong": 300,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "19e81ef9-cfd4-4d9c-b964-e5ec022cde88",
     "tenPhong": "Room 107",
     "loaiPhongId": "6710c33f-e4e6-43c8-acbb-4e11536926c6",
     "giaPhong": 325,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "7386a11a-a7f5-489c-ab17-2b364de3402c",
     "tenPhong": "Room 108",
     "loaiPhongId": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
     "giaPhong": 350,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   },
   {
     "_id": "82854520-dba6-4b72-97e9-425fdc41f78b",
     "tenPhong": "Room 109",
     "loaiPhongId": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
     "giaPhong": 375,
-    "trangThai": "Trống"
+    "trangThai": "Trống",
+    "image": "default.jpg"
   }
 ]
