@@ -20,7 +20,7 @@ const Contact = require('../models/contact');
 router.get('/', (req, res) => {
   if (req.session.user && req.session.user.role === true) {
     return res.redirect('/dashboard');
-  }
+}
 
   res.locals.title = 'Trang chủ'; 
   res.render('index'); //  không ghi đè user

@@ -49,10 +49,17 @@ require('./models/serviceuse');
 require('./models/user');
 
 // Import routers
-const indexRouter = require('./routers/index');
-const roomRouter = require('./routers/room');
-const contactRouter = require('./routers/contact');
+app.use(flash());
 
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null;
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  next();
+});
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 // Use routers
 app.use('/', indexRouter);
 app.use('/room', roomRouter);
