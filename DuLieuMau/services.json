@@ -11,7 +11,7 @@
   },
   {
     "_id": { "$oid": "374ecc4dbcb84e78be4f14e9" },
-    "tenDichVu": "Dịch vụ 4",
+    "tenDichVu": "Hồ bơi",
     "donGia": 80000
   },
   {
