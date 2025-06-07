@@ -1,13 +1,17 @@
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
-const mongoose = require('mongoose');
+const flash = require('connect-flash');
+//var app = express () ;
+var mongoose = require('mongoose');
 
 const app = express();
 
-// View engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//Import router
+var indexRouter = require('./routers/index'); 
+var roomRouter = require('./routers/room');
+const contactRouter = require('./routers/contact');
+const router = express.Router();
 
 // Static folder
 app.use(express.static('public'));
@@ -64,4 +68,4 @@ mongoose.connect(uri)
             console.log('Server is running at http://127.0.0.1:3000');
         });
     })
-    .catch(err => console.log(err));
+.catch(err => console.log(err));
