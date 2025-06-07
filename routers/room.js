@@ -46,37 +46,28 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Route chi tiết phòng - FIXED
 router.get('/:id', async (req, res) => {
   try {
     const roomId = req.params.id;
     
-    // Kiểm tra ID có hợp lệ không
     if (!mongoose.Types.ObjectId.isValid(roomId)) {
-      console.log('Invalid room ID:', roomId);
       return res.status(400).render('room_detail', { 
         room: null, 
         error: 'ID phòng không hợp lệ' 
       });
     }
-
-    console.log('Looking for room with ID:', roomId);
     
     const room = await Room.findById(roomId)
       .populate('loaiPhong')
       .lean();
-      
-    console.log('Found room:', room);
-    
+          
     if (!room) {
-      console.log('Room not found for ID:', roomId);
       return res.status(404).render('room_detail', { 
         room: null, 
         error: 'Không tìm thấy phòng' 
       });
     }
     
-    // Xử lý dữ liệu phòng để đảm bảo có đầy đủ thông tin
     const processedRoom = {
       ...room,
       image: room.image || 'default.jpg',
