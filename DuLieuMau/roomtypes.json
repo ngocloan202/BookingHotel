@@ -1,6 +1,8 @@
 [
   {
-    "_id": "507f1f77bcf86cd799439011",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439011"
+    },
     "tenLoaiPhong": "Phòng Tiêu Chuẩn (Standard Room)",
     "donGia": 800000,
     "soNguoiToiDa": 2,
@@ -8,7 +10,9 @@
     "moTa": "Diện tích 25m², giường Queen, WiFi miễn phí, tivi màn hình LED, điều hòa"  
   },
   {
-    "_id": "507f1f77bcf86cd799439012",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439012"
+    },
     "tenLoaiPhong": "Phòng Cao Cấp (Superior Room)",
     "donGia": 1200000,
     "soNguoiToiDa": 2,
@@ -16,7 +20,9 @@
     "moTa": "Diện tích 30m², giường King, view thành phố, minibar và trà/cà phê miễn phí"  
   },
   {
-    "_id": "507f1f77bcf86cd799439013",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439013"
+    },
     "tenLoaiPhong": "Phòng Deluxe",
     "donGia": 1600000,
     "soNguoiToiDa": 3,
@@ -24,7 +30,9 @@
     "moTa": "Diện tích 35m², giường King hoặc 2 giường Queen, ban công hướng sông/biển"  
   },
   {
-    "_id": "507f1f77bcf86cd799439014",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439014"
+    },
     "tenLoaiPhong": "Suite Junior",
     "donGia": 2500000,
     "soNguoiToiDa": 3,
@@ -32,7 +40,9 @@
     "moTa": "Diện tích 45m², phòng ngủ tách biệt, khu vực tiếp khách, bồn tắm cao cấp"  
   },
   {
-    "_id": "507f1f77bcf86cd799439015",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439015"
+    },
     "tenLoaiPhong": "Suite Tổng Thống (Presidential Suite)",
     "donGia": 5000000,
     "soNguoiToiDa": 4,
@@ -40,7 +50,9 @@
     "moTa": "Diện tích 100m², phòng khách rộng, phòng ăn, phòng làm việc, view toàn cảnh thành phố"  
   },
   {
-    "_id": "507f1f77bcf86cd799439016",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439016"
+    },
     "tenLoaiPhong": "Phòng Gia Đình (Family Room)",
     "donGia": 1800000,
     "soNguoiToiDa": 4,
@@ -48,7 +60,9 @@
     "moTa": "Diện tích 40m², 2 giường Queen, phòng thông nhau, thích hợp gia đình"  
   },
   {
-    "_id": "507f1f77bcf86cd799439017",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439017"
+    },
     "tenLoaiPhong": "Phòng Studio",
     "donGia": 2000000,
     "soNguoiToiDa": 2,
@@ -56,7 +70,9 @@
     "moTa": "Diện tích 50m², giường King, bếp nhỏ (kitchenette), khu vực tiếp khách"  
   },
   {
-    "_id": "507f1f77bcf86cd799439018",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439018"
+    },
     "tenLoaiPhong": "Phòng Executive",
     "donGia": 2200000,
     "soNguoiToiDa": 2,

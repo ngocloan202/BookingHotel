@@ -6,4 +6,4 @@ const RoomTypeSchema = new mongoose.Schema({
     soLuong: { type: Number, required: true },
     moTa: { type: String }
   });
-module.exports = mongoose.model('RoomTypeModel', RoomTypeSchema);
+module.exports = mongoose.model('RoomTypeModel', RoomTypeSchema, 'roomtypes');

@@ -1,82 +1,158 @@
 [
   {
-    "_id": "507f1f77bcf86cd799439201",
-    "room": "507f1f77bcf86cd799439027",
-    "equipment": "507f1f77bcf86cd799439101",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439201"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439027"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439101"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439202",
-    "room": "507f1f77bcf86cd799439027",
-    "equipment": "507f1f77bcf86cd799439102",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439202"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439027"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439102"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439203",
-    "room": "507f1f77bcf86cd799439027",
-    "equipment": "507f1f77bcf86cd799439103",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439203"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439027"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439103"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439204",
-    "room": "507f1f77bcf86cd799439027",
-    "equipment": "507f1f77bcf86cd799439104",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439204"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439027"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439104"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439205",
-    "room": "507f1f77bcf86cd799439027",
-    "equipment": "507f1f77bcf86cd799439105",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439205"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439027"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439105"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439206",
-    "room": "507f1f77bcf86cd799439027",
-    "equipment": "507f1f77bcf86cd799439106",
-    "trangThai": true
-  },
-
-  {
-    "_id": "507f1f77bcf86cd799439207",
-    "room": "507f1f77bcf86cd799439028",
-    "equipment": "507f1f77bcf86cd799439101",
-    "trangThai": true
-  },
-  {
-    "_id": "507f1f77bcf86cd799439208",
-    "room": "507f1f77bcf86cd799439028",
-    "equipment": "507f1f77bcf86cd799439102",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439206"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439027"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439106"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439209",
-    "room": "507f1f77bcf86cd799439028",
-    "equipment": "507f1f77bcf86cd799439103",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439207"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439028"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439101"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439210",
-    "room": "507f1f77bcf86cd799439028",
-    "equipment": "507f1f77bcf86cd799439106",
-    "trangThai": true
-  },
-
-  {
-    "_id": "507f1f77bcf86cd799439211",
-    "room": "507f1f77bcf86cd799439029",
-    "equipment": "507f1f77bcf86cd799439101",
-    "trangThai": true
-  },
-  {
-    "_id": "507f1f77bcf86cd799439212",
-    "room": "507f1f77bcf86cd799439029",
-    "equipment": "507f1f77bcf86cd799439102",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439208"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439028"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439102"
+    },
     "trangThai": true
   },
   {
-    "_id": "507f1f77bcf86cd799439213",
-    "room": "507f1f77bcf86cd799439029",
-    "equipment": "507f1f77bcf86cd799439106",
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439209"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439028"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439103"
+    },
+    "trangThai": true
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439210"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439028"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439106"
+    },
+    "trangThai": true
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439211"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439029"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439101"
+    },
+    "trangThai": true
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439212"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439029"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439102"
+    },
+    "trangThai": true
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439213"
+    },
+    "room": {
+      "$oid": "507f1f77bcf86cd799439029"
+    },
+    "equipment": {
+      "$oid": "507f1f77bcf86cd799439106"
+    },
     "trangThai": true
   }
 ]
