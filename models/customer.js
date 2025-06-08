@@ -5,7 +5,7 @@ const CustomerSchema = new mongoose.Schema({
     soDienThoai: { type: String },
     email: { type: String },
     diaChi: { type: String },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserModel', required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserModel', required: false },
     nationality: { type: mongoose.Schema.Types.ObjectId, ref: 'NationalityModel', required: true }
   });
 module.exports = mongoose.model('CustomerModel', CustomerSchema);

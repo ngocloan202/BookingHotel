@@ -25,7 +25,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Giới Thiệu</a></li>
         </ul>
         <div class="d-flex align-items-center" id="auth-section">
-          <!-- Viết script thay thế sử dụng firebase xác thực người dùng -->
+         
         </div>
       </div>
      </div>
@@ -34,77 +34,122 @@
     <h2 class="mb-4 fw-bold">XÁC NHẬN ĐẶT PHÒNG</h2>
     <div class="row">
       <div class="col-md-6">
-        <!-- Hình ảnh phòng -->
-        <img src="[URL_PHONG]" alt="Ảnh phòng" class="img-fluid rounded shadow">
-        <p class="mt-3 fs-5 fw-semibold">?</p>
-        <p class="text-muted">?</p>
+       <img src="/images/<%= room.image ? room.image : 'default.jpg' %>" alt="Ảnh phòng" class="img-fluid room-image w-100">
       </div>
 
       <div class="col-md-6">
         <div class="card p-4">
           <h5 class="mb-3">CHI TIẾT PHÒNG ĐẶT</h5>
-          <form action="/bookings/confirm" method="POST">
-            <div class="mb-3">
-              <label class="form-label">Tên</label>
-              <input type="text" name="name" class="form-control" value="<%= user.name %>" readonly>
+        <form action="/booking/confirm" method="POST" id="bookingForm">
+          <input type="hidden" name="roomId" value="<%= room._id %>" />
+
+          <!-- Họ và tên -->
+          <div class="mb-3">
+            <label class="form-label">Họ và Tên</label>
+            <input type="text" name="hoVaTen" class="form-control" placeholder="Nhập họ tên của bạn" required />
+          </div>
+
+          <!-- CCCD -->
+          <div class="mb-3">
+            <label class="form-label">CCCD</label>
+            <input type="text" name="cccd" class="form-control" placeholder="Nhập số CCCD/CMND" required />
+          </div>
+
+          <!-- Số điện thoại -->
+          <div class="mb-3">
+            <label class="form-label">Số Điện Thoại</label>
+            <input type="text" name="soDienThoai" class="form-control" required pattern="[0-9]{9,15}" title="Vui lòng nhập số điện thoại hợp lệ"/>
+          </div>
+
+          <!-- Email (tuỳ chọn) -->
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="Nhập email nếu có" />
+          </div>
+
+          <!-- Địa chỉ -->
+          <div class="mb-3">
+            <label class="form-label">Địa Chỉ</label>
+            <textarea name="diaChi" class="form-control" rows="2" placeholder="Nhập địa chỉ liên hệ" required ></textarea>
+          </div>
+
+          <!-- Quốc tịch -->
+          <div class="mb-3">
+            <label class="form-label">Quốc tịch</label>
+            <select name="nationalityId" class="form-select">
+              <% nationalities.forEach(n => { %>
+                <option value="<%= n._id %>" <%= n.tenQuocGia === 'Việt Nam' ? 'selected' : '' %> >
+                  <%= n.tenQuocGia %>
+                </option>
+              <% }) %>
+            </select>
+          </div>
+          <!-- Ngày nhận / trả -->
+          <div class="row">
+            <div class="col">
+              <label class="form-label">Ngày Nhận Phòng</label>
+              <input type="date" name="ngayNhanPhong" id="checkin" class="form-control" required />
             </div>
-            <div class="mb-3">
-              <label class="form-label">Số Điện Thoại</label>
-              <input type="text" name="phone" class="form-control" value="<%= user.phone %>" readonly>
+            <div class="col">
+              <label class="form-label">Ngày Trả Phòng</label>
+              <input type="date" name="ngayTraPhong" id="checkout" class="form-control" required />
             </div>
-            <div class="mb-3">
-              <label class="form-label">Địa Chỉ</label>
-              <textarea name="address" class="form-control" rows="2"><%= user.address %></textarea>
-            </div>
-            <div class="row">
-              <div class="col">
-                <label class="form-label">Ngày Nhận Phòng</label>
-                <input type="date" name="checkin" class="form-control" min="<%= today %>" required>
-              </div>
-              <div class="col">
-                <label class="form-label">Ngày Trả Phòng</label>
-                <input type="date" name="checkout" class="form-control" required>
-              </div>
-            </div>
-            <div class="mt-3">
-              <p><strong>Số Phòng Trống:</strong> <%= room.available %></p>
-              <p><strong>Số Ngày Đặt:</strong> <span id="days">[TÍNH TOÁN]</span></p>
-              <p><strong>Tổng số tiền phải trả:</strong> <span id="total">[TÍNH TOÁN]</span> vnd</p>
-              <p class="text-danger" id="dateError" style="display:none;">Ngày đặt không hợp lệ. Vui lòng chọn lại!</p>
-            </div>
-            <button type="submit" class="btn btn-success w-100">Đặt Ngay</button>
-          </form>
+          </div>
+
+          <!-- Tổng tiền + xác nhận -->
+          <div class="mt-3">
+            <p><strong>Số Phòng Trống:</strong> <%= room.available %></p>
+            <p><strong>Số Ngày Đặt:</strong> <span id="days">[TÍNH TOÁN]</span></p>
+            <p><strong>Giá phòng / đêm:</strong> <span id="pricePerNight"><%= (room.giaPhong || 0).toLocaleString('vi-VN') %></span> vnd</p>
+            <p><strong>Tổng số tiền phải trả:</strong> <span id="total">0</span> vnd</p>
+            <p class="text-danger" id="dateError" style="display:none;">
+              Ngày đặt không hợp lệ. Vui lòng chọn lại!
+            </p>
+          </div>
+
+          <button type="submit" class="btn btn-success w-100">Đặt Ngay</button>
+        </form>
         </div>
       </div>
-    </div>
-  </div>
-
+    </div>  
+  </div>  
   <script>
-    const checkinInput = document.querySelector('input[name="checkin"]');
-    const checkoutInput = document.querySelector('input[name="checkout"]');
-    const dateError = document.getElementById('dateError');
-    const totalSpan = document.getElementById('total');
+    const checkin = document.getElementById('checkin');
+    const checkout = document.getElementById('checkout');
     const daysSpan = document.getElementById('days');
+    const totalSpan = document.getElementById('total');
+    const dateError = document.getElementById('dateError');
+    
+    // Giá phòng từ server (number)
+    const pricePerNight = Number('<%= room.giaPhong || 0 %>');
 
-    function calculateDays() {
-      const checkin = new Date(checkinInput.value);
-      const checkout = new Date(checkoutInput.value);
-      const today = new Date();
+    function calculateDaysAndTotal() {
+      const checkinDate = new Date(checkin.value);
+      const checkoutDate = new Date(checkout.value);
 
-      if (checkin < today || checkout <= checkin) {
-        dateError.style.display = 'block';
-        totalSpan.innerText = '[TÍNH TOÁN]';
-        daysSpan.innerText = '[TÍNH TOÁN]';
-      } else {
+      if (!checkin.value || !checkout.value) {
+        daysSpan.textContent = '0';
+        totalSpan.textContent = '0';
         dateError.style.display = 'none';
-        const diffDays = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
-        const total = diffDays * 800000;
-        totalSpan.innerText = total.toLocaleString();
-        daysSpan.innerText = diffDays;
+        return;
+      }
+
+      const diffTime = checkoutDate - checkinDate;
+      const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+      if (diffDays <= 0) {
+        daysSpan.textContent = '0';
+        totalSpan.textContent = '0';
+        dateError.style.display = 'block';
+      } else {
+        daysSpan.textContent = diffDays;
+        totalSpan.textContent = (diffDays * pricePerNight).toLocaleString('vi-VN');
+        dateError.style.display = 'none';
       }
     }
-    checkinInput.addEventListener('change', calculateDays);
-    checkoutInput.addEventListener('change', calculateDays);
+
+    checkin.addEventListener('change', calculateDaysAndTotal);
+    checkout.addEventListener('change', calculateDaysAndTotal);
   </script>
 </body>
 </html>
