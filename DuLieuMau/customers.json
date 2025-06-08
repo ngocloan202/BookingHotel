@@ -1,82 +1,82 @@
 [
   {
-    "_id": "91114d28-805c-42fc-a39e-4d95541780d1",
+    "_id": { "$oid": "91114d28805c42fca39e4d95" },
     "hoVaTen": "Lê Thanh Huyền",
     "cccd": "0123456781",
     "soDienThoai": "0123651895",
     "email": "huyen@mail.com",
     "diaChi": "Long An",
-    "user": "105585cd-b1e9-440d-927d-07335b878896",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "105585cdb1e9440d927d0733" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "_id": "6d18c055-8ecd-453a-9a65-e1a167f30d30",
+    "_id": { "$oid": "6d18c0558ecd453a9a65e1a1" },
     "hoVaTen": "Trần Văn Hùng",
     "cccd": "0123456782",
     "soDienThoai": "0987765895",
     "email": "hung@mail.com",
     "diaChi": "Kiên Giang",
-    "user": "38e34a13-3705-4460-bac0-e91ede75de08",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "38e34a1337054460bac0e91e" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "_id": "6195d4f1-c53b-42f8-8a88-e616b1b2a960",
+    "_id": { "$oid": "6195d4f1c53b42f88a88e616" },
     "hoVaTen": "Nguyễn Thị Mai",
     "cccd": "0123456783",
     "soDienThoai": "0987651123",
     "email": "mai@mail.com",
     "diaChi": "Bạc Liêu",
-    "user": "b815c6dc-7e66-4e3c-a7fe-232f01c4dc4f",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "b815c6dc7e664e3ca7fe232f" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "_id": "8910194c-d997-49cb-9996-6c44c8f5957a",
+    "_id": { "$oid": "8910194cd99749cb99966c44" },
     "hoVaTen": "Phạm Đức Anh",
     "cccd": "0123456784",
     "soDienThoai": "0987092895",
     "email": "anh@mail.com",
     "diaChi": "An Giang",
-    "user": "35336f26-4b09-402e-a6bc-bebc99e8975e",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "35336f264b09402ea6bcbe8f" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "_id": "4c918fdf-301d-4216-a67e-9aa1e151432d",
+    "_id": { "$oid": "4c918fdf301d4216a67e9aa1" },
     "hoVaTen": "Hoàng Ngọc Trâm",
     "cccd": "0123456785",
     "soDienThoai": "0987609195",
     "email": "tram@mail.com",
     "diaChi": "Phú Thọ",
-    "user": "c1e19141-29d9-4800-9b98-9a403c644ff7",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "c1e1914129d948009b989a40" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "_id": "3b7ff635-3f70-4a15-8027-49e4baf1a568",
+    "_id": { "$oid": "3b7ff6353f704a15802749e4" },
     "hoVaTen": "Lý Quốc Vinh",
     "cccd": "0123456786",
     "soDienThoai": "0980001895",
     "email": "vinh@mail.com",
     "diaChi": "Tiền Giang",
-    "user": "004618e5-5481-497f-b38b-1e534f409b8b",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "004618e55481497fb38b1e53" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "_id": "58647c9b-d3bf-400d-a23b-c35e4a22dc6c",
+    "_id": { "$oid": "58647c9bd3bf400da23bc35e" },
     "hoVaTen": "Võ Minh Phương",
     "cccd": "0123456787",
     "soDienThoai": "0912651895",
     "email": "phuong@mail.com",
     "diaChi": "TP Hồ Chí Minh",
-    "user": "a3499506-e5ae-4390-bf0e-b6eb3cfecd6a",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "a3499506e5ae4390bf0e6eb3" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "_id": "2cb58daa-ad31-4623-8a8e-43b366ffff0f",
+    "_id": { "$oid": "2cb58daaad3146238a8e43b3" },
     "hoVaTen": "Đào Thị Nhàn",
     "cccd": "0123456788",
     "soDienThoai": "0987038895",
     "email": "nhan@mail.com",
     "diaChi": "An Giang",
-    "user": "92e045f1-97e2-42ce-b033-83d368403e6b",
-    "nationality": "bf61be9e-7df4-4a43-8744-8c14ede098e5"
+    "user":         { "$oid": "92e045f197e242ceb03383d3" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   }
 ]

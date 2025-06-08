@@ -1,0 +1,92 @@
+[
+  {
+    "hoVaTen": "Kiều Oanh",
+    "tenDangNhap": "oanh",
+    "matKhau": "$2b$12$s11icEmhECKdBZb.LvfOvOrG1f8PMOo2iFgmzF5VEZEb1uNxUTUxe",
+    "role": true,
+    "email": "oanh@mail.com",
+    "_id": { "$oid": "a54524c286eb4574a844d2b2" },
+    "hinhAnh": "user.png"
+  },
+  {
+    "hoVaTen": "Ngọc Loan",
+    "tenDangNhap": "loan",
+    "matKhau": "$2b$12$9jm9Nqvxdf8aHwfmvIKqbe0OBEbkpH8N/on66T.Mb0H54VEFeHIDi",
+    "role": true,
+    "email": "loan@mail.com",
+    "_id": { "$oid": "7d57a0252d8849dc8c8fb266" },
+    "hinhAnh": "user1.png"
+  },
+  {
+    "hoVaTen": "Lê Thanh Huyền",
+    "tenDangNhap": "huyen",
+    "matKhau": "$2b$12$wOpw2rx6YSlFp7UetAQpi.rKH4jMjMH5fkhO/7B0YWYo8jzb/cPny",
+    "role": false,
+    "email": "huyen@gmail.com",
+    "_id": { "$oid": "105585cdb1e9440d927d0733" },
+    "hinhAnh": "user3.png"
+  },
+  {
+    "hoVaTen": "Trần Văn Hùng",
+    "tenDangNhap": "hung",
+    "matKhau": "$2b$12$4P0piukYpq3NQjWvSIoGq.ljragPrniCaa7.BXn6UcBw2g/rmLg.C",
+    "role": false,
+    "email": "hung@gmail.com",
+    "_id": { "$oid": "38e34a1337054460bac0e91e" },
+    "hinhAnh": "user4.png"
+  },
+  {
+    "hoVaTen": "Nguyễn Thị Mai",
+    "tenDangNhap": "mai",
+    "matKhau": "$2b$12$K8970okuCdVIbfRzVmslfe.LWBoYZ72fCIo2dJ7YLE2Q7QKbZn7F.",
+    "role": false,
+    "email": "mai@gmail.com",
+    "_id": { "$oid": "b815c6dc7e664e3ca7fe232f" },
+    "hinhAnh": "user.png"
+  },
+  {
+    "hoVaTen": "Phạm Đức Anh",
+    "tenDangNhap": "anh",
+    "matKhau": "$2b$12$OJysogRMAbHF27AaV6ZDGOleV6WRhMJZbriFNWNbK1aNbSr4dcs2i",
+    "role": false,
+    "email": "anh@gmail.com",
+    "_id": { "$oid": "35336f264b09402ea6bcbe8f" },
+    "hinhAnh": "user1.png"
+  },
+  {
+    "hoVaTen": "Hoàng Ngọc Trâm",
+    "tenDangNhap": "tram",
+    "matKhau": "$2b$12$8qfSYaHW8HbxAS9416k5bOJNO5K8CbzBRQwweMYT5xTmfqfYVi1a2",
+    "role": false,
+    "email": "tram@gmail.com",
+    "_id": { "$oid": "c1e1914129d948009b989a40" },
+    "hinhAnh": "user3.png"
+  },
+  {
+    "hoVaTen": "Lý Quốc Vinh",
+    "tenDangNhap": "vinh",
+    "matKhau": "$2b$12$WMjWiGF.F7RbW2v.xkSa4ecHjSIuM6Dfqi2KHnk72K0gJFq1FJZmy",
+    "role": false,
+    "email": "vinh@gmail.com",
+    "_id": { "$oid": "004618e55481497fb38b1e53" },
+    "hinhAnh": "user4.png"
+  },
+  {
+    "hoVaTen": "Võ Minh Phương",
+    "tenDangNhap": "phuong",
+    "matKhau": "$2b$12$1dacJy5X6eARzX/hGQ/HMOInJyeRjpBkBGtO2H2QQPmlkkllV1xBC",
+    "role": false,
+    "email": "phuong@gmail.com",
+    "_id": { "$oid": "a3499506e5ae4390bf0e6eb3" },
+    "hinhAnh": "user.png"
+  },
+  {
+    "hoVaTen": "Đào Thị Nhàn",
+    "tenDangNhap": "nhan",
+    "matKhau": "$2b$12$QbhoaKKrAWG.VLSfTB2pFugExO8NEItU7TD9Bg/uclli7l/f0byly",
+    "role": false,
+    "email": "nhan@gmail.com",
+    "_id": { "$oid": "92e045f197e242ceb03383d3" },
+    "hinhAnh": "user1.png"
+  }
+]
