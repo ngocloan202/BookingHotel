@@ -6,7 +6,7 @@ const BookingSchema = new mongoose.Schema({
     ngayTraPhong: { type: Date, required: true },
     soNgayThue: { type: Number, required: true },
     trangThai: { type: String, default: 'Chờ xác nhận' },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserModel', required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserModel', required: false },
     soNguoiLon: { type: Number, default: 1 },
     soTreEm: { type: Number, default: 0 },
     ngayDat: { type: Date, default: Date.now },
