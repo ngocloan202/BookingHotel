@@ -23,9 +23,6 @@ function ensureAuthenticated(req, res, next) {
 
 router.get('/', ensureAuthenticated, async (req, res) => {
   try {
-    console.log('Session:', req.session);
-    console.log('User ID:', req.session.user?._id);
-    
     if (!req.session.user?._id) {
       console.log('No user ID found in session');
       return res.redirect('/login');
@@ -53,6 +50,7 @@ router.post('/', ensureAuthenticated, upload.single('hinhAnh'), async (req, res)
   await UserModel.findByIdAndUpdate(req.session.user._id, updateData);
   const updatedUser = await UserModel.findById(req.session.user._id);
   req.session.user = updatedUser;
+  req.flash('success_msg', 'Cập nhật thông tin thành công!');
   res.redirect('/info');
 });
 
