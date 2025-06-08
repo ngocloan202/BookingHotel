@@ -59,12 +59,8 @@ const bookingConfirmRouter = require('./routers/bookingConfirm');
 app.use('/', indexRouter);
 app.use('/room', roomRouter);
 app.use('/contact', contactRouter);
-<<<<<<< HEAD
 app.use('/booking', bookingRouter);
 app.use('/booking', bookingConfirmRouter);
-=======
-app.use('/info', infoRouter);
->>>>>>> cd9552c5fc6cfd639844475520df599f9cc66b4f
 
 // Connect to MongoDB
 const uri = 'mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel';
