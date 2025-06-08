@@ -1,379 +1,142 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title || 'Dịch Vụ Khách Sạn' %></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-        }
-
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-            color: white;
-            padding: 80px 0;
-            margin-bottom: 40px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .service-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 100%;
-            border: none;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background: white;
-            position: relative;
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-img-container {
-            position: relative;
-            overflow: hidden;
-            height: 220px;
-        }
-
-        .service-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .service-card:hover .service-img {
-            transform: scale(1.1);
-        }
-
-        .service-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(52, 152, 219, 0.8), rgba(231, 76, 60, 0.8));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-card:hover .service-overlay {
-            opacity: 1;
-        }
-
-        .overlay-icon {
-            color: white;
-            font-size: 3rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        .card-body {
-            padding: 25px;
-        }
-
-        .service-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .service-description {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            height: 60px;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-        }
-
-        .price {
-            color: var(--success-color);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .service-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .btn-book-service {
-            background: linear-gradient(45deg, var(--secondary-color), #5dade2);
-            border: none;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            flex: 1;
-            justify-content: center;
-        }
-
-        .btn-book-service:hover {
-            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-            color: white;
-        }
-
-        .service-time {
-            background: linear-gradient(45deg, var(--warning-color), #f7dc6f);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            white-space: nowrap;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        }
-
-        .no-services {
-            text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .no-services-icon {
-            font-size: 4rem;
-            color: #bdc3c7;
-            margin-bottom: 20px;
-        }
-
-        .error-message {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .loading-spinner {
-            display: none;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .spinner-border {
-            color: var(--secondary-color);
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .service-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .btn-book-service {
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch Vụ - ZentoStay</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <%- include('navbar') %>
+  <!-- Navbar -->
+  <%- include('navbar') %>
+
+  <!-- Banner -->
+  <div class="container-fluid px-0">
+    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" class="w-100" style="height: 350px; object-fit: cover;">
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+      <h1 class="display-4 fw-bold">Dịch Vụ Khách Sạn</h1>
+      <p class="lead">Trải nghiệm những dịch vụ đẳng cấp tại ZentoStay</p>
+    </div>
+  </div>
+
+  <!-- Danh sách Dịch Vụ -->
+  <div class="container">
+    <h2 class="section-title">Các Dịch Vụ</h2>
     
-    <div class="hero-section">
-        <div class="container text-center">
-            <h1 class="hero-title">
-                <i class="fas fa-concierge-bell me-3"></i>
-                Dịch Vụ Đẳng Cấp
-            </h1>
-            <p class="hero-subtitle">
-                Trải nghiệm những dịch vụ cao cấp và chuyên nghiệp, 
-                được thiết kế để mang đến sự thoải mái tối đa cho quý khách
-            </p>
-        </div>
-    </div>
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="alert alert-danger" role="alert">
+        <i class="bi bi-exclamation-triangle me-2"></i>
+        <%= error %>
+      </div>
+    <% } %>
 
-    <div class="container pb-5">
-        <% if (typeof error !== 'undefined' && error) { %>
-            <div class="error-message">
-                <i class="fas fa-exclamation-triangle me-2"></i>
-                <%= error %>
-            </div>
-        <% } %>
-
-        <% if (services && services.length > 0) { %>
-            <div class="row g-4">
-                <% services.forEach(function(service) { %>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card service-card">
-                            <div class="service-img-container">
-                                <img src="/images/<%= service.hinhAnh || 'default-service.jpg' %>" 
-                                     class="service-img" 
-                                     alt="<%= service.tenDichVu %>"
-                                     onerror="this.src='/images/default-service.jpg'">
-                                <div class="service-overlay">
-                                    <i class="fas fa-eye overlay-icon"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="service-title">
-                                    <i class="fas fa-star me-2" style="color: #f39c12;"></i>
-                                    <%= service.tenDichVu %>
-                                </h5>
-                                <p class="service-description">
-                                    <%= service.moTa || 'Dịch vụ chất lượng cao với đội ngũ chuyên nghiệp, mang đến trải nghiệm tuyệt vời cho quý khách.' %>
-                                </p>
-                                <div class="price">
-                                    <i class="fas fa-tag me-2"></i>
-                                    <%= service.gia.toLocaleString('vi-VN') %> VND
-                                </div>
-                                <div class="service-actions">
-                                    <a href="/service/<%= service._id %>" 
-                                       class="btn btn-book-service">
-                                        <i class="fas fa-calendar-plus"></i>
-                                        Đặt Dịch Vụ
-                                    </a>
-                                    <span class="service-time">
-                                        <i class="fas fa-clock me-1"></i>
-                                        <%= service.thoiGianPhucVu %>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% }); %>
-            </div>
-        <% } else { %>
-            <div class="no-services">
-                <div class="no-services-icon">
-                    <i class="fas fa-spa"></i>
-                </div>
-                <h3>Hiện tại chưa có dịch vụ nào</h3>
-                <p class="text-muted">Chúng tôi đang chuẩn bị những dịch vụ tuyệt vời cho quý khách. Vui lòng quay lại sau!</p>
-            </div>
-        <% } %>
-    </div>
-
-    <!-- Loading Spinner -->
-    <div class="loading-spinner" id="loadingSpinner">
-        <div class="spinner-border" role="status">
-            <span class="visually-hidden">Đang tải...</span>
-        </div>
-        <p class="mt-3">Đang tải dịch vụ...</p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Animation khi tải trang
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.service-card');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'all 0.6s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        });
-
-        // Xử lý lỗi hình ảnh
-        document.querySelectorAll('.service-img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.src = '/images/default-service.jpg';
-                this.alt = 'Hình ảnh mặc định';
-            });
-        });
-
-        // Smooth scroll cho các liên kết anchor
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+    <div class="row" id="service-list">
+      <% if (services && services.length > 0) { %>
+        <% services.forEach(function(service) { %>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+              <% 
+                let imagePath = '/images/default-service.jpg';
+                if (service.hinhAnh && service.hinhAnh !== 'default-service.jpg' && service.hinhAnh !== 'undefined') {
+                  imagePath = '/images/' + service.hinhAnh;
                 }
-            });
-        });
-    </script>
+              %>
+              
+              <img src="<%= imagePath %>" 
+                   class="card-img-top" 
+                   alt="<%= service.tenDichVu %>"
+                   style="object-fit: cover; width: 100%; height: 200px;"
+                   onerror="this.src='/images/default-service.jpg';">
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center">
+                  <i class="bi bi-star-fill text-warning me-2"></i>
+                  <%= service.tenDichVu %>
+                </h5>
+                
+                <div class="service-info mb-3">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <small class="text-muted">
+                      <i class="bi bi-clock me-1"></i>
+                      Thời gian: <%= service.thoiGianPhucVu || 'Liên hệ' %>
+                    </small>
+                  </div>
+                  
+                  <div class="text-left">
+                    <span class="h5 text-success fw-bold">
+                      <i class="bi bi-tag me-1"></i>
+                      <%= service.gia ? service.gia.toLocaleString('vi-VN') : '0' %> VND
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="mt-auto">
+                  <a href="/service/<%= service._id %>" class="btn btn-success w-100">
+                    <i class="bi bi-calendar-plus me-2"></i>Đặt Dịch Vụ
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <div class="col-12">
+          <div class="text-center py-5">
+            <i class="bi bi-emoji-frown display-1 text-muted"></i>
+            <h3 class="mt-3">Hiện tại chưa có dịch vụ nào</h3>
+            <p class="text-muted">Chúng tôi đang chuẩn bị những dịch vụ tuyệt vời cho quý khách. Vui lòng quay lại sau!</p>
+          </div>
+        </div>
+      <% } %>
+    </div>
+    
+    <% if (services && services.length > 0) { %>
+      <div class="text-center my-3">
+        <button class="btn btn-outline-secondary">Xem thêm >>></button>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Footer -->
+  <%- include('footer') %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Flash message -->
+  <% if (success_msg && success_msg.length > 0 || error_msg && error_msg.length > 0) { %>
+    <div id="flash-message" class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 9999; min-width: 300px;">
+      <% if (success_msg) { %>
+        <div class="alert alert-success text-center shadow"><%= success_msg %></div>
+      <% } %>
+      <% if (error_msg) { %>
+        <div class="alert alert-danger text-center shadow"><%= error_msg %></div>
+      <% } %>
+    </div>
+  <% } %>
+  
+  <script>
+    setTimeout(() => {
+      const msg = document.getElementById('flash-message');
+      if (msg) msg.remove();
+    }, 3000);
+
+    // Animation cho cards khi load trang
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          card.style.transition = 'all 0.5s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    });
+  </script>
 </body>
-</html>
+</ht
