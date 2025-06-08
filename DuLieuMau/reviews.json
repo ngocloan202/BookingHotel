@@ -1,102 +1,29 @@
 [
   {
-    "_id": "111ffdda-cc66-4228-82ea-383159edb69e",
-    "reviewId": 1,
-    "phongId": 106,
-    "khachHangId": 9,
-    "soSao": 3,
-    "noiDung": "Đánh giá mẫu 1",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "77a795f2-2f58-4ad1-b20a-badd25c4a275",
-    "reviewId": 2,
-    "phongId": 101,
-    "khachHangId": 10,
+    "_id": "6c0e7e0a-9e8b-4b67-9af0-4c0fa7b17600",
+    "room": "19e81ef9-cfd4-4d9c-b964-e5ec022cde88",
+    "customer": "2cb58daa-ad31-4623-8a8e-43b366ffff0f",
     "soSao": 5,
-    "noiDung": "Đánh giá mẫu 2",
-    "ngayDanhGia": "2025-06-01T00:00:00",
+    "noiDung": "Phòng rất sạch sẽ và tiện nghi.",
+    "ngayDanhGia": "2025-06-04T17:00:00.000Z",
     "hienThi": true
   },
   {
-    "_id": "590ac2a0-e09e-43bd-8b12-5625b8689e09",
-    "reviewId": 3,
-    "phongId": 101,
-    "khachHangId": 9,
+    "_id": "77aa0c01-2fe2-4cd1-8935-b7f2de7c3697",
+    "room": "7386a11a-a7f5-489c-ab17-2b364de3402c",
+    "customer": "58647c9b-d3bf-400d-a23b-c35e4a22dc6c",
+    "soSao": 4,
+    "noiDung": "Nhân viên thân thiện, vị trí thuận tiện.",
+    "ngayDanhGia": "2025-06-03T17:00:00.000Z",
+    "hienThi": true
+  },
+  {
+    "_id": "df3ed2ff-0c96-42d6-bb72-8393c94cebd9",
+    "room": "82854520-dba6-4b72-97e9-425fdc41f78b",
+    "customer": "6d18c055-8ecd-453a-9a65-e1a167f30d30",
     "soSao": 3,
-    "noiDung": "Đánh giá mẫu 3",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "e4472442-092c-4d3d-81fb-06bea489d95d",
-    "reviewId": 4,
-    "phongId": 102,
-    "khachHangId": 9,
-    "soSao": 3,
-    "noiDung": "Đánh giá mẫu 4",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "7955b271-8f9f-49b4-a5b6-36d507de5d69",
-    "reviewId": 5,
-    "phongId": 108,
-    "khachHangId": 10,
-    "soSao": 4,
-    "noiDung": "Đánh giá mẫu 5",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "f1287db1-e999-4e9f-a8fd-8196e019b270",
-    "reviewId": 6,
-    "phongId": 105,
-    "khachHangId": 3,
-    "soSao": 4,
-    "noiDung": "Đánh giá mẫu 6",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "6f032714-1af0-4d0c-a13a-88a2f4c4fa13",
-    "reviewId": 7,
-    "phongId": 105,
-    "khachHangId": 7,
-    "soSao": 4,
-    "noiDung": "Đánh giá mẫu 7",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "4a41c013-eef1-469f-b51f-e278fd59d299",
-    "reviewId": 8,
-    "phongId": 110,
-    "khachHangId": 1,
-    "soSao": 3,
-    "noiDung": "Đánh giá mẫu 8",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "0e6381cc-67a7-40ee-aa7c-b452fc629da3",
-    "reviewId": 9,
-    "phongId": 101,
-    "khachHangId": 1,
-    "soSao": 4,
-    "noiDung": "Đánh giá mẫu 9",
-    "ngayDanhGia": "2025-06-01T00:00:00",
-    "hienThi": true
-  },
-  {
-    "_id": "8939454e-79fe-496e-9397-c31aa8c16bdd",
-    "reviewId": 10,
-    "phongId": 108,
-    "khachHangId": 5,
-    "soSao": 4,
-    "noiDung": "Đánh giá mẫu 10",
-    "ngayDanhGia": "2025-06-01T00:00:00",
+    "noiDung": "Ổn nhưng cần cải thiện cách âm.",
+    "ngayDanhGia": "2025-06-02T17:00:00.000Z",
     "hienThi": true
   }
 ]

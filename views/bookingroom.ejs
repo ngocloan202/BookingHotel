@@ -18,14 +18,33 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.php">Trang Chủ</a></li>
-          <li class="nav-item"><a class="nav-link" href="rooms.php">Phòng</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Trang Chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="/room">Phòng</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Tiện Nghi</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.php">Liên Hệ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Giới Thiệu</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Liên Hệ</a></li>
+          <li class="nav-item"><a class="nav-link" href="/introduce">Giới Thiệu</a></li>
         </ul>
-        <div class="d-flex align-items-center" id="auth-section">
-          <!-- Viết script thay thế sử dụng firebase xác thực người dùng -->
+        <!-- xác thực người dùng -->
+        <div class="d-flex align-items-center justify-content-end gap-2 pe-3" id="auth-section"style="height: 50px;">
+          <% if (!user) { %>
+            <a href="/login" class="btn btn-outline-dark me-2">Đăng Nhập</a>
+            <a href="/register" class="btn btn-dark ">Đăng Ký</a>
+          <% } else { %>
+          <span class="fs-6 text-dark">Xin chào: <%= user.hoVaTen %></span>
+          <div class="dropdown">
+            <img src="/images/<%= user.hinhAnh || 'default.jpg' %>" width="32" height="32" class="rounded-circle dropdown-toggle" data-bs-toggle="dropdown" role="button">
+            <ul class="dropdown-menu dropdown-menu-end">
+              <% if (user.role === true) { %> <!-- là admin -->
+                <li><a class="dropdown-item" href="/dashboard">Trang quản trị</a></li>
+              <% } else { %> <!-- là khách hàng -->
+                <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                <li><a class="dropdown-item" href="/customer_booking">Phòng đã đặt</a></li>
+                <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+              <% } %>
+            <li><hr class="dropdown-divider"></li>
+            </ul>
+          </div>
+          <% } %>
         </div>
       </div>
      </div>
@@ -105,6 +124,23 @@
     }
     checkinInput.addEventListener('change', calculateDays);
     checkoutInput.addEventListener('change', calculateDays);
+  </script>
+  <!-- Flash message -->
+  <% if (success_msg && success_msg.length > 0 || error_msg && error_msg.length > 0) { %>
+    <div id="flash-message" class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 9999; min-width: 300px;">
+      <% if (success_msg) { %>
+        <div class="alert alert-success text-center shadow"><%= success_msg %></div>
+      <% } %>
+      <% if (error_msg) { %>
+        <div class="alert alert-danger text-center shadow"><%= error_msg %></div>
+      <% } %>
+    </div>
+  <% } %>
+  <script>
+    setTimeout(() => {
+      const msg = document.getElementById('flash-message');
+      if (msg) msg.remove();
+    }, 3000);
   </script>
 </body>
 </html>

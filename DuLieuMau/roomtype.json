@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "51309c92-d2db-4540-a552-9dd40aad33ae",
+    "tenLoaiPhong": "Type 1",
+    "donGia": 100000,
+    "soNguoiToiDa": 2,
+    "soLuong": 5
+  },
+  {
+    "_id": "47ce1ff1-96d2-4dd2-91aa-8431531c01d6",
+    "tenLoaiPhong": "Type 2",
+    "donGia": 150000,
+    "soNguoiToiDa": 3,
+    "soLuong": 5
+  },
+  {
+    "_id": "3d8db20c-8ddc-413d-85c5-bd734fb2c299",
+    "tenLoaiPhong": "Type 3",
+    "donGia": 200000,
+    "soNguoiToiDa": 4,
+    "soLuong": 5
+  },
+  {
+    "_id": "29f21324-5e1b-48ce-9e72-f0282ceada5c",
+    "tenLoaiPhong": "Type 4",
+    "donGia": 250000,
+    "soNguoiToiDa": 2,
+    "soLuong": 5
+  },
+  {
+    "_id": "6710c33f-e4e6-43c8-acbb-4e11536926c6",
+    "tenLoaiPhong": "Type 5",
+    "donGia": 300000,
+    "soNguoiToiDa": 3,
+    "soLuong": 5
+  }
+]
