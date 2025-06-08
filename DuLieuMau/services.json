@@ -2,51 +2,61 @@
   {
     "_id": { "$oid": "e33e0ecb563b4bf79c8766e1" },
     "tenDichVu": "Bữa trưa",
-    "donGia": 60000
+    "donGia": 60000,
+    "thoiGianPhucVu": "11:00-14:00"
   },
   {
     "_id": { "$oid": "b1974c541fcb42c3a58d88e1" },
     "tenDichVu": "Buổi tối",
-    "donGia": 70000
+    "donGia": 70000,
+    "thoiGianPhucVu": "18:00-21:00"
   },
   {
     "_id": { "$oid": "374ecc4dbcb84e78be4f14e9" },
     "tenDichVu": "Hồ bơi",
-    "donGia": 80000
+    "donGia": 80000,
+    "thoiGianPhucVu": "06:00-20:00"
   },
   {
     "_id": { "$oid": "62404c4f375c44c3844df214" },
     "tenDichVu": "Spa",
-    "donGia": 90000
+    "donGia": 90000,
+    "thoiGianPhucVu": "09:00-21:00"
   },
   {
     "_id": { "$oid": "d6ad54ff2d284573b4a9b1a7" },
     "tenDichVu": "Buổi sáng",
-    "donGia": 50000
+    "donGia": 50000,
+    "thoiGianPhucVu": "06:00-10:00"
   },
   {
     "_id": { "$oid": "a1b2c3d4e5f67890abcdef12" },
     "tenDichVu": "Giặt ủi",
-    "donGia": 30000
+    "donGia": 30000,
+    "thoiGianPhucVu": "08:00-18:00"
   },
   {
     "_id": { "$oid": "a1b2c3d4e5f67890abcdef13" },
     "tenDichVu": "Di chuyển",
-    "donGia": 80000
+    "donGia": 80000,
+    "thoiGianPhucVu": "Theo yêu cầu"
   },
   {
     "_id": { "$oid": "507f1f77bcf86cd799439300" },
     "tenDichVu": "Giữ xe",
-    "donGia": 20000
+    "donGia": 20000,
+    "thoiGianPhucVu": "24/7"
   },
   {
     "_id": { "$oid": "507f1f77bcf86cd799439301" },
     "tenDichVu": "Đưa đón sân bay",
-    "donGia": 150000
+    "donGia": 150000,
+    "thoiGianPhucVu": "Theo yêu cầu"
   },
   {
     "_id": { "$oid": "507f1f77bcf86cd799439302" },
     "tenDichVu": "Dọn phòng",
-    "donGia": 50000
+    "donGia": 50000,
+    "thoiGianPhucVu": "08:00-12:00"
   }
 ]
