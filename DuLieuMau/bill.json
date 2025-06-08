@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "39681b84-6a28-4569-af87-57230cd815e5",
+    "booking": "627b96d8-afab-43b8-b1a2-dbeaf2111e6f",
+    "ngayLap": "2025-06-01",
+    "tongTien": 7615989,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "3bb321f0-36e8-497f-8c89-e4bb76720388",
+    "booking": "5a8ef41e-e3e8-49a9-9ceb-61fd3ef175f9",
+    "ngayLap": "2025-06-01",
+    "tongTien": 7888563,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "66f9d7e5-e4df-4ae9-8be2-263d293caf43",
+    "booking": "5bbe2198-8749-47c6-924e-ac69c3cb67e2",
+    "ngayLap": "2025-06-01",
+    "tongTien": 4177926,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "f07eff85-f747-4a5b-821a-b6d3e4299389",
+    "booking": "1ad30d5f-8460-4f57-b2d1-d8e559c14321",
+    "ngayLap": "2025-06-01",
+    "tongTien": 3663666,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  },
+  {
+    "_id": "c04df319-833f-4df6-becb-182c13197e18",
+    "booking": "1a705f00-6c61-42cd-be4f-c6456a446877",
+    "ngayLap": "2025-06-01",
+    "tongTien": 4064226,
+    "trangThaiThanhToan": "Đã thanh toán",
+    "ghiChu": ""
+  }
+]

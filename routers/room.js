@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Room = mongoose.model('Room');
+//const Room = mongoose.model('Room');
+const Room = require('../models/room'); // 
 const RoomType = mongoose.model('RoomTypeModel');
 
 router.get('/', async (req, res) => {
