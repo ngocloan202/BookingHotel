@@ -11,7 +11,7 @@ const app = express();
 var indexRouter = require('./routers/index'); 
 var roomRouter = require('./routers/room');
 const contactRouter = require('./routers/contact');
-const router = express.Router();
+const infoRouter = require('./routers/info');
 
 // Static folder
 app.use(express.static('public'));
@@ -60,10 +60,11 @@ app.use((req, res, next) => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-// Use routers
+
 app.use('/', indexRouter);
 app.use('/room', roomRouter);
 app.use('/contact', contactRouter);
+app.use('/info', infoRouter);
 
 // Connect to MongoDB
 const uri = 'mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel';
