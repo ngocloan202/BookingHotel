@@ -7,4 +7,4 @@ const RoomSchema = new mongoose.Schema({
   ghiChu: { type: String },
   image: { type: String }
 });
-module.exports = mongoose.model('Room', RoomSchema, 'roommodels');
+module.exports = mongoose.model('RoomModel', RoomSchema);

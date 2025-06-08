@@ -1,0 +1,38 @@
+[
+    {
+      "hoVaTen": "Nguyễn Văn Vinh",
+      "email": "nguyenvanvinh@example.com",
+      "tieuDe": "Yêu cầu hỗ trợ đặt phòng",
+      "tinNhan": "Tôi cần được hỗ trợ đặt phòng cho 3 người vào cuối tuần.",
+      "ngayGui": "2025-06-06"
+    },
+    {
+      "hoVaTen": "Trần Thị Xuân",
+      "email": "tranthixuan@example.com",
+      "tieuDe": "Hỏi về tiện nghi khách sạn",
+      "tinNhan": "Khách sạn có bể bơi và phòng gym không?",
+      "ngayGui": "2025-06-05"
+    },
+    {
+      "hoVaTen": "Lê Văn Cường",
+      "email": "cuonglv@example.com",
+      "tieuDe": "Góp ý về dịch vụ",
+      "tinNhan": "Nhân viên phục vụ rất tốt, tôi sẽ quay lại.",
+      "ngayGui": "2025-06-04"
+    },
+    {
+      "hoVaTen": "Phạm Minh Dũng",
+      "email": "dungpm@example.com",
+      "tieuDe": "Báo lỗi hệ thống thanh toán",
+      "tinNhan": "Tôi không thể thanh toán bằng thẻ VISA.",
+      "ngayGui": "2025-06-06"
+    },
+    {
+      "hoVaTen": "Đặng Thị Hạnh",
+      "email": "hanhdt@example.com",
+      "tieuDe": "Đặt nhầm ngày nhận phòng",
+      "tinNhan": "Tôi đặt nhầm ngày check-in, xin hỗ trợ đổi lại.",
+      "ngayGui": "2025-06-03"
+    }
+  ]
+  

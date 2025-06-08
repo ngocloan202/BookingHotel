@@ -20,7 +20,7 @@ const Contact = require('../models/contact');
 router.get('/', (req, res) => {
   if (req.session.user && req.session.user.role === true) {
     return res.redirect('/dashboard');
-  }
+}
 
   res.locals.title = 'Trang chủ'; 
   res.render('index'); //  không ghi đè user
@@ -196,13 +196,7 @@ router.get('/confirmpayment', (req, res) => res.render('confirmpayment'));
 router.get('/newbookingroom', (req, res) => res.render('newbookingroom'));
 router.get('/historybooking', (req, res) => res.render('historybooking'));
 router.get('/customer_booking', (req, res) => res.render('customer_booking'));
-
-// Room views
-const roomRouter = require('./room');
-//app.use('/room', roomRouter); 
-// router.get('/room', (req, res) => res.render('room'));
 router.get('/room_detail', (req, res) => res.render('room_detail'));
-
 router.get('/error', (req, res) => res.render('error', { title: 'Lỗi' }));
 router.get('/success', (req, res) => res.render('success', { title: 'Thành công' }));
 
