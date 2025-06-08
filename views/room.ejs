@@ -35,9 +35,9 @@
           <div class="dropdown">
             <img src="/images/<%= user.hinhAnh || 'default.jpg' %>" width="32" height="32" class="rounded-circle dropdown-toggle" data-bs-toggle="dropdown" role="button">
             <ul class="dropdown-menu dropdown-menu-end">
-              <% if (user.role === true) { %> <!-- là admin -->
+              <% if (user.role === true) { %> 
                 <li><a class="dropdown-item" href="/dashboard">Trang quản trị</a></li>
-              <% } else { %> <!-- là khách hàng -->
+              <% } else { %> 
                 <li><a class="dropdown-item" href="/info">Tài khoản của tôi</a></li>
                 <li><a class="dropdown-item" href="/customer_booking">Phòng đã đặt</a></li>
                 <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
@@ -50,11 +50,9 @@
       </div>
     </div>
   </nav>
-  <!-- Danh sách phòng -->
   <div class="container">
     <h2 class="section-title text-center my-4">Phòng</h2>
     <div class="row">
-      <!-- Cột tìm kiếm -->
       <div class="col-md-3 mb-4">
         <div class="card p-3">
           <h5 class="mb-3">Tìm Kiếm</h5>
@@ -67,7 +65,7 @@
             <input type="date" id="checkout" class="form-control">
           </div>
           <div class="mb-3">
-            <label class="form-label">Dịch Vụ</label>
+            <label class="form-label">Tiện Nghi</label>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="wifi">
               <label class="form-check-label" for="wifi">Wifi</label>
