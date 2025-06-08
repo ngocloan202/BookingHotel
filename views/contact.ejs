@@ -7,9 +7,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    
-  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -25,10 +22,28 @@
           <li class="nav-item"><a class="nav-link" href="/room">Phòng</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Tiện Nghi</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact">Liên Hệ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Giới Thiệu</a></li>
+          <li class="nav-item"><a class="nav-link" href="/introduce">Giới Thiệu</a></li>
         </ul>
-        <div class="d-flex align-items-center" id="auth-section">
-          <!-- Viết script thay thế sử dụng firebase xác thực người dùng -->
+        <div class="d-flex align-items-center justify-content-end gap-2 pe-3" id="auth-section"style="height: 50px;">
+          <% if (!user) { %>
+            <a href="/login" class="btn btn-outline-dark me-2">Đăng Nhập</a>
+            <a href="/register" class="btn btn-dark ">Đăng Ký</a>
+          <% } else { %>
+          <span class="fs-6 text-dark">Xin chào: <%= user.hoVaTen %></span>
+          <div class="dropdown">
+            <img src="/images/<%= user.hinhAnh || 'default.jpg' %>" width="32" height="32" class="rounded-circle dropdown-toggle" data-bs-toggle="dropdown" role="button">
+            <ul class="dropdown-menu dropdown-menu-end">
+              <% if (user.role === true) { %> <!-- là admin -->
+                <li><a class="dropdown-item" href="/dashboard">Trang quản trị</a></li>
+              <% } else { %> <!-- là khách hàng -->
+                <li><a class="dropdown-item" href="/info">Tài khoản của tôi</a></li>
+                <li><a class="dropdown-item" href="/customer_booking">Phòng đã đặt</a></li>
+                <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+              <% } %>
+            <li><hr class="dropdown-divider"></li>
+            </ul>
+          </div>
+          <% } %>
         </div>
       </div>
     </div>
@@ -40,9 +55,9 @@
     <div class="row">
       <div class="col-md-6 mb-4">
         <div class="card p-3 h-100">
-          <iframe src="https://www.google.com/maps?q=99+Lê+Duẩn,+Vinh,+Việt+Nam&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.179411095577!2d105.4359458758242!3d10.375362089751913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a048f83c4db47f%3A0x9e94c5b2c09aaec5!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBBbiBHaWFuZw!5e0!3m2!1svi!2s!4v1717698309123!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           <div class="mt-3">
-            <p><strong>Địa Chỉ</strong><br><i class="bi bi-geo-alt-fill"></i> 99 Lê Duẩn - Phường Bến Thủy - Thành Phố Vinh</p>
+            <p><strong>Địa Chỉ</strong><br><i class="bi bi-geo-alt-fill"></i> 18 Ung Văn Khiêm, Phường Mỹ Xuyên, Thành phố Long Xuyên, An Giang, Việt Nam</p>
             <p><strong>Liên Hệ Đường Dây Nóng</strong><br><i class="bi bi-telephone"></i> +84974562765<br><i class="bi bi-telephone"></i> +84974562765</p>
             <p><strong>Email</strong><br><i class="bi bi-envelope"></i> zentostay@gmail.com</p>
             <p><strong>Theo Dõi Ngay</strong><br>
@@ -55,31 +70,31 @@
       <div class="col-md-6 mb-4">
         <div class="card p-4">
           <h5 class="mb-3">Gửi Tin Nhắn</h5>
-          <form>
+          <form action="/contact" method="POST">
             <div class="mb-3">
               <label for="fullname" class="form-label">Họ và Tên</label>
-              <input type="text" class="form-control" id="fullname">
+              <input type="text" name="hoVaTen" class="form-control" placeholder="Họ và tên" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" name="email" class="form-control" placeholder="Email" required>
             </div>
             <div class="mb-3">
               <label for="subject" class="form-label">Tiêu Đề</label>
-              <input type="text" class="form-control" id="subject">
+              <input type="text" name="tieuDe" class="form-control" placeholder="Tiêu đề" required>
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Tin Nhắn</label>
-              <textarea class="form-control" id="message" rows="5"></textarea>
+              <textarea name="tinNhan" class="form-control" placeholder="Nội dung..." required></textarea>
             </div>
             <button type="submit" class="btn btn-success">GỬI</button>
-          </form>
+          </form>          
         </div>
       </div>
     </div>
   </div>
     <!-- Footer -->
-  <footer class="bg-light text-dark py-4 mt-5">
+  <footer class="bg-dark text-white mt-5 py-4">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -91,10 +106,10 @@
           <h5 class="fw-bold">Links</h5>
           <ul class="list-unstyled ">
             <li><a href="/">Trang Chủ</a></li>
-            <li><a href="#">Phòng</a></li>
+            <li><a href="/room">Phòng</a></li>
             <li><a href="#">Tiện Nghi</a></li>
-            <li><a href="#">Liên Hệ</a></li>
-            <li><a href="#">Giới Thiệu</a></li>
+            <li><a href="/contact">Liên Hệ</a></li>
+            <li><a href="/introduce">Giới Thiệu</a></li>
           </ul>
         </div>
         <div class="col-md-4">
@@ -105,4 +120,21 @@
       </div>
     </div>
   </footer>
+  <!-- Flash message -->
+  <% if (success_msg && success_msg.length > 0 || error_msg && error_msg.length > 0) { %>
+    <div id="flash-message" class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 9999; min-width: 300px;">
+      <% if (success_msg) { %>
+        <div class="alert alert-success text-center shadow"><%= success_msg %></div>
+      <% } %>
+      <% if (error_msg) { %>
+        <div class="alert alert-danger text-center shadow"><%= error_msg %></div>
+      <% } %>
+    </div>
+  <% } %>
+  <script>
+    setTimeout(() => {
+      const msg = document.getElementById('flash-message');
+      if (msg) msg.remove();
+    }, 3000);
+  </script>
 </body>

@@ -9,9 +9,9 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link <%= locals.path === '/' ? 'active' : '' %>" href="/">Trang Chủ</a></li>
                 <li class="nav-item"><a class="nav-link <%= locals.path === '/room' ? 'active' : '' %>" href="/room">Phòng</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Tiện Nghi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Dịch vụ</a></li>
                 <li class="nav-item"><a class="nav-link <%= locals.path === '/contact' ? 'active' : '' %>" href="/contact">Liên Hệ</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Giới Thiệu</a></li>
+                <li class="nav-item"><a class="nav-link" href="/introduce">Giới Thiệu</a></li>
             </ul>
             <div class="d-flex align-items-center" id="auth-section">
                 <% if (locals.user) { %>

@@ -1,52 +1,42 @@
 [
   {
-    "_id": "bf61be9e-7df4-4a43-8744-8c14ede098e5",
-    "quocTichId": 1,
+    "_id": { "$oid": "bf61be9e7df44a4387448c14" },
     "tenQuocGia": "Việt Nam"
   },
   {
-    "_id": "66eecd7e-a0b0-41e8-a4a9-15f70b389d3e",
-    "quocTichId": 2,
+    "_id": { "$oid": "66eecd7ea0b041e8a4a915f7" },
     "tenQuocGia": "Hàn Quốc"
   },
   {
-    "_id": "a7bcfa87-23d2-4c9d-a693-545d60fcc6cb",
-    "quocTichId": 3,
+    "_id": { "$oid": "a7bcfa8723d24c9da693545d" },
     "tenQuocGia": "Nhật Bản"
   },
   {
-    "_id": "20a1b8c3-a79e-4801-91cd-5ca822dec937",
-    "quocTichId": 4,
+    "_id": { "$oid": "20a1b8c3a79e480191cd5ca8" },
     "tenQuocGia": "Anh"
   },
   {
-    "_id": "d414ca60-95a6-4019-96b4-518ebb94efcb",
-    "quocTichId": 5,
+    "_id": { "$oid": "d414ca6095a6401996b4518e" },
     "tenQuocGia": "Pháp"
   },
   {
-    "_id": "a3893155-801d-45cf-b087-614d9df306f4",
-    "quocTichId": 6,
+    "_id": { "$oid": "a3893155801d45cfb087614d" },
     "tenQuocGia": "Mỹ"
   },
   {
-    "_id": "0b49b864-f0e5-42f1-962b-84093ba5972e",
-    "quocTichId": 7,
+    "_id": { "$oid": "0b49b864f0e542f1962b8409" },
     "tenQuocGia": "Úc"
   },
   {
-    "_id": "351aaf0c-5a3b-4a6b-9c3d-424791670b10",
-    "quocTichId": 8,
+    "_id": { "$oid": "351aaf0c5a3b4a6b9c3d4247" },
     "tenQuocGia": "Canada"
   },
   {
-    "_id": "ade57c08-6377-44c4-817b-e498268019ff",
-    "quocTichId": 9,
+    "_id": { "$oid": "ade57c08637744c4817be498" },
     "tenQuocGia": "Lào"
   },
   {
-    "_id": "9e9d83f4-7c6c-418c-b998-8fd99875511c",
-    "quocTichId": 10,
+    "_id": { "$oid": "9e9d83f47c6c418cb9988fd9" },
     "tenQuocGia": "Thái Lan"
   }
 ]

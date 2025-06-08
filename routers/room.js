@@ -1,21 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Room = mongoose.model('Room');
+//const Room = mongoose.model('Room');
+const Room = require('../models/room'); // 
 
 router.get('/', async (req, res) => {
   try {
     const rooms = await Room.find({})
       .populate('loaiPhong')
       .lean();
-    
-    rooms.forEach(room => {
-      console.log(`Room ${room.tenPhong}:`, {
-        roomId: room._id,
-        loaiPhong: room.loaiPhong?._id,
-        tenLoaiPhong: room.loaiPhong
-      });
-    });
     
     const processedRooms = rooms.map(room => {
       return {

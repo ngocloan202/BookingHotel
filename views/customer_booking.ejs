@@ -20,10 +20,29 @@
                     <li class="nav-item"><a class="nav-link" href="/room">Phòng</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Tiện Nghi</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Liên Hệ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Giới Thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/introduce">Giới Thiệu</a></li>
             </ul>
-            <div class="d-flex align-items-center" id="auth-section">
-            <!-- Viết script thay thế sử dụng firebase xác thực người dùng -->
+            <!-- xác thực người dùng -->
+            <div class="d-flex align-items-center justify-content-end gap-2 pe-3" id="auth-section"style="height: 50px;">
+              <% if (!user) { %>
+                <a href="/login" class="btn btn-outline-dark me-2">Đăng Nhập</a>
+                <a href="/register" class="btn btn-dark ">Đăng Ký</a>
+              <% } else { %>
+              <span class="fs-6 text-dark">Xin chào: <%= user.hoVaTen %></span>
+              <div class="dropdown">
+                <img src="/images/<%= user.hinhAnh || 'default.jpg' %>" width="32" height="32" class="rounded-circle dropdown-toggle" data-bs-toggle="dropdown" role="button">
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <% if (user.role === true) { %> <!-- là admin -->
+                    <li><a class="dropdown-item" href="/dashboard">Trang quản trị</a></li>
+                  <% } else { %> <!-- là khách hàng -->
+                    <li><a class="dropdown-item" href="/info">Tài khoản của tôi</a></li>
+                    <li><a class="dropdown-item" href="/customer_booking">Phòng đã đặt</a></li>
+                    <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+                  <% } %>
+                <li><hr class="dropdown-divider"></li>
+                </ul>
+                </div>
+              <% } %>
             </div>
          </div>
         </div>

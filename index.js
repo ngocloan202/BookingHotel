@@ -1,13 +1,17 @@
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
-const mongoose = require('mongoose');
+const flash = require('connect-flash');
+//var app = express () ;
+var mongoose = require('mongoose');
 
 const app = express();
 
-// View engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//Import router
+var indexRouter = require('./routers/index'); 
+var roomRouter = require('./routers/room');
+const contactRouter = require('./routers/contact');
+const infoRouter = require('./routers/info');
 
 // Static folder
 app.use(express.static('public'));
@@ -55,8 +59,12 @@ const bookingConfirmRouter = require('./routers/bookingConfirm');
 app.use('/', indexRouter);
 app.use('/room', roomRouter);
 app.use('/contact', contactRouter);
+<<<<<<< HEAD
 app.use('/booking', bookingRouter);
 app.use('/booking', bookingConfirmRouter);
+=======
+app.use('/info', infoRouter);
+>>>>>>> cd9552c5fc6cfd639844475520df599f9cc66b4f
 
 // Connect to MongoDB
 const uri = 'mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel';
@@ -68,4 +76,4 @@ mongoose.connect(uri)
             console.log('Server is running at http://127.0.0.1:3000');
         });
     })
-    .catch(err => console.log(err));
+.catch(err => console.log(err));

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông Tin Cá Nhân</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/info.css">
+</head>
+<body>
+    <!-- Flash message -->
+    <% if (success_msg && success_msg.length > 0) { %>
+      <div id="flash-message" class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 9999; min-width: 300px;">
+        <div class="alert alert-success text-center shadow"><%= success_msg %></div>
+      </div>
+    <% } %>
+    <% if (error_msg && error_msg.length > 0) { %>
+      <div id="flash-message" class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 9999; min-width: 300px;">
+        <div class="alert alert-danger text-center shadow"><%= error_msg %></div>
+      </div>
+    <% } %>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="profile-container">
+                  <button onclick="history.back()" class="back-button">
+                    <i class="fas fa-arrow-left me-2"></i>Quay lại
+                </button>
+                    <% if (user) { %>
+                    <div class="profile-header">
+                        <h2 class="mb-4">Thông Tin Cá Nhân</h2>
+                        <div class="avatar-wrapper">
+                            <img src="/images/<%= user.hinhAnh || 'default.jpg' %>" 
+                                 class="avatar-image" 
+                                 alt="Avatar">
+                            <label for="avatar-input" class="avatar-upload">
+                                <i class="fas fa-camera"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <form action="/info" method="POST" enctype="multipart/form-data">
+                        <input type="file" 
+                               id="avatar-input" 
+                               name="hinhAnh" 
+                               class="d-none" 
+                               accept="image/*">
+
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                            <input type="text" 
+                                   name="hoVaTen" 
+                                   class="form-control" 
+                                   value="<%= user.hoVaTen %>" 
+                                   placeholder="Họ và tên"
+                                   required>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-user-tag"></i></span>
+                            <input type="text" 
+                                   name="tenDangNhap" 
+                                   class="form-control" 
+                                   value="<%= user.tenDangNhap %>" 
+                                   readonly>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <input type="text" 
+                                   name="diaChi" 
+                                   class="form-control" 
+                                   value="<%= user.diaChi %>"
+                                   placeholder="Địa chỉ">
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-calendar"></i></span>
+                            <input type="date" 
+                                   name="ngaySinh" 
+                                   class="form-control" 
+                                   value="<%= user.ngaySinh ? user.ngaySinh.toISOString().substring(0,10) : '' %>">
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                            <input type="email" 
+                                   name="email" 
+                                   class="form-control" 
+                                   value="<%= user.email %>"
+                                   placeholder="Email">
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-icon"><i class="fas fa-phone"></i></span>
+                            <input type="text" 
+                                   name="soDienThoai" 
+                                   class="form-control" 
+                                   value="<%= user.soDienThoai %>"
+                                   placeholder="Số điện thoại">
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-save">
+                                <i class="fas fa-save me-2"></i>Lưu Thay Đổi
+                            </button>
+                        </div>
+                    </form>
+                    <% } else { %>
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Không tìm thấy thông tin người dùng.
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        setTimeout(() => {
+          const msg = document.getElementById('flash-message');
+          if (msg) msg.remove();
+        }, 3000);
+        document.getElementById('avatar-input').onchange = function() {
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.querySelector('.avatar-image').src = e.target.result;
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        };
+    </script>
+</body>
+</html>
