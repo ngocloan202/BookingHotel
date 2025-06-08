@@ -202,6 +202,8 @@ const roomRouter = require('./room');
 //app.use('/room', roomRouter); 
 // router.get('/room', (req, res) => res.render('room'));
 router.get('/room_detail', (req, res) => res.render('room_detail'));
+app.use('/room', roomRouter); 
+app.use(express.static('public'));
 
 router.get('/error', (req, res) => res.render('error', { title: 'Lỗi' }));
 router.get('/success', (req, res) => res.render('success', { title: 'Thành công' }));
