@@ -11,14 +11,6 @@ router.get('/', async (req, res) => {
       .populate('loaiPhong')
       .lean();
     
-    rooms.forEach(room => {
-      console.log(`Room ${room.tenPhong}:`, {
-        roomId: room._id,
-        loaiPhong: room.loaiPhong?._id,
-        tenLoaiPhong: room.loaiPhong
-      });
-    });
-    
     const processedRooms = rooms.map(room => {
       return {
         ...room,
