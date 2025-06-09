@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const Room = mongoose.model('Room');
+//const Room = mongoose.model('Room');
+const Room = require('../models/room'); // 
 const RoomType = mongoose.model('RoomTypeModel');
 
 router.get('/', async (req, res) => {
@@ -97,5 +98,16 @@ router.get('/:id', async (req, res) => {
     });
   }
 });
+  // Xoá phòng
+router.post('/delete/:id', async (req, res) => {
+  try {
+    await Room.findByIdAndDelete(req.params.id);
+    res.redirect('/manageroom');
+  } catch (err) {
+    console.error('Lỗi xoá phòng:', err);
+    res.redirect('/manageroom');
+  }
+});
+
 
 module.exports = router;

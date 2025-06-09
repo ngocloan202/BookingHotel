@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giới Thiệu - ZentoStay</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">ZentoStay</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/">Trang Chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="/room">Phòng</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tiện Nghi</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Liên Hệ</a></li>
+          <li class="nav-item"><a class="nav-link" href="/introduce">Giới Thiệu</a></li>
+        </ul>
+        <!-- Xác thực người dùng -->
+        <div class="d-flex align-items-center justify-content-end gap-2 pe-3" id="auth-section"style="height: 50px;">
+          <% if (!user) { %>
+            <a href="/login" class="btn btn-outline-dark me-2">Đăng Nhập</a>
+            <a href="/register" class="btn btn-dark ">Đăng Ký</a>
+          <% } else { %>
+          <span class="fs-6 text-dark">Xin chào: <%= user.hoVaTen %></span>
+          <div class="dropdown">
+            <img src="/images/<%= user.hinhAnh || 'default.jpg' %>" width="32" height="32" class="rounded-circle dropdown-toggle" data-bs-toggle="dropdown" role="button">
+            <ul class="dropdown-menu dropdown-menu-end">
+              <% if (user.role === true) { %> 
+                <li><a class="dropdown-item" href="/dashboard">Trang quản trị</a></li>
+              <% } else { %> 
+                <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                <li><a class="dropdown-item" href="/customer_booking">Phòng đã đặt</a></li>
+                <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+              <% } %>
+            <li><hr class="dropdown-divider"></li>
+            </ul>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <div class="bg-dark text-white text-center py-5" style="background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') center/cover;">
+    <h1 class="display-4 fw-bold">Giới Thiệu Về ZentoStay</h1>
+    <p class="lead">Trải nghiệm kỳ nghỉ lý tưởng cùng chúng tôi</p>
+  </div>
+
+  <!-- Nội dung chính -->
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">Chào mừng đến với ZentoStay</h2>
+        <p>
+          ZentoStay là hệ thống khách sạn hiện đại, được thành lập với sứ mệnh mang đến cho khách hàng những trải nghiệm nghỉ dưỡng tuyệt vời nhất. Với đội ngũ nhân viên chuyên nghiệp, cơ sở vật chất hiện đại và không gian thoáng đãng, ZentoStay là lựa chọn lý tưởng cho cả kỳ nghỉ gia đình, công tác và du lịch cá nhân.
+        </p>
+        <p>
+          Chúng tôi cam kết không ngừng nâng cao chất lượng dịch vụ, mang lại cảm giác thoải mái và tiện nghi như ở nhà cho quý khách.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="img-fluid rounded shadow" alt="ZentoStay Hotel">
+      </div>
+    </div>
+
+    <div class="row text-center my-5">
+      <div class="col-md-4">
+        <i class="bi bi-house-heart fs-2 text-success"></i>
+        <h5 class="mt-2">Với nhiều phòng cao cấp</h5>
+        <p>Không gian sạch sẽ, nội thất hiện đại, phù hợp với mọi nhu cầu lưu trú.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-emoji-smile fs-2 text-primary"></i>
+        <h5 class="mt-2">Khách hàng hài lòng</h5>
+        <p>Được đánh giá cao với hơn 95% khách hàng hài lòng về chất lượng dịch vụ.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-shield-check fs-2 text-warning"></i>
+        <h5 class="mt-2">An toàn & bảo mật</h5>
+        <p>Bảo đảm quyền riêng tư và an ninh tuyệt đối trong suốt kỳ nghỉ của bạn.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="bg-dark text-white mt-5 py-4">
+    <h2 class="section-title">Liên Hệ</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.179411095577!2d105.4359458758242!3d10.375362089751913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a048f83c4db47f%3A0x9e94c5b2c09aaec5!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBBbiBHaWFuZw!5e0!3m2!1svi!2s!4v1717698309123!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-6">
+        <h5 class="mb-3">Bạn cần hỗ trợ? Hãy gọi ngay:</h5>
+        <p><i class="bi bi-telephone-fill me-2"></i>+84974562765</p>
+        <p><i class="bi bi-telephone-fill me-2"></i>+84974562765</p>
+        <h5 class="mt-4 mb-2">Theo dõi ngay:</h5>
+        <p><i class="bi bi-facebook me-2"></i><a href="#">Facebook</a></p>
+        <p><i class="bi bi-instagram me-2"></i><a href="#">Instagram</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

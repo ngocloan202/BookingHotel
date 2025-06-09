@@ -1,52 +1,32 @@
 [
   {
-    "_id": "bf61be9e-7df4-4a43-8744-8c14ede098e5",
-    "quocTichId": 1,
     "tenQuocGia": "Việt Nam"
   },
   {
-    "_id": "66eecd7e-a0b0-41e8-a4a9-15f70b389d3e",
-    "quocTichId": 2,
     "tenQuocGia": "Hàn Quốc"
   },
   {
-    "_id": "a7bcfa87-23d2-4c9d-a693-545d60fcc6cb",
-    "quocTichId": 3,
     "tenQuocGia": "Nhật Bản"
   },
   {
-    "_id": "20a1b8c3-a79e-4801-91cd-5ca822dec937",
-    "quocTichId": 4,
     "tenQuocGia": "Anh"
   },
   {
-    "_id": "d414ca60-95a6-4019-96b4-518ebb94efcb",
-    "quocTichId": 5,
     "tenQuocGia": "Pháp"
   },
   {
-    "_id": "a3893155-801d-45cf-b087-614d9df306f4",
-    "quocTichId": 6,
     "tenQuocGia": "Mỹ"
   },
   {
-    "_id": "0b49b864-f0e5-42f1-962b-84093ba5972e",
-    "quocTichId": 7,
     "tenQuocGia": "Úc"
   },
   {
-    "_id": "351aaf0c-5a3b-4a6b-9c3d-424791670b10",
-    "quocTichId": 8,
     "tenQuocGia": "Canada"
   },
   {
-    "_id": "ade57c08-6377-44c4-817b-e498268019ff",
-    "quocTichId": 9,
     "tenQuocGia": "Lào"
   },
   {
-    "_id": "9e9d83f4-7c6c-418c-b998-8fd99875511c",
-    "quocTichId": 10,
     "tenQuocGia": "Thái Lan"
   }
 ]

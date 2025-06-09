@@ -10,11 +10,13 @@ const multer = require('multer'); //để load ảnh từ máy
 const User = require('../models/user');
 const RoomType = require('../models/roomtype');
 const Room = require('../models/room');
-const Booking = require('../models/booking');
 const Customer = require('../models/customer');
+const Booking = require('../models/booking');
 const Review = require('../models/review');
 const Bill = require('../models/bill');
 const Contact = require('../models/contact');
+const Equipment = require('../models/equipment');
+const Room_Equipment = require('../models/room_equipment');
 
 // Trang chủ: nếu đã đăng nhập thì chuyển đến dashboard nếu là admin
 router.get('/', (req, res) => {
@@ -189,17 +191,426 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
+// Hiển thị danh sách đơn chờ xác nhận
+router.get('/newbookingroom', async (req, res) => {
+  try {
+    const bookings = await Booking.find({ trangThai: 'Chờ xác nhận' })
+      .populate('customer')  
+      .populate('room');    
+    res.render('newbookingroom', { bookings });
+  } catch (err) {
+    console.error(err);
+    res.render('newbookingroom', { bookings: [] });
+  }
+});
+
+router.post('/confirm-booking/:id', async (req, res) => {
+  try {
+    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã xác nhận' });
+    req.flash('success_msg', 'Đơn đã được xác nhận thành công!');
+  } catch (err) {
+    req.flash('error_msg', 'Xác nhận thất bại!');
+  }
+  res.redirect('/newbookingroom');
+});
+router.post('/cancel-booking/:id', async (req, res) => {
+  try {
+    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã huỷ đơn' });
+    req.flash('success_msg', 'Đơn đã bị huỷ thành công!');
+  } catch (err) {
+    req.flash('error_msg', 'Huỷ đơn thất bại!');
+  }
+  res.redirect('/newbookingroom');
+});
+
+
+// Quản lý khách hàng 
+router.get('/managecustomer', async (req, res) => {
+  try {
+    const customers = await Customer.find().lean(); 
+    res.render('managecustomer', { customers });
+  } catch (err) {
+    console.error('Lỗi khi lấy danh sách khách hàng:', err);
+    res.render('managecustomer', { customers: [] });
+  }
+});
+
+//Quản lý phòng
+router.get('/manageroom', async (req, res) => {
+  try {
+    const rooms = await Room.find().populate('loaiPhong').lean();
+    rooms.forEach(r => {
+      if (!r.image) r.image = 'default.jpg';
+    });
+    res.render('manageroom', { rooms });
+  } catch (err) {
+    console.error('Lỗi khi load phòng:', err);
+    res.render('manageroom', { rooms: [] });
+  }
+});
+// Hiển thị form thêm phòng
+router.get('/rooms/add', async (req, res) => {
+  try {
+    const roomTypes = await RoomType.find().lean();
+    res.render('addroom', { roomTypes });
+  } catch (err) {
+    console.error('Lỗi khi lấy loại phòng:', err);
+    res.redirect('/manageroom');
+  }
+});
+
+router.post('/rooms/add', upload.single('anhPhong'), async (req, res) => {
+  try {
+    const { tenPhong, loaiPhong, trangThai, ghiChu } = req.body;
+    const roomType = await RoomType.findById(loaiPhong);
+
+    const giaPhong = roomType?.donGia || 0;
+
+    const newRoom = new Room({
+      tenPhong,
+      image: req.file?.filename || 'default.jpg',
+      loaiPhong,
+      giaPhong,
+      trangThai,
+      ghiChu
+    });
+
+    await newRoom.save();
+    res.redirect('/manageroom');
+  } catch (err) {
+    console.error('Lỗi khi thêm phòng:', err);
+    res.redirect('/rooms/add');
+  }
+});
+
+router.get('/rooms/edit/:id', async (req, res) => {
+  try {
+    const room = await Room.findById(req.params.id).lean();
+    const roomTypes = await RoomType.find().lean();
+
+    res.render('editroom', { room, roomTypes });
+  } catch (err) {
+    console.error('Lỗi khi load form sửa phòng:', err);
+    res.redirect('/manageroom');
+  }
+});
+
+router.post('/rooms/edit/:id', upload.single('anhPhong'), async (req, res) => {
+  try {
+    const { tenPhong, loaiPhong, trangThai, ghiChu } = req.body;
+    const roomType = await RoomType.findById(loaiPhong);
+    const giaPhong = roomType?.donGia || 0;
+
+    const updateData = {
+      tenPhong,
+      loaiPhong,
+      trangThai,
+      ghiChu,
+      giaPhong
+    };
+
+    if (req.file) {
+      updateData.image = req.file.filename;
+    }
+
+    await Room.findByIdAndUpdate(req.params.id, updateData);
+    res.redirect('/manageroom');
+  } catch (err) {
+    console.error('Lỗi khi sửa phòng:', err);
+    res.redirect('/manageroom');
+  }
+});
+
+//lịch sử đặt phòng
+router.get('/historybooking', async (req, res) => {
+  try {
+    const bookings = await Booking.find()
+      .populate('customer')
+      .populate('room')
+      .lean();
+
+    res.render('historybooking', { bookings });
+  } catch (err) {
+    console.error('Lỗi khi lấy lịch sử đặt phòng:', err);
+    res.render('historybooking', { bookings: [] });
+  }
+});
+
+//xác nhận thanh toán
+router.get('/confirmpayment', async (req, res) => {
+  try {
+    const bookings = await Booking.find({ trangThai: 'Đã xác nhận' })
+      .populate('customer')
+      .populate('room')
+      .lean();
+
+    res.render('confirmpayment', { bookings });
+  } catch (err) {
+    console.error('Lỗi hiển thị thanh toán:', err);
+    res.render('confirmpayment', { bookings: [] });
+  }
+});
+router.post('/payment/confirm/:id', async (req, res) => {
+  try {
+    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã thanh toán' });
+    req.flash('success_msg', 'Xác nhận thanh toán thành công!');
+  } catch (err) {
+    console.error('Lỗi xác nhận thanh toán:', err);
+    req.flash('error_msg', 'Xác nhận thất bại!');
+  }
+  res.redirect('/confirmpayment');
+});
+
+router.post('/payment/cancel/:id', async (req, res) => {
+  try {
+    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã huỷ đơn' });
+    req.flash('success_msg', 'Đơn đã được huỷ!');
+  } catch (err) {
+    console.error('Lỗi huỷ:', err);
+    req.flash('error_msg', 'Huỷ thất bại!');
+  }
+  res.redirect('/confirmpayment');
+});
+
+//xử lý đánh giá
+router.get('/reviews', async (req, res) => {
+  try {
+    const reviews = await Review.find()
+      .populate('customer')
+      .populate('room')
+      .sort({ ngay: -1 })
+      .lean();
+    res.render('reviews', { reviews });
+  } catch (err) {
+    console.error('Lỗi hiển thị đánh giá:', err);
+    res.render('reviews', { reviews: [] });
+  }
+});
+
+router.post('/reviews/delete/:id', async (req, res) => {
+  try {
+    await Review.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Xoá đánh giá thành công!');
+  } catch (err) {
+    console.error('Lỗi xoá đánh giá:', err);
+    req.flash('error_msg', 'Xoá đánh giá thất bại!');
+  }
+  res.redirect('/reviews');
+});
+
+router.post('/reviews/read/:id', async (req, res) => {
+  try {
+    await Review.findByIdAndUpdate(req.params.id, { hienThi: false });
+    req.flash('success_msg', 'Đánh dấu đã đọc thành công!');
+  } catch (err) {
+    req.flash('error_msg', 'Lỗi khi đánh dấu đã đọc!');
+  }
+  res.redirect('/reviews');
+});
+
+router.post('/reviews/read-all', async (req, res) => {
+  try {
+    await Review.updateMany({}, { hienThi: false });
+    req.flash('success_msg', 'Tất cả đánh giá đã được đánh dấu là đã đọc.');
+  } catch (err) {
+    req.flash('error_msg', 'Lỗi khi đánh dấu tất cả.');
+  }
+  res.redirect('/reviews');
+});
+
+router.post('/reviews/delete-all', async (req, res) => {
+  try {
+    await Review.deleteMany({});
+    req.flash('success_msg', 'Tất cả đánh giá đã được xoá.');
+  } catch (err) {
+    req.flash('error_msg', 'Lỗi khi xoá tất cả.');
+  }
+  res.redirect('/reviews');
+});
+
+//feedback khách hàng
+router.get('/feedback', async (req, res) => {
+  try {
+    const feedbacks = await Contact.find().sort({ createdAt: -1 }).lean();
+    res.render('feedback', { feedbacks });
+  } catch (err) {
+    console.error('Lỗi khi load phản hồi:', err);
+    res.render('feedback', { feedbacks: [] });
+  }
+});
+
+router.post('/feedback/delete/:id', async (req, res) => {
+  try {
+    await Contact.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Xoá phản hồi thành công!');
+  } catch (err) {
+    console.error('Lỗi xoá phản hồi:', err);
+    req.flash('error_msg', 'Xoá phản hồi thất bại!');
+  }
+  res.redirect('/feedback');
+});
+
+router.get('/manageequipment', async (req, res) => {
+  try {
+    const equipments = await Equipment.find().lean();
+    const roomEquipments = await Room_Equipment.find()
+      .populate('room')
+      .populate('equipment')
+      .lean();
+
+    res.render('manageequipment', {
+      equipments,
+      roomEquipments,
+      success_msg: req.flash('success_msg'),
+      error_msg: req.flash('error_msg')
+    });
+  } catch (err) {
+    console.error('Lỗi khi load thiết bị:', err);
+    res.render('manageequipment', {
+      equipments: [],
+      roomEquipments: [],
+      success_msg: [],
+      error_msg: ['Không thể tải dữ liệu thiết bị']
+    });
+  }
+});
+
+// Hiển thị form thêm thiết bị
+router.get('/equipment/add', (req, res) => {
+  res.render('addequipment');
+});
+
+// Xử lý thêm thiết bị
+router.post('/equipment/add', async (req, res) => {
+  try {
+    const { tenThietBi, donGia, moTa } = req.body;
+    const newEquipment = new Equipment({ tenThietBi, donGia, moTa });
+    await newEquipment.save();
+    req.flash('success_msg', 'Thêm thiết bị thành công!');
+    res.redirect('/manageequipment');
+  } catch (err) {
+    console.error('Lỗi thêm thiết bị:', err);
+    req.flash('error_msg', 'Thêm thiết bị thất bại!');
+    res.redirect('/manageequipment');
+  }
+});
+
+// Hiển thị form sửa thiết bị
+router.get('/equipment/edit/:id', async (req, res) => {
+  try {
+    const equipment = await Equipment.findById(req.params.id).lean();
+    res.render('editequipment', { equipment });
+  } catch (err) {
+    console.error('Lỗi hiển thị form sửa thiết bị:', err);
+    res.redirect('/manageequipment');
+  }
+});
+
+// Xử lý cập nhật thiết bị
+router.post('/equipment/edit/:id', async (req, res) => {
+  try {
+    const { tenThietBi, donGia, moTa } = req.body;
+    await Equipment.findByIdAndUpdate(req.params.id, { tenThietBi, donGia, moTa });
+    req.flash('success_msg', 'Cập nhật thiết bị thành công!');
+    res.redirect('/manageequipment');
+  } catch (err) {
+    console.error('Lỗi cập nhật thiết bị:', err);
+    req.flash('error_msg', 'Cập nhật thất bại!');
+    res.redirect('/manageequipment');
+  }
+});
+
+// Xử lý xoá thiết bị
+router.post('/equipment/delete/:id', async (req, res) => {
+  try {
+    await Equipment.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Xoá thiết bị thành công!');
+  } catch (err) {
+    console.error('Lỗi xoá thiết bị:', err);
+    req.flash('error_msg', 'Xoá thất bại!');
+  }
+  res.redirect('/manageequipment');
+});
+
+// Hiển thị form thêm thiết bị vào phòng
+router.get('/room-equipment/add', async (req, res) => {
+  try {
+    const rooms = await Room.find().lean();
+    const equipments = await Equipment.find().lean();
+    res.render('addroomequipment', { rooms, equipments });
+  } catch (err) {
+    console.error('Lỗi load form thêm room-equipment:', err);
+    res.redirect('/manageequipment');
+  }
+});
+
+// Xử lý thêm room-equipment
+router.post('/room-equipment/add', async (req, res) => {
+  try {
+    const { room, equipment, trangThai } = req.body;
+    const newRE = new Room_Equipment({
+      room,
+      equipment,
+      trangThai: trangThai === 'true'
+    });
+    await newRE.save();
+    req.flash('success_msg', 'Thêm thiết bị vào phòng thành công!');
+  } catch (err) {
+    console.error('Lỗi thêm room-equipment:', err);
+    req.flash('error_msg', 'Thêm thất bại!');
+  }
+  res.redirect('/manageequipment');
+});
+
+// Hiển thị form sửa room-equipment
+router.get('/room-equipment/edit/:id', async (req, res) => {
+  try {
+    const roomEquipment = await Room_Equipment.findById(req.params.id).lean();
+    const rooms = await Room.find().lean();
+    const equipments = await Equipment.find().lean();
+    res.render('editroomequipment', { roomEquipment, rooms, equipments });
+  } catch (err) {
+    console.error('Lỗi load form sửa room-equipment:', err);
+    res.redirect('/manageequipment');
+  }
+});
+
+// Xử lý cập nhật room-equipment
+router.post('/room-equipment/edit/:id', async (req, res) => {
+  try {
+    const { room, equipment, trangThai } = req.body;
+    await Room_Equipment.findByIdAndUpdate(req.params.id, {
+      room,
+      equipment,
+      trangThai: trangThai === 'true'
+    });
+    req.flash('success_msg', 'Cập nhật thiết bị trong phòng thành công!');
+  } catch (err) {
+    console.error('Lỗi cập nhật room-equipment:', err);
+    req.flash('error_msg', 'Cập nhật thất bại!');
+  }
+  res.redirect('/manageequipment');
+});
+
+router.post('/room-equipment/delete/:id', async (req, res) => {
+  try {
+    await Room_Equipment.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Xoá thiết bị khỏi phòng thành công!');
+  } catch (err) {
+    console.error('Lỗi xoá room-equipment:', err);
+    req.flash('error_msg', 'Xoá thất bại!');
+  }
+  res.redirect('/manageequipment');
+});
+
 // Booking views
 router.get('/introduce', (req, res) => res.render('introduce'));
 router.get('/bookingroom', (req, res) => res.render('bookingroom'));
-router.get('/confirmpayment', (req, res) => res.render('confirmpayment'));
-router.get('/newbookingroom', (req, res) => res.render('newbookingroom'));
-router.get('/historybooking', (req, res) => res.render('historybooking'));
 router.get('/customer_booking', (req, res) => res.render('customer_booking'));
 
 // Room views
 const roomRouter = require('./room');
-//app.use('/room', roomRouter); 
+
 // router.get('/room', (req, res) => res.render('room'));
 router.get('/room_detail', (req, res) => res.render('room_detail'));
 

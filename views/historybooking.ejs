@@ -30,20 +30,21 @@
               </ul>
             </details>
           </li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Khách Hàng</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Phản Hồi</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Đánh Giá</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Phòng</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Cơ Sở và Thiết Bị</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Slided</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Thiết Lập</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/managecustomer">Khách Hàng</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/feedback">Phản Hồi</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/reviews">Đánh Giá</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/manageroom">Phòng</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/manageequipment">Cơ Sở và Thiết Bị</a></li>
+          <!--<li class="nav-item"><a class="nav-link text-white" href="#">Slided</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Thiết Lập</a></li>-->
+          
         </ul>
       </aside>
       <main class="col-md-10 p-4">
         <h2 class="mb-4">Hồ Sơ Đặt Phòng</h2>
         <div class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
-          <button class="btn btn-outline-primary" type="submit">Tìm</button>
+          
         </div>
         <div class="table-responsive">
           <table class="table table-bordered align-middle text-center">
@@ -58,8 +59,44 @@
               </tr>
             </thead>
             <tbody>
-              <!--<% /* Bổ sung code: render lịch sử đặt phòng */ %>-->
+              <% bookings.forEach(function(booking, index) { %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td>
+                    <strong><%= booking.customer?.hoVaTen || 'Ẩn' %></strong><br>
+                    <small>Email: <%= booking.customer?.email || 'Ẩn' %></small><br>
+                    <small>SDT: <%= booking.customer?.soDienThoai || 'Ẩn' %></small>
+                  </td>
+                  <td><%= booking.room?.tenPhong || 'N/A' %></td>
+                  <td>
+                    Ngày đến: <%= booking.ngayNhanPhong?.toISOString().split('T')[0] %><br>
+                    Ngày đi: <%= booking.ngayTraPhong?.toISOString().split('T')[0] %><br>
+                    Số ngày: <%= booking.soNgayThue %><br>
+                    Người lớn: <%= booking.soNguoiLon %> | Trẻ em: <%= booking.soTreEm %><br>
+                    Tổng tiền: <%= booking.tongTien?.toLocaleString() || 0 %> VNĐ
+                  </td>
+                  <td>
+                    <% if (booking.trangThai === 'Đã thanh toán') { %>
+                      <span class="badge bg-success">Đã Thanh Toán</span>
+                    <% } else if (booking.trangThai === 'Đã xác nhận') { %>
+                      <span class="badge bg-primary">Đã xác nhận</span>
+                    <% } else if (booking.trangThai === 'Đã huỷ đơn') { %>
+                      <span class="badge bg-danger">Đã huỷ</span>
+                    <% } else if (booking.trangThai === 'Chờ xác nhận') { %>
+                      <span class="badge bg-warning text-dark">Chờ xác nhận</span>
+                    <% } else { %>
+                      <span class="badge bg-secondary"><%= booking.trangThai %></span>
+                    <% } %>
+                  </td>                  
+                  <td>
+                    <a href="#" target="_blank" class="btn btn-outline-success btn-sm">
+                      <i class="bi bi-printer"></i>📄
+                    </a>
+                  </td>
+                </tr>
+              <% }); %>
             </tbody>
+            
           </table>
         </div>
       </main>

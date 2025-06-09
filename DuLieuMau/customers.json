@@ -1,82 +1,92 @@
 [
   {
-    "_id": "91114d28-805c-42fc-a39e-4d95541780d1",
-    "hoVaTen": "Customer 1",
-    "cccd": "0123456781",
-    "email": "customer1@mail.com",
-    "uid": "7c594936-7ac9-4c69-8964-598532714e4f",
-    "quocTichId": 1
+    "hoVaTen": "Trần Thị Chanh",
+    "cccd": "0873456781",
+    "soDienThoai": "0912345678",
+    "email": "chanh@mail.com",
+    "diaChi": "An Giang",
+    "user:": {"$oid":"6843f0e3cc70dd3b9ddd6411"},
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "6d18c055-8ecd-453a-9a65-e1a167f30d30",
     "hoVaTen": "Customer 2",
     "cccd": "0123456782",
+    "soDienThoai": "",
     "email": "customer2@mail.com",
-    "uid": "28fae69a-ecb4-493e-9272-bb9e732556b3",
-    "quocTichId": 2
+    "diaChi": "",
+    "user:": "28fae69a-ecb4-493e-9272-bb9e732556b3",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "6195d4f1-c53b-42f8-8a88-e616b1b2a960",
     "hoVaTen": "Customer 3",
     "cccd": "0123456783",
+    "soDienThoai": "",
     "email": "customer3@mail.com",
-    "uid": "18bfe7b0-af3a-4e04-9f2f-a824f27f078a",
-    "quocTichId": 3
+    "diaChi": "",
+    "user:": "18bfe7b0-af3a-4e04-9f2f-a824f27f078a",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "8910194c-d997-49cb-9996-6c44c8f5957a",
     "hoVaTen": "Customer 4",
     "cccd": "0123456784",
+    "soDienThoai": "",
     "email": "customer4@mail.com",
-    "uid": "6b7a9a26-c718-4499-9955-a2ac3e6451ec",
-    "quocTichId": 4
+    "diaChi": "",
+    "user:": "6b7a9a26-c718-4499-9955-a2ac3e6451ec",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "4c918fdf-301d-4216-a67e-9aa1e151432d",
     "hoVaTen": "Customer 5",
     "cccd": "0123456785",
+    "soDienThoai": "",
     "email": "customer5@mail.com",
-    "uid": "276c7fbe-63f9-48b7-9ee5-24a0b6dca268",
-    "quocTichId": 5
+    "diaChi": "",
+    "user:": "276c7fbe-63f9-48b7-9ee5-24a0b6dca268",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "3b7ff635-3f70-4a15-8027-49e4baf1a568",
     "hoVaTen": "Customer 6",
     "cccd": "0123456786",
+    "soDienThoai": "",
     "email": "customer6@mail.com",
-    "uid": "e5d5c70d-2c24-4f83-81cf-21742d28ddc2",
-    "quocTichId": 6
+    "diaChi": "",
+    "user:": "e5d5c70d-2c24-4f83-81cf-21742d28ddc2",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "58647c9b-d3bf-400d-a23b-c35e4a22dc6c",
     "hoVaTen": "Customer 7",
     "cccd": "0123456787",
+    "soDienThoai": "",
     "email": "customer7@mail.com",
-    "uid": "63965f0c-88e8-464a-8cc1-1419a149546d",
-    "quocTichId": 7
+    "diaChi": "",
+    "user:": "63965f0c-88e8-464a-8cc1-1419a149546d",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "2cb58daa-ad31-4623-8a8e-43b366ffff0f",
     "hoVaTen": "Customer 8",
     "cccd": "0123456788",
+    "soDienThoai": "",
     "email": "customer8@mail.com",
-    "uid": "18bfe7b0-af3a-4e04-9f2f-a824f27f078a",
-    "quocTichId": 8
+    "diaChi": "",
+    "user:": "18bfe7b0-af3a-4e04-9f2f-a824f27f078a",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "b11bd90e-8d23-4f8e-b461-021f594e7c33",
     "hoVaTen": "Customer 9",
     "cccd": "0123456789",
+    "soDienThoai": "",
     "email": "customer9@mail.com",
-    "uid": "a89e37f3-d3aa-4866-9b43-06f4479762db",
-    "quocTichId": 9
+    "diaChi": "",
+    "user:": "a89e37f3-d3aa-4866-9b43-06f4479762db",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   },
   {
-    "_id": "5f912908-adf1-4ad9-8c6c-2ceaf24abe46",
     "hoVaTen": "Customer 10",
     "cccd": "01234567810",
+    "soDienThoai": "",
     "email": "customer10@mail.com",
-    "uid": "46e5fd00-efc8-4391-843b-c214080377cb",
-    "quocTichId": 10
+    "diaChi": "",
+    "user:": "46e5fd00-efc8-4391-843b-c214080377cb",
+    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
   }
 ]
