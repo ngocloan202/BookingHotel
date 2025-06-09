@@ -72,10 +72,14 @@
                       </span>
                       <span class="text-muted fs-5"> VND/đêm</span>
                     </div>
-                    <% if (!room.trangThai ) { %>
+                    <% if (room.trangThai === 'Trống') { %>
                       <a href="/confirm-room/<%= room._id %>" class="btn btn-success btn-book w-100">
                         <i class="bi bi-calendar-check me-2"></i>Đặt Ngay
                       </a>
+                    <% } else { %>
+                      <button class="btn btn-secondary w-100" disabled>
+                        <i class="bi bi-calendar-x me-2"></i>Không thể đặt phòng này
+                      </button>
                     <% } %>
 
 

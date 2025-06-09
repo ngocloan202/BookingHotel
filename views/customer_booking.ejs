@@ -62,15 +62,15 @@
               <!--p><strong>ID Đơn:</strong> <%= booking.maDon %></p-->
               <p><strong>Ngày Đặt:</strong> <%= booking.ngayDat.toLocaleDateString('vi-VN') %></p>
     
-              <% if (booking.trangThai === 'Đã hủy đơn') { %>
-                <span class="badge bg-danger">Đã Huỷ</span>
-              <% } else if (booking.trangThai === 'Đã xác nhận') { %>
-                <span class="badge bg-primary">Đã Xác Nhận Đặt Phòng</span>
-              <% } else if (booking.trangThai === 'Chờ xác nhận') { %>
+              <% if (booking.trangThai === 'Chờ xác nhận') { %>
                 <span class="badge bg-warning text-dark">Chờ xác nhận</span>
                 <div class="mt-2">
                   <a href="/booking/cancel/<%= booking._id %>" class="btn btn-danger btn-sm">Huỷ Đặt Phòng</a>
                 </div>
+              <% } else if (booking.trangThai === 'Đã xác nhận') { %>
+                <span class="badge bg-primary">Đã Xác Nhận Đặt Phòng</span>
+              <% } else if (booking.trangThai === 'Đã hủy đơn') { %>
+                <span class="badge bg-danger">Đã Huỷ</span>
               <% } else if (booking.trangThai === 'Đã thanh toán') { %>
                 <span class="badge bg-success">Đã Thanh Toán</span>
                 <div class="mt-2">

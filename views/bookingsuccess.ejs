@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <title>Xác nhận đặt phòng</title>
   <style>
-    
-    /* Tổng thể container */
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -59,7 +57,15 @@
     <p><strong>Ngày nhận phòng:</strong> <%= booking.ngayNhanPhong.toLocaleDateString() %></p>
     <p><strong>Ngày trả phòng:</strong> <%= booking.ngayTraPhong.toLocaleDateString() %></p>
     <p><strong>Tổng tiền:</strong> <%= booking.tongTien.toLocaleString('vi-VN') %> VND</p>
-    <p><strong>Trạng thái:</strong> <span class="badge bg-success">Đã đặt phòng</span></p>
+    <p><strong>Trạng thái:</strong>
+      <% if (booking.trangThai === 'Chờ xác nhận') { %>
+        <span class="badge bg-warning text-dark">Chờ xác nhận</span>
+      <% } else if (booking.trangThai === 'Đã xác nhận') { %>
+        <span class="badge bg-success">Đã đặt phòng</span>
+      <% } else if (booking.trangThai === 'Đã hủy đơn') { %>
+        <span class="badge bg-danger">Đã huỷ</span>
+      <% } %>
+    </p>
   </div>
 </body>
 </html>
