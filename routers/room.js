@@ -3,12 +3,27 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Room = require('../models/room');
 const RoomType = mongoose.model('RoomTypeModel');
+const RoomEquipment = mongoose.model('RoomEquipmentModel');
+const Equipment = mongoose.model('EquipmentModel');
 
 router.get('/', async (req, res) => {
   try {
     const rooms = await Room.find({})
       .populate('loaiPhong')
       .lean();
+    
+    // Lấy danh sách thiết bị cho từng phòng
+    const roomIds = rooms.map(r => r._id);
+    const roomEquipments = await RoomEquipment.find({ room: { $in: roomIds }, trangThai: true })
+      .populate('equipment')
+      .lean();
+    
+    // Gom thiết bị theo phòng
+    const equipmentMap = {};
+    roomEquipments.forEach(re => {
+      if (!equipmentMap[re.room.toString()]) equipmentMap[re.room.toString()] = [];
+      if (re.equipment) equipmentMap[re.room.toString()].push(re.equipment);
+    });
     
     const processedRooms = rooms.map(room => {
       return {
@@ -19,7 +34,8 @@ router.get('/', async (req, res) => {
           donGia: 0,
           soNguoiToiDa: 0,
           moTa: ''
-        }
+        },
+        equipments: equipmentMap[room._id.toString()] || []
       };
     });
     

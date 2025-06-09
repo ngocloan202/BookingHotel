@@ -6,6 +6,20 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+// Tải tất cả các model để MongoDB tạo collection tương ứng
+require('./models/bill');
+require('./models/booking');
+require('./models/customer');
+require('./models/equipment');
+require('./models/national');
+require('./models/review');
+require('./models/room');
+require('./models/room_equipment');
+require('./models/roomtype');
+require('./models/service');
+require('./models/serviceuse');
+require('./models/user');
+
 //Import router
 const indexRouter = require('./routers/index'); 
 const roomRouter = require('./routers/room');
@@ -33,20 +47,6 @@ app.use((req, res, next) => {
     res.locals.session = req.session;
     next();
 });
-
-// Tải tất cả các model để MongoDB tạo collection tương ứng
-require('./models/bill');
-require('./models/booking');
-require('./models/customer');
-require('./models/equipment');
-require('./models/national');
-require('./models/review');
-require('./models/room');
-require('./models/room_equipment');
-require('./models/roomtype');
-require('./models/service');
-require('./models/serviceuse');
-require('./models/user');
 
 // Import routers
 app.use(flash());
