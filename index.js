@@ -26,7 +26,7 @@ const roomRouter = require('./routers/room');
 const contactRouter = require('./routers/contact');
 const infoRouter = require('./routers/info');
 const bookingRouter = require('./routers/bookingroom');
-const confirmRouter = require('./routers/bookingConfirm');
+const confirmRouter = require('./routers/bookingconfirm');
 const serviceRouter = require('./routers/service');
 
 // Static folder
