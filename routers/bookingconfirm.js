@@ -29,25 +29,8 @@ router.post("/confirm", async (req, res) => {
         .status(400)
         .json({ error: "Ngày trả phòng phải sau ngày nhận phòng" });
     }
-    let customer;
-    if (userId) {
-      const user = await User.findById(userId);
-      customer = await Customer.findOne(user._id);
-      if (!customer) {
-          customer = new Customer({
-          hoVaTen: user.name,
-          cccd: user.cccd,
-          soDienThoai: user.phone,
-          email: user.email,
-          diaChi: user.address,
-          nationality: user.nationalityId,
-          user: user._id
-        });
-        await customer.save();
-      }
-    } else {
-      customer = await Customer.findOne({ cccd });
-      if (!customer) {
+    let customer = await Customer.findOne({ cccd });
+    if (!customer) {
         customer = new Customer({
           hoVaTen,
           cccd,
@@ -57,8 +40,8 @@ router.post("/confirm", async (req, res) => {
           nationality: nationalityId,
         });
         await customer.save();
-      }
     }
+
     const room = await Room.findById(roomId);
     if (!room) {
       return res.status(404).json({ error: "Phòng không tồn tại" });
