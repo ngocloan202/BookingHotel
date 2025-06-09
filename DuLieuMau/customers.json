@@ -1,92 +1,82 @@
 [
   {
-    "hoVaTen": "Trần Thị Chanh",
-    "cccd": "0873456781",
-    "soDienThoai": "0912345678",
-    "email": "chanh@mail.com",
-    "diaChi": "An Giang",
-    "user:": {"$oid":"6843f0e3cc70dd3b9ddd6411"},
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "_id": { "$oid": "91114d28805c42fca39e4d95" },
+    "hoVaTen": "Lê Thanh Huyền",
+    "cccd": "0123456781",
+    "soDienThoai": "0123651895",
+    "email": "huyen@mail.com",
+    "diaChi": "Long An",
+    "user":         { "$oid": "105585cdb1e9440d927d0733" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "hoVaTen": "Customer 2",
+    "_id": { "$oid": "6d18c0558ecd453a9a65e1a1" },
+    "hoVaTen": "Trần Văn Hùng",
     "cccd": "0123456782",
-    "soDienThoai": "",
-    "email": "customer2@mail.com",
-    "diaChi": "",
-    "user:": "28fae69a-ecb4-493e-9272-bb9e732556b3",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "soDienThoai": "0987765895",
+    "email": "hung@mail.com",
+    "diaChi": "Kiên Giang",
+    "user":         { "$oid": "38e34a1337054460bac0e91e" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "hoVaTen": "Customer 3",
+    "_id": { "$oid": "6195d4f1c53b42f88a88e616" },
+    "hoVaTen": "Nguyễn Thị Mai",
     "cccd": "0123456783",
-    "soDienThoai": "",
-    "email": "customer3@mail.com",
-    "diaChi": "",
-    "user:": "18bfe7b0-af3a-4e04-9f2f-a824f27f078a",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "soDienThoai": "0987651123",
+    "email": "mai@mail.com",
+    "diaChi": "Bạc Liêu",
+    "user":         { "$oid": "b815c6dc7e664e3ca7fe232f" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "hoVaTen": "Customer 4",
+    "_id": { "$oid": "8910194cd99749cb99966c44" },
+    "hoVaTen": "Phạm Đức Anh",
     "cccd": "0123456784",
-    "soDienThoai": "",
-    "email": "customer4@mail.com",
-    "diaChi": "",
-    "user:": "6b7a9a26-c718-4499-9955-a2ac3e6451ec",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "soDienThoai": "0987092895",
+    "email": "anh@mail.com",
+    "diaChi": "An Giang",
+    "user":         { "$oid": "35336f264b09402ea6bcbe8f" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "hoVaTen": "Customer 5",
+    "_id": { "$oid": "4c918fdf301d4216a67e9aa1" },
+    "hoVaTen": "Hoàng Ngọc Trâm",
     "cccd": "0123456785",
-    "soDienThoai": "",
-    "email": "customer5@mail.com",
-    "diaChi": "",
-    "user:": "276c7fbe-63f9-48b7-9ee5-24a0b6dca268",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "soDienThoai": "0987609195",
+    "email": "tram@mail.com",
+    "diaChi": "Phú Thọ",
+    "user":         { "$oid": "c1e1914129d948009b989a40" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "hoVaTen": "Customer 6",
+    "_id": { "$oid": "3b7ff6353f704a15802749e4" },
+    "hoVaTen": "Lý Quốc Vinh",
     "cccd": "0123456786",
-    "soDienThoai": "",
-    "email": "customer6@mail.com",
-    "diaChi": "",
-    "user:": "e5d5c70d-2c24-4f83-81cf-21742d28ddc2",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "soDienThoai": "0980001895",
+    "email": "vinh@mail.com",
+    "diaChi": "Tiền Giang",
+    "user":         { "$oid": "004618e55481497fb38b1e53" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "hoVaTen": "Customer 7",
+    "_id": { "$oid": "58647c9bd3bf400da23bc35e" },
+    "hoVaTen": "Võ Minh Phương",
     "cccd": "0123456787",
-    "soDienThoai": "",
-    "email": "customer7@mail.com",
-    "diaChi": "",
-    "user:": "63965f0c-88e8-464a-8cc1-1419a149546d",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "soDienThoai": "0912651895",
+    "email": "phuong@mail.com",
+    "diaChi": "TP Hồ Chí Minh",
+    "user":         { "$oid": "a3499506e5ae4390bf0e6eb3" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   },
   {
-    "hoVaTen": "Customer 8",
+    "_id": { "$oid": "2cb58daaad3146238a8e43b3" },
+    "hoVaTen": "Đào Thị Nhàn",
     "cccd": "0123456788",
-    "soDienThoai": "",
-    "email": "customer8@mail.com",
-    "diaChi": "",
-    "user:": "18bfe7b0-af3a-4e04-9f2f-a824f27f078a",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
-  },
-  {
-    "hoVaTen": "Customer 9",
-    "cccd": "0123456789",
-    "soDienThoai": "",
-    "email": "customer9@mail.com",
-    "diaChi": "",
-    "user:": "a89e37f3-d3aa-4866-9b43-06f4479762db",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
-  },
-  {
-    "hoVaTen": "Customer 10",
-    "cccd": "01234567810",
-    "soDienThoai": "",
-    "email": "customer10@mail.com",
-    "diaChi": "",
-    "user:": "46e5fd00-efc8-4391-843b-c214080377cb",
-    "nationality:": {"$oid": "68450b66d4af46ef599aab04"}
+    "soDienThoai": "0987038895",
+    "email": "nhan@mail.com",
+    "diaChi": "An Giang",
+    "user":         { "$oid": "92e045f197e242ceb03383d3" },
+    "nationality":  { "$oid": "bf61be9e7df44a4387448c14" }
   }
 ]

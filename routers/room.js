@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-//const Room = mongoose.model('Room');
-const Room = require('../models/room'); // 
+const Room = require('../models/room');
 const RoomType = mongoose.model('RoomTypeModel');
+const RoomEquipment = mongoose.model('RoomEquipmentModel');
+const Equipment = mongoose.model('EquipmentModel');
 
 router.get('/', async (req, res) => {
   try {
@@ -11,12 +12,17 @@ router.get('/', async (req, res) => {
       .populate('loaiPhong')
       .lean();
     
-    rooms.forEach(room => {
-      console.log(`Room ${room.tenPhong}:`, {
-        roomId: room._id,
-        loaiPhong: room.loaiPhong?._id,
-        tenLoaiPhong: room.loaiPhong
-      });
+    // Lấy danh sách thiết bị cho từng phòng
+    const roomIds = rooms.map(r => r._id);
+    const roomEquipments = await RoomEquipment.find({ room: { $in: roomIds }, trangThai: true })
+      .populate('equipment')
+      .lean();
+    
+    // Gom thiết bị theo phòng
+    const equipmentMap = {};
+    roomEquipments.forEach(re => {
+      if (!equipmentMap[re.room.toString()]) equipmentMap[re.room.toString()] = [];
+      if (re.equipment) equipmentMap[re.room.toString()].push(re.equipment);
     });
     
     const processedRooms = rooms.map(room => {
@@ -28,7 +34,8 @@ router.get('/', async (req, res) => {
           donGia: 0,
           soNguoiToiDa: 0,
           moTa: ''
-        }
+        },
+        equipments: equipmentMap[room._id.toString()] || []
       };
     });
     
@@ -47,37 +54,28 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Route chi tiết phòng - FIXED
 router.get('/:id', async (req, res) => {
   try {
     const roomId = req.params.id;
     
-    // Kiểm tra ID có hợp lệ không
     if (!mongoose.Types.ObjectId.isValid(roomId)) {
-      console.log('Invalid room ID:', roomId);
       return res.status(400).render('room_detail', { 
         room: null, 
         error: 'ID phòng không hợp lệ' 
       });
     }
-
-    console.log('Looking for room with ID:', roomId);
     
     const room = await Room.findById(roomId)
       .populate('loaiPhong')
       .lean();
-      
-    console.log('Found room:', room);
-    
+          
     if (!room) {
-      console.log('Room not found for ID:', roomId);
       return res.status(404).render('room_detail', { 
         room: null, 
         error: 'Không tìm thấy phòng' 
       });
     }
     
-    // Xử lý dữ liệu phòng để đảm bảo có đầy đủ thông tin
     const processedRoom = {
       ...room,
       image: room.image || 'default.jpg',

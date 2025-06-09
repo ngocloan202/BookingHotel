@@ -1,32 +1,42 @@
 [
   {
+    "_id": { "$oid": "bf61be9e7df44a4387448c14" },
     "tenQuocGia": "Việt Nam"
   },
   {
+    "_id": { "$oid": "66eecd7ea0b041e8a4a915f7" },
     "tenQuocGia": "Hàn Quốc"
   },
   {
+    "_id": { "$oid": "a7bcfa8723d24c9da693545d" },
     "tenQuocGia": "Nhật Bản"
   },
   {
+    "_id": { "$oid": "20a1b8c3a79e480191cd5ca8" },
     "tenQuocGia": "Anh"
   },
   {
+    "_id": { "$oid": "d414ca6095a6401996b4518e" },
     "tenQuocGia": "Pháp"
   },
   {
+    "_id": { "$oid": "a3893155801d45cfb087614d" },
     "tenQuocGia": "Mỹ"
   },
   {
+    "_id": { "$oid": "0b49b864f0e542f1962b8409" },
     "tenQuocGia": "Úc"
   },
   {
+    "_id": { "$oid": "351aaf0c5a3b4a6b9c3d4247" },
     "tenQuocGia": "Canada"
   },
   {
+    "_id": { "$oid": "ade57c08637744c4817be498" },
     "tenQuocGia": "Lào"
   },
   {
+    "_id": { "$oid": "9e9d83f47c6c418cb9988fd9" },
     "tenQuocGia": "Thái Lan"
   }
 ]

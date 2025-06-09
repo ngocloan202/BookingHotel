@@ -607,13 +607,7 @@ router.post('/room-equipment/delete/:id', async (req, res) => {
 router.get('/introduce', (req, res) => res.render('introduce'));
 router.get('/bookingroom', (req, res) => res.render('bookingroom'));
 router.get('/customer_booking', (req, res) => res.render('customer_booking'));
-
-// Room views
-const roomRouter = require('./room');
-
-// router.get('/room', (req, res) => res.render('room'));
 router.get('/room_detail', (req, res) => res.render('room_detail'));
-
 router.get('/error', (req, res) => res.render('error', { title: 'Lỗi' }));
 router.get('/success', (req, res) => res.render('success', { title: 'Thành công' }));
 
