@@ -646,7 +646,10 @@ router.get('/customer_booking', async (req, res) => {
 
 router.get('/booking/cancel/:id', async (req, res) => {
   try {
-    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã hủy đơn' });
+    const booking = await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã hủy đơn' }, { new: true });
+    if (booking && booking.room) {
+      await Room.findByIdAndUpdate(booking.room, { trangThai: 'Trống' });
+    }
     req.flash('success_msg', 'Đơn đặt phòng đã được huỷ!');
   } catch (err) {
     console.error('Lỗi huỷ đặt phòng:', err);
