@@ -10,44 +10,8 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="/">ZentoStay</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="/">Trang Chủ</a></li>
-          <li class="nav-item"><a class="nav-link" href="/room">Phòng</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Tiện Nghi</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact">Liên Hệ</a></li>
-          <li class="nav-item"><a class="nav-link" href="/introduce">Giới Thiệu</a></li>
-        </ul>
-        <div class="d-flex align-items-center justify-content-end gap-2 pe-3" id="auth-section"style="height: 50px;">
-          <% if (!user) { %>
-            <a href="/login" class="btn btn-outline-dark me-2">Đăng Nhập</a>
-            <a href="/register" class="btn btn-dark ">Đăng Ký</a>
-          <% } else { %>
-          <span class="fs-6 text-dark">Xin chào: <%= user.hoVaTen %></span>
-          <div class="dropdown">
-            <img src="/images/<%= user.hinhAnh || 'default.jpg' %>" width="32" height="32" class="rounded-circle dropdown-toggle" data-bs-toggle="dropdown" role="button">
-            <ul class="dropdown-menu dropdown-menu-end">
-              <% if (user.role === true) { %> <!-- là admin -->
-                <li><a class="dropdown-item" href="/dashboard">Trang quản trị</a></li>
-              <% } else { %> <!-- là khách hàng -->
-                <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
-                <li><a class="dropdown-item" href="/customer_booking">Phòng đã đặt</a></li>
-                <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
-              <% } %>
-            <li><hr class="dropdown-divider"></li>
-            </ul>
-          </div>
-          <% } %>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <%- include('navbar') %>
+  
   <!-- Trang Liên Hệ -->
   <div class="container my-5">
     <h2 class="section-title text-center">Liên Hệ Chúng Tôi</h2>
@@ -99,7 +63,7 @@
       <div class="row">
         <div class="col-md-4">
           <h5 class="fw-bold">ZentoStay</h5>
-          <p>ZentoStay là nơi bạn tìm thấy sự thư giãn tuyệt đối và dịch vụ lưu trú chất lượng tại mọi hành trình. Với hệ thống phòng hiện đại, tiện nghi đa dạng và đội ngũ nhân viên thân thiện, chúng tôi cam kết mang đến cho bạn trải nghiệm nghỉ dưỡng thoải mái, an toàn và đáng nhớ.
+          <p>ZentoStay là nơi bạn tìm thấy sự thư giãn tuyệt đối và dịch vụ lưu trú chất lượng tại mọi hành trình. Với hệ thống phòng hiện đại, Dịch Vụ đa dạng và đội ngũ nhân viên thân thiện, chúng tôi cam kết mang đến cho bạn trải nghiệm nghỉ dưỡng thoải mái, an toàn và đáng nhớ.
             Cho dù bạn đang đi công tác, du lịch hay nghỉ ngơi cuối tuần — ZentoStay luôn sẵn sàng chào đón bạn như người thân trong gia đình.</p>
         </div>
         <div class="col-md-4">
@@ -107,7 +71,7 @@
           <ul class="list-unstyled ">
             <li><a href="/">Trang Chủ</a></li>
             <li><a href="/room">Phòng</a></li>
-            <li><a href="#">Tiện Nghi</a></li>
+            <li><a href="#">Dịch Vụ</a></li>
             <li><a href="/contact">Liên Hệ</a></li>
             <li><a href="/introduce">Giới Thiệu</a></li>
           </ul>

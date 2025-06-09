@@ -1,82 +1,72 @@
 [
   {
     "_id": "67c0fd99-edc3-4e47-83bf-2fe0da2d0403",
-    "suDungId": 1,
-    "datPhongId": 1,
-    "dichVuId": 2,
+    "booking": "627b96d8-afab-43b8-b1a2-dbeaf2111e6f",
+    "service": "e33e0ecb-563b-4bf7-9c87-66e18ee1d0fb",
     "soLuong": 5,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "5583e78a-c07e-4828-a778-21aa334b6f88",
-    "suDungId": 2,
-    "datPhongId": 2,
-    "dichVuId": 3,
+    "booking": "5a8ef41e-e3e8-49a9-9ceb-61fd3ef175f9",
+    "service": "b1974c54-1fcb-42c3-a58d-88e103dc8651",
     "soLuong": 1,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "25e1e965-5094-444c-b710-379a5fa3200b",
-    "suDungId": 3,
-    "datPhongId": 1,
-    "dichVuId": 1,
+    "booking": "627b96d8-afab-43b8-b1a2-dbeaf2111e6f",
+    "service": "d6ad54ff-2d28-4573-b4a9-b1a72b96b4ba",
     "soLuong": 2,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "740c9107-9fa7-4f57-a0ad-52573d08f53e",
-    "suDungId": 4,
-    "datPhongId": 10,
-    "dichVuId": 1,
+    "booking": "7989e55d-eb8d-4a99-a108-cde3261b2dbd",
+    "service": "62404c4f-375c-44c3-844d-f214ed885b2a",
     "soLuong": 1,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "5bfa5152-1666-4462-9595-85c7a350ded9",
-    "suDungId": 5,
-    "datPhongId": 7,
-    "dichVuId": 1,
+    "booking": "8f59b0ea-5bd6-49b2-8847-1c3df17edf31",
+    "service": "d6ad54ff-2d28-4573-b4a9-b1a72b96b4ba",
     "soLuong": 4,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "cf291c0c-ef3e-4e41-add0-a0aa80fc7893",
-    "suDungId": 6,
-    "datPhongId": 4,
-    "dichVuId": 5,
+    "booking": "1ad30d5f-8460-4f57-b2d1-d8e559c14321",
+    "service": "62404c4f-375c-44c3-844d-f214ed885b2a",
     "soLuong": 1,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "3d455581-667b-4922-bc53-52048a6881ee",
-    "suDungId": 7,
-    "datPhongId": 4,
-    "dichVuId": 2,
+    "booking": "1ad30d5f-8460-4f57-b2d1-d8e559c14321",
+    "service": "e33e0ecb-563b-4bf7-9c87-66e18ee1d0fb",
     "soLuong": 2,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "18f85b04-5e1e-4618-bf0c-f4499aeb35a8",
-    "suDungId": 8,
-    "datPhongId": 8,
-    "dichVuId": 4,
+    "booking": "58d9a2ff-c3ae-4cdc-98a6-3ae15402a9fa",
+    "service": "374ecc4d-bcb8-4e78-be4f-14e91975b274",
     "soLuong": 1,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "23363f1d-8a64-4926-97d7-d75f1973bb36",
-    "suDungId": 9,
-    "datPhongId": 5,
-    "dichVuId": 5,
+    "booking": "1a705f00-6c61-42cd-be4f-c6456a446877",
+    "service": "62404c4f-375c-44c3-844d-f214ed885b2a",
     "soLuong": 2,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   },
   {
     "_id": "9d4193dc-d70e-4b24-bdee-4ac385c41577",
-    "suDungId": 10,
-    "datPhongId": 1,
-    "dichVuId": 1,
+    "booking": "627b96d8-afab-43b8-b1a2-dbeaf2111e6f",
+    "service": "374ecc4d-bcb8-4e78-be4f-14e91975b274",
     "soLuong": 5,
-    "ngaySuDung": "2025-06-01T00:00:00"
+    "ngaySuDung": "2025-06-01"
   }
 ]

@@ -2,16 +2,32 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const flash = require('connect-flash');
-//var app = express () ;
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const app = express();
 
+// Tải tất cả các model để MongoDB tạo collection tương ứng
+require('./models/bill');
+require('./models/booking');
+require('./models/customer');
+require('./models/equipment');
+require('./models/national');
+require('./models/review');
+require('./models/room');
+require('./models/room_equipment');
+require('./models/roomtype');
+require('./models/service');
+require('./models/serviceuse');
+require('./models/user');
+
 //Import router
-var indexRouter = require('./routers/index'); 
-var roomRouter = require('./routers/room');
+const indexRouter = require('./routers/index'); 
+const roomRouter = require('./routers/room');
 const contactRouter = require('./routers/contact');
-const router = express.Router();
+const infoRouter = require('./routers/info');
+const bookingRouter = require('./routers/bookingroom');
+const confirmRouter = require('./routers/bookingConfirm');
+const serviceRouter = require('./routers/service');
 
 // Static folder
 app.use(express.static('public'));
@@ -34,20 +50,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// Tải tất cả các model để MongoDB tạo collection tương ứng
-require('./models/bill');
-require('./models/booking');
-require('./models/customer');
-require('./models/equipment');
-require('./models/national');
-require('./models/review');
-require('./models/room');
-require('./models/room_equipment');
-require('./models/roomtype');
-require('./models/service');
-require('./models/serviceuse');
-require('./models/user');
-
 // Import routers
 app.use(flash());
 
@@ -60,10 +62,14 @@ app.use((req, res, next) => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-// Use routers
+
 app.use('/', indexRouter);
 app.use('/room', roomRouter);
 app.use('/contact', contactRouter);
+app.use('/info', infoRouter);
+app.use('/confirm-room', bookingRouter);
+app.use('/booking', confirmRouter);
+app.use('/service', serviceRouter);
 
 // Connect to MongoDB
 const uri = 'mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel';

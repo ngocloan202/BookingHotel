@@ -617,26 +617,21 @@ router.post('/room-equipment/delete/:id', async (req, res) => {
 router.get('/introduce', (req, res) => res.render('introduce'));
 router.get('/bookingroom', (req, res) => res.render('bookingroom'));
 
-//Lịch sử đặt phòng mỗi account
 router.get('/customer_booking', async (req, res) => {
   try {
-    // Lấy user hiện tại từ session
     const userId = req.session.user._id;
-
-    // Tìm customer tương ứng
     const customer = await Customer.findOne({ user: userId });
+
     if (!customer) {
       req.flash('error_msg', 'Không tìm thấy thông tin khách hàng');
       return res.redirect('/');
     }
 
-    // Lấy các đơn đặt phòng của customer và populate thông tin phòng
     const bookings = await Booking.find({ customer: customer._id })
       .populate('room')
       .sort({ ngayDat: -1 })
       .lean();
 
-    // Truyền bookings và user sang view
     res.render('customer_booking', {
       bookings,
       user: req.session.user
@@ -671,7 +666,6 @@ router.get('/review/:bookingId', async (req, res) => {
   }
 });
 
-// Gửi đánh giá
 router.post('/review/submit', async (req, res) => {
   try {
     const { soSao, noiDung, bookingId } = req.body;
@@ -703,8 +697,8 @@ router.post('/review/submit', async (req, res) => {
 const roomRouter = require('./room');
 
 // router.get('/room', (req, res) => res.render('room'));
+router.get('/customer_booking', (req, res) => res.render('customer_booking'));
 router.get('/room_detail', (req, res) => res.render('room_detail'));
-
 router.get('/error', (req, res) => res.render('error', { title: 'Lỗi' }));
 router.get('/success', (req, res) => res.render('success', { title: 'Thành công' }));
 

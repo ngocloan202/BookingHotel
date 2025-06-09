@@ -86,3 +86,91 @@
     border-radius: 5px; 
     padding: 8px 12px; 
   }
+  .room-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .room-image {
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .room-image:hover {
+    transform: scale(1.02);
+  }
+  .info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    height: 100%;
+  }
+  .detail-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .detail-item:last-child {
+    border-bottom: none;
+  }
+  .price-highlight {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+  .status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .btn-book {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  }
+  .btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+  }
+  .section-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 2px;
+  }
+  .back-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #6c757d;
+    transition: all 0.3s ease;
+  }
+  .back-btn:hover {
+    background: #e9ecef;
+    color: #495057;
+    transform: translateX(-3px);
+  }
+  .room-title {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }

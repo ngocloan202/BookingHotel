@@ -5,7 +5,8 @@
     "matKhau": "$2b$12$s11icEmhECKdBZb.LvfOvOrG1f8PMOo2iFgmzF5VEZEb1uNxUTUxe",
     "role": true,
     "email": "oanh@mail.com",
-    "_id": "a54524c2-86eb-4574-a844-d2b27961d41f"
+    "_id": { "$oid": "a54524c286eb4574a844d2b2" },
+    "hinhAnh": "user.png"
   },
   {
     "hoVaTen": "Ngọc Loan",
@@ -13,7 +14,8 @@
     "matKhau": "$2b$12$9jm9Nqvxdf8aHwfmvIKqbe0OBEbkpH8N/on66T.Mb0H54VEFeHIDi",
     "role": true,
     "email": "loan@mail.com",
-    "_id": "7d57a025-2d88-49dc-8c8f-b266c8247c08"
+    "_id": { "$oid": "7d57a0252d8849dc8c8fb266" },
+    "hinhAnh": "user1.png"
   },
   {
     "hoVaTen": "Lê Thanh Huyền",
@@ -21,7 +23,8 @@
     "matKhau": "$2b$12$wOpw2rx6YSlFp7UetAQpi.rKH4jMjMH5fkhO/7B0YWYo8jzb/cPny",
     "role": false,
     "email": "huyen@gmail.com",
-    "_id": "105585cd-b1e9-440d-927d-07335b878896"
+    "_id": { "$oid": "105585cdb1e9440d927d0733" },
+    "hinhAnh": "user3.png"
   },
   {
     "hoVaTen": "Trần Văn Hùng",
@@ -29,7 +32,8 @@
     "matKhau": "$2b$12$4P0piukYpq3NQjWvSIoGq.ljragPrniCaa7.BXn6UcBw2g/rmLg.C",
     "role": false,
     "email": "hung@gmail.com",
-    "_id": "38e34a13-3705-4460-bac0-e91ede75de08"
+    "_id": { "$oid": "38e34a1337054460bac0e91e" },
+    "hinhAnh": "user4.png"
   },
   {
     "hoVaTen": "Nguyễn Thị Mai",
@@ -37,7 +41,8 @@
     "matKhau": "$2b$12$K8970okuCdVIbfRzVmslfe.LWBoYZ72fCIo2dJ7YLE2Q7QKbZn7F.",
     "role": false,
     "email": "mai@gmail.com",
-    "_id": "b815c6dc-7e66-4e3c-a7fe-232f01c4dc4f"
+    "_id": { "$oid": "b815c6dc7e664e3ca7fe232f" },
+    "hinhAnh": "user.png"
   },
   {
     "hoVaTen": "Phạm Đức Anh",
@@ -45,7 +50,8 @@
     "matKhau": "$2b$12$OJysogRMAbHF27AaV6ZDGOleV6WRhMJZbriFNWNbK1aNbSr4dcs2i",
     "role": false,
     "email": "anh@gmail.com",
-    "_id": "35336f26-4b09-402e-a6bc-bebc99e8975e"
+    "_id": { "$oid": "35336f264b09402ea6bcbe8f" },
+    "hinhAnh": "user1.png"
   },
   {
     "hoVaTen": "Hoàng Ngọc Trâm",
@@ -53,7 +59,8 @@
     "matKhau": "$2b$12$8qfSYaHW8HbxAS9416k5bOJNO5K8CbzBRQwweMYT5xTmfqfYVi1a2",
     "role": false,
     "email": "tram@gmail.com",
-    "_id": "c1e19141-29d9-4800-9b98-9a403c644ff7"
+    "_id": { "$oid": "c1e1914129d948009b989a40" },
+    "hinhAnh": "user3.png"
   },
   {
     "hoVaTen": "Lý Quốc Vinh",
@@ -61,7 +68,8 @@
     "matKhau": "$2b$12$WMjWiGF.F7RbW2v.xkSa4ecHjSIuM6Dfqi2KHnk72K0gJFq1FJZmy",
     "role": false,
     "email": "vinh@gmail.com",
-    "_id": "004618e5-5481-497f-b38b-1e534f409b8b"
+    "_id": { "$oid": "004618e55481497fb38b1e53" },
+    "hinhAnh": "user4.png"
   },
   {
     "hoVaTen": "Võ Minh Phương",
@@ -69,7 +77,8 @@
     "matKhau": "$2b$12$1dacJy5X6eARzX/hGQ/HMOInJyeRjpBkBGtO2H2QQPmlkkllV1xBC",
     "role": false,
     "email": "phuong@gmail.com",
-    "_id": "a3499506-e5ae-4390-bf0e-b6eb3cfecd6a"
+    "_id": { "$oid": "a3499506e5ae4390bf0e6eb3" },
+    "hinhAnh": "user.png"
   },
   {
     "hoVaTen": "Đào Thị Nhàn",
@@ -77,6 +86,7 @@
     "matKhau": "$2b$12$QbhoaKKrAWG.VLSfTB2pFugExO8NEItU7TD9Bg/uclli7l/f0byly",
     "role": false,
     "email": "nhan@gmail.com",
-    "_id": "92e045f1-97e2-42ce-b033-83d368403e6b"
+    "_id": { "$oid": "92e045f197e242ceb03383d3" },
+    "hinhAnh": "user1.png"
   }
 ]
