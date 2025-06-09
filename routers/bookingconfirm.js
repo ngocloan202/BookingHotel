@@ -1,14 +1,14 @@
-const express = require('express'); 
-const router = express.Router(); 
-const mongoose = require('mongoose');
-const Booking = require('../models/booking');
-const Room = require('../models/room');
-const Customer = require('../models/customer');
-
-
-router.post('/confirm', async (req, res) => {
-  try{
-    const { hoVaTen,
+const express = require("express");
+const router = express.Router();
+const mongoose = require("mongoose");
+const Booking = require("../models/booking");
+const Room = require("../models/room");
+const Customer = require("../models/customer");
+const User = require("../models/user");
+router.post("/confirm", async (req, res) => {
+  try {
+    const {
+      hoVaTen,
       cccd,
       soDienThoai,
       email,
@@ -19,38 +19,42 @@ router.post('/confirm', async (req, res) => {
       ngayNhanPhong,
       ngayTraPhong,
       soNguoiLon,
-      soTreEm,} = req.body;
+      soTreEm,
+    } = req.body;
     const checkInDay = new Date(ngayNhanPhong);
     const checkOutDay = new Date(ngayTraPhong);
-    
-    if(checkOutDay <= checkInDay) {
-      return res.status(400).json({error: 'Ngày trả phòng phải sau ngày nhận phòng'});
-    }
-    let customer = await Customer.findOne({cccd});
-    if(!customer) {
-        customer = new Customer({
-        hoVaTen,
-        cccd,
-        soDienThoai,
-        email,
-        diaChi,
-        nationality: nationalityId,
-      });
-      await customer.save();
-    };
 
-    const room  = await Room.findById(roomId);
-    if(!room) {
-      return res.status(404).json({error: 'Phòng không tồn tại'});
+    if (checkOutDay <= checkInDay) {
+      return res
+        .status(400)
+        .json({ error: "Ngày trả phòng phải sau ngày nhận phòng" });
+    }
+    let customer = await Customer.findOne({ cccd });
+    if (!customer) {
+        customer = new Customer({
+          hoVaTen,
+          cccd,
+          soDienThoai,
+          email,
+          diaChi,
+          nationality: nationalityId,
+        });
+        await customer.save();
+    }
+
+    const room = await Room.findById(roomId);
+    if (!room) {
+      return res.status(404).json({ error: "Phòng không tồn tại" });
     }
 
     const price = room.giaPhong;
-    const NumOfNight = Math.ceil((checkOutDay - checkInDay) / (1000 * 60 * 60 * 24));
+    const NumOfNight = Math.ceil(
+      (checkOutDay - checkInDay) / (1000 * 60 * 60 * 24)
+    );
     const total = NumOfNight * price;
 
     const newBooking = new Booking({
-     
-      customer:  customer._id || null,
+      customer: customer._id || null,
       room: roomId,
       user: userId || null,
       ngayNhanPhong: checkInDay,
@@ -62,26 +66,27 @@ router.post('/confirm', async (req, res) => {
     });
 
     await newBooking.save();
-    console.log('Đã lưu booking:', newBooking);
+    await Room.findByIdAndUpdate(roomId, { trangThai: "Đã đặt" });
+    console.log("Đã lưu booking:", newBooking);
     res.redirect(`/booking/confirm/${newBooking._id}`);
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
   }
 });
 
-router.get('/confirm/:bookingId', async (req, res) => {
+router.get("/confirm/:bookingId", async (req, res) => {
   try {
     const booking = await Booking.findById(req.params.bookingId)
-    .populate('room').populate('customer')
-    .populate('user');
+      .populate("room")
+      .populate("customer")
+      .populate("user");
     if (!booking) {
-      return res.status(404).send('Lỗi');
+      return res.status(404).send("Lỗi");
     }
-    res.render('bookingsuccess', { booking });
+    res.render("bookingsuccess", { booking });
   } catch (error) {
     console.error(error);
-    res.status(500).send('Lỗi server');
+    res.status(500).send("Lỗi server");
   }
 });
-module.exports = router; 
+module.exports = router;
