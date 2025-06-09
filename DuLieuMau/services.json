@@ -1,52 +1,98 @@
 [
   {
+    "_id": { "$oid": "d6ad54ff2d284573b4a9b1a7" },
+    "tenDichVu": "Bữa sáng",
+    "donGia": 50000,
+    "thoiGianPhucVu": "06:00-10:00",
+    "hinhAnh": "bua-sang.jpg",
+    "trangThai": "Hoạt động"
+  },
+  {
     "_id": { "$oid": "e33e0ecb563b4bf79c8766e1" },
     "tenDichVu": "Bữa trưa",
-    "donGia": 60000
+    "donGia": 60000,
+    "thoiGianPhucVu": "11:00-14:00",
+    "hinhAnh": "bua-trua.jpg",
+    "trangThai": "Hoạt động"
   },
   {
     "_id": { "$oid": "b1974c541fcb42c3a58d88e1" },
-    "tenDichVu": "Buổi tối",
-    "donGia": 70000
+    "tenDichVu": "Bữa tối",
+    "donGia": 70000,
+    "thoiGianPhucVu": "18:00-21:00",
+    "hinhAnh": "bua-toi.jpg",
+    "trangThai": "Hoạt động"
   },
   {
     "_id": { "$oid": "374ecc4dbcb84e78be4f14e9" },
     "tenDichVu": "Hồ bơi",
-    "donGia": 80000
+    "donGia": 80000,
+    "thoiGianPhucVu": "06:00-20:00",
+    "hinhAnh": "ho-boi.jpg",
+    "trangThai": "Hoạt động"
   },
   {
     "_id": { "$oid": "62404c4f375c44c3844df214" },
     "tenDichVu": "Spa",
-    "donGia": 90000
-  },
-  {
-    "_id": { "$oid": "d6ad54ff2d284573b4a9b1a7" },
-    "tenDichVu": "Buổi sáng",
-    "donGia": 50000
+    "donGia": 90000,
+    "thoiGianPhucVu": "09:00-21:00",
+    "hinhAnh": "spa.png",
+    "trangThai": "Hoạt động"
   },
   {
     "_id": { "$oid": "a1b2c3d4e5f67890abcdef12" },
     "tenDichVu": "Giặt ủi",
-    "donGia": 30000
-  },
-  {
-    "_id": { "$oid": "a1b2c3d4e5f67890abcdef13" },
-    "tenDichVu": "Di chuyển",
-    "donGia": 80000
+    "donGia": 30000,
+    "thoiGianPhucVu": "08:00-18:00",
+    "hinhAnh": "giat-ui.jpg",
+    "trangThai": "Hoạt động"
   },
   {
     "_id": { "$oid": "507f1f77bcf86cd799439300" },
     "tenDichVu": "Giữ xe",
-    "donGia": 20000
-  },
-  {
-    "_id": { "$oid": "507f1f77bcf86cd799439301" },
-    "tenDichVu": "Đưa đón sân bay",
-    "donGia": 150000
+    "donGia": 20000,
+    "thoiGianPhucVu": "24/7",
+    "hinhAnh": "giu-xe.jpg",
+    "trangThai": "Hoạt động"
   },
   {
     "_id": { "$oid": "507f1f77bcf86cd799439302" },
     "tenDichVu": "Dọn phòng",
-    "donGia": 50000
+    "donGia": 50000,
+    "thoiGianPhucVu": "08:00-12:00",
+    "hinhAnh": "don-phong.jpg",
+    "trangThai": "Hoạt động"
+  },
+  {
+    "_id": { "$oid": "507f1f77bcf86cd799439303" },
+    "tenDichVu": "Massage",
+    "donGia": 120000,
+    "thoiGianPhucVu": "09:00-22:00",
+    "hinhAnh": "massage.jpg",
+    "trangThai": "Hoạt động"
+  },
+  {
+    "_id": { "$oid": "507f1f77bcf86cd799439304" },
+    "tenDichVu": "Karaoke",
+    "donGia": 100000,
+    "thoiGianPhucVu": "19:00-02:00",
+    "hinhAnh": "karaoke.jpg",
+    "trangThai": "Hoạt động"
+  },
+  {
+    "_id": { "$oid": "507f1f77bcf86cd799439305" },
+    "tenDichVu": "Phòng gym",
+    "donGia": 40000,
+    "thoiGianPhucVu": "05:00-23:00",
+    "hinhAnh": "phong-gym.jpg",
+    "trangThai": "Hoạt động"
+  },
+  {
+    "_id": { "$oid": "507f1f77bcf86cd799439306" },
+    "tenDichVu": "Thuê xe đạp",
+    "donGia": 25000,
+    "thoiGianPhucVu": "06:00-18:00",
+    "hinhAnh": "thue-xe-dap.jpg",
+    "trangThai": "Hoạt động"
   }
 ]

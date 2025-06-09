@@ -2,16 +2,16 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const flash = require('connect-flash');
-//var app = express () ;
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const app = express();
 
 //Import router
-var indexRouter = require('./routers/index'); 
-var roomRouter = require('./routers/room');
+const indexRouter = require('./routers/index'); 
+const roomRouter = require('./routers/room');
 const contactRouter = require('./routers/contact');
 const infoRouter = require('./routers/info');
+const serviceRouter = require('./routers/service');
 
 // Static folder
 app.use(express.static('public'));
@@ -65,6 +65,7 @@ app.use('/', indexRouter);
 app.use('/room', roomRouter);
 app.use('/contact', contactRouter);
 app.use('/info', infoRouter);
+app.use('/service', serviceRouter);
 
 // Connect to MongoDB
 const uri = 'mongodb+srv://oanhdth225720:%23oanh%23%2A%2A%2A@cluster0.ct8fl.mongodb.net/hotel';
