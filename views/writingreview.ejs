@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZentoStay</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container my-5">
+      <div class="col-md-6 mx-auto mb-4">
+        <div class="card p-4 shadow rounded-4">
+          <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">
+          <i class="bi bi-chat-heart-fill text-primary me-2"></i>Đánh Giá
+        </h5>
+        <% if (success_msg && success_msg.length > 0) { %>
+            <div class="alert alert-success"><%= success_msg[0] %></div>
+          <% } %>
+          <% if (error_msg && error_msg.length > 0) { %>
+            <div class="alert alert-danger"><%= error_msg[0] %></div>
+          <% } %>
+        <!--button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button-->
+        <a href="/customer_booking" class="bbtn-close" data-bs-dismiss="modal" aria-label="Đóng"></a>
+      </div>
+      <div class="modal-body">
+        <form action="/review/submit" method="POST">
+          <input type="hidden" name="bookingId" value="<%= bookingId %>">
+          <div class="mb-3">
+            <label for="ratingSelect" class="form-label">Đánh Giá</label>
+            <select id="ratingSelect" name="soSao" class="form-select" required>
+              <option value="5">Rất Tốt</option>
+              <option value="4">Tốt</option>
+              <option value="3">Bình Thường</option>
+              <option value="2">Tệ</option>
+              <option value="1">Rất Tệ</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="comment" class="form-label">Nhận Xét</label>
+            <textarea id="comment" name="noiDung" class="form-control" rows="4" placeholder="Viết nhận xét của bạn..." required></textarea>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-success px-4">
+              <i class="bi bi-send me-1"></i>Gửi>
+            </button>
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>

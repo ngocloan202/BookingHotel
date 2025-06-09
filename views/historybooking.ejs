@@ -69,8 +69,8 @@
                   </td>
                   <td><%= booking.room?.tenPhong || 'N/A' %></td>
                   <td>
-                    Ngày đến: <%= booking.ngayNhanPhong?.toISOString().split('T')[0] %><br>
-                    Ngày đi: <%= booking.ngayTraPhong?.toISOString().split('T')[0] %><br>
+                    Ngày đến: <%= booking.ngayNhanPhong %><br>
+                    Ngày đi: <%= booking.ngayTraPhong %><br>
                     Số ngày: <%= booking.soNgayThue %><br>
                     Người lớn: <%= booking.soNguoiLon %> | Trẻ em: <%= booking.soTreEm %><br>
                     Tổng tiền: <%= booking.tongTien?.toLocaleString() || 0 %> VNĐ
