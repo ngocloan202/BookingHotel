@@ -106,6 +106,16 @@
                       <%= r.giaPhong.toLocaleString('vi-VN') %> VND / đêm
                     </p>
                     <p><small><%= r.ghiChu || '' %></small></p>
+                    <% if (r.equipments && r.equipments.length > 0) { %>
+                      <div class="mb-2">
+                        <strong>Thiết bị:</strong>
+                        <ul class="list-unstyled mb-0">
+                          <% r.equipments.forEach(function(eq) { %>
+                            <li><i class="bi bi-check-circle text-success"></i> <%= eq.tenThietBi %></li>
+                          <% }); %>
+                        </ul>
+                      </div>
+                    <% } %>
                     <a href="/room/<%= r._id %>" class="btn btn-outline-primary w-100 mt-2">Xem chi tiết</a>
                   </div>
                 </div>
