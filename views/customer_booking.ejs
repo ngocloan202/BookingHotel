@@ -50,38 +50,41 @@
   <div class="container py-5">
     <h2 class="mb-4 fw-bold">ĐƠN ĐẶT PHÒNG</h2>
     <div class="row">
-      <!--<% bookings.forEach((booking, index) => { %>
+      <% bookings.forEach((booking, index) => { %>
         <div class="col-md-4 mb-4">
           <div class="card shadow-sm h-100">
             <div class="card-body">
-              <h5 class="card-title fw-bold"><%= booking.roomName %></h5>
-              <p><%= booking.price.toLocaleString() %> vnd</p>
-              <p><strong>Ngày Vào:</strong> <%= booking.checkin %></p>
-              <p><strong>Ngày Trả:</strong> <%= booking.checkout %></p>
-              <p><strong>Tổng:</strong> <%= booking.total.toLocaleString() %> vnd</p>
-              <p><strong>ID Đơn:</strong> <%= booking.orderId %></p>
-              <p><strong>Ngày Đặt:</strong> <%= booking.bookingDate %></p>
-              
-              <% if (booking.status === 'CANCELLED') { %>
+              <h5 class="card-title fw-bold"><%= booking.room.tenPhong %></h5>
+              <p><%= booking.room.giaPhong.toLocaleString() %> vnd</p>
+              <p><strong>Ngày Vào:</strong> <%= booking.ngayNhanPhong %></p>
+              <p><strong>Ngày Trả:</strong> <%= booking.ngayTraPhong %></p>
+              <p><strong>Tổng:</strong> <%= booking.tongTien.toLocaleString() %> vnd</p>
+              <!--p><strong>ID Đơn:</strong> <%= booking.maDon %></p-->
+              <p><strong>Ngày Đặt:</strong> <%= booking.ngayDat.toLocaleDateString('vi-VN') %></p>
+    
+              <% if (booking.trangThai === 'Đã hủy đơn') { %>
                 <span class="badge bg-danger">Đã Huỷ</span>
-              <% } else if (booking.status === 'CONFIRMED') { %>
+              <% } else if (booking.trangThai === 'Đã xác nhận') { %>
                 <span class="badge bg-primary">Đã Xác Nhận Đặt Phòng</span>
-              <% } else if (booking.status === 'PAID') { %>
+              <% } else if (booking.trangThai === 'Chờ xác nhận') { %>
+                <span class="badge bg-warning text-dark">Chờ xác nhận</span>
+                <div class="mt-2">
+                  <a href="/booking/cancel/<%= booking._id %>" class="btn btn-danger btn-sm">Huỷ Đặt Phòng</a>
+                </div>
+              <% } else if (booking.trangThai === 'Đã thanh toán') { %>
                 <span class="badge bg-success">Đã Thanh Toán</span>
                 <div class="mt-2">
-                  <a href="/review/<%= booking.orderId %>" class="btn btn-dark btn-sm">Đánh Giá</a>
+                  <a href="/review/<%= booking._id %>" class="btn btn-dark btn-sm">Đánh Giá</a>
                 </div>
               <% } else { %>
-                <span class="badge bg-warning text-dark">Đã Đặt</span>
-                <div class="mt-2">
-                  <a href="/booking/cancel/<%= booking.orderId %>" class="btn btn-danger btn-sm">Huỷ Đặt Phòng</a>
-                </div>
+                <span class="badge bg-secondary">Trạng thái khác</span>
               <% } %>
             </div>
           </div>
         </div>
-      <% }) %>-->
+      <% }) %>
     </div>
+    
   </div>
 </body>
 </html>

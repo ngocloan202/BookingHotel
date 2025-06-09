@@ -351,8 +351,18 @@ router.get('/confirmpayment', async (req, res) => {
   }
 });
 router.post('/payment/confirm/:id', async (req, res) => {
-  try {
-    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã thanh toán' });
+    try {
+      // Cập nhật trạng thái đơn đặt phòng
+      const updatedBooking = await Booking.findByIdAndUpdate(
+        req.params.id,
+        { trangThai: 'Đã thanh toán' },
+        { new: true } // để lấy booking sau khi update
+      );
+  
+      // Cập nhật trạng thái phòng thành 'Trống'
+      if (updatedBooking && updatedBooking.room) {
+        await Room.findByIdAndUpdate(updatedBooking.room, { trangThai: 'Trống' });
+      }
     req.flash('success_msg', 'Xác nhận thanh toán thành công!');
   } catch (err) {
     console.error('Lỗi xác nhận thanh toán:', err);
@@ -606,6 +616,87 @@ router.post('/room-equipment/delete/:id', async (req, res) => {
 // Booking views
 router.get('/introduce', (req, res) => res.render('introduce'));
 router.get('/bookingroom', (req, res) => res.render('bookingroom'));
+
+router.get('/customer_booking', async (req, res) => {
+  try {
+    const userId = req.session.user._id;
+    const customer = await Customer.findOne({ user: userId });
+
+    if (!customer) {
+      req.flash('error_msg', 'Không tìm thấy thông tin khách hàng');
+      return res.redirect('/');
+    }
+
+    const bookings = await Booking.find({ customer: customer._id })
+      .populate('room')
+      .sort({ ngayDat: -1 })
+      .lean();
+
+    res.render('customer_booking', {
+      bookings,
+      user: req.session.user
+    });
+  } catch (err) {
+    console.error('Lỗi khi tải đơn đặt phòng:', err);
+    res.render('customer_booking', {
+      bookings: [],
+      user: req.session.user
+    });
+  }
+});
+
+router.get('/booking/cancel/:id', async (req, res) => {
+  try {
+    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã hủy đơn' });
+    req.flash('success_msg', 'Đơn đặt phòng đã được huỷ!');
+  } catch (err) {
+    console.error('Lỗi huỷ đặt phòng:', err);
+    req.flash('error_msg', 'Không thể huỷ đơn!');
+  }
+  res.redirect('/customer_booking');
+});
+
+router.get('/review/:bookingId', async (req, res) => {
+  try {
+    const { bookingId } = req.params;
+    res.render('writingreview', { bookingId });
+  } catch (err) {
+    console.error('Lỗi khi mở form đánh giá:', err);
+    res.redirect('/customer_booking');
+  }
+});
+
+router.post('/review/submit', async (req, res) => {
+  try {
+    const { soSao, noiDung, bookingId } = req.body;
+    const booking = await Booking.findById(bookingId).populate('customer').populate('room');
+
+    const review = new Review({
+      customer: booking.customer._id,
+      room: booking.room._id,
+      soSao,
+      noiDung,
+      hienThi: true,
+      ngayDanhGia: new Date()
+    });
+
+    await review.save();
+
+    req.flash('success_msg', 'Đánh giá đã được gửi!');
+    res.redirect('/customer_booking');
+  } catch (err) {
+    console.error('Lỗi khi gửi đánh giá:', err);
+    req.flash('error_msg', 'Gửi đánh giá thất bại!');
+    res.redirect('/customer_booking');
+  }
+});
+
+
+
+// Room views
+const roomRouter = require('./room');
+
+// router.get('/room', (req, res) => res.render('room'));
 router.get('/customer_booking', (req, res) => res.render('customer_booking'));
 router.get('/room_detail', (req, res) => res.render('room_detail'));
 router.get('/error', (req, res) => res.render('error', { title: 'Lỗi' }));
