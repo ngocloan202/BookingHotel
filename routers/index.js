@@ -206,7 +206,10 @@ router.get('/newbookingroom', async (req, res) => {
 
 router.post('/confirm-booking/:id', async (req, res) => {
   try {
-    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã xác nhận' });
+    const booking = await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã xác nhận' }, { new: true });
+    if (booking && booking.room) {
+      await Room.findByIdAndUpdate(booking.room, { trangThai: 'Đã đặt' });
+    }
     req.flash('success_msg', 'Đơn đã được xác nhận thành công!');
   } catch (err) {
     req.flash('error_msg', 'Xác nhận thất bại!');
@@ -351,21 +354,17 @@ router.get('/confirmpayment', async (req, res) => {
   }
 });
 router.post('/payment/confirm/:id', async (req, res) => {
-    try {
-      // Cập nhật trạng thái đơn đặt phòng
-      const updatedBooking = await Booking.findByIdAndUpdate(
-        req.params.id,
-        { trangThai: 'Đã thanh toán' },
-        { new: true } // để lấy booking sau khi update
-      );
-  
-      // Cập nhật trạng thái phòng thành 'Trống'
-      if (updatedBooking && updatedBooking.room) {
-        await Room.findByIdAndUpdate(updatedBooking.room, { trangThai: 'Trống' });
-      }
+  try {
+    const updatedBooking = await Booking.findByIdAndUpdate(
+      req.params.id,
+      { trangThai: 'Đã thanh toán' },
+      { new: true }
+    );
+    if (updatedBooking && updatedBooking.room) {
+      await Room.findByIdAndUpdate(updatedBooking.room, { trangThai: 'Trống' });
+    }
     req.flash('success_msg', 'Xác nhận thanh toán thành công!');
   } catch (err) {
-    console.error('Lỗi xác nhận thanh toán:', err);
     req.flash('error_msg', 'Xác nhận thất bại!');
   }
   res.redirect('/confirmpayment');
@@ -647,7 +646,10 @@ router.get('/customer_booking', async (req, res) => {
 
 router.get('/booking/cancel/:id', async (req, res) => {
   try {
-    await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã hủy đơn' });
+    const booking = await Booking.findByIdAndUpdate(req.params.id, { trangThai: 'Đã hủy đơn' }, { new: true });
+    if (booking && booking.room) {
+      await Room.findByIdAndUpdate(booking.room, { trangThai: 'Trống' });
+    }
     req.flash('success_msg', 'Đơn đặt phòng đã được huỷ!');
   } catch (err) {
     console.error('Lỗi huỷ đặt phòng:', err);
