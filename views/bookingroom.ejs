@@ -28,31 +28,37 @@
           <!-- Họ và tên -->
           <div class="mb-3">
             <label class="form-label">Họ và Tên</label>
-            <input type="text" name="hoVaTen" class="form-control" placeholder="Nhập họ tên của bạn" required />
+            <input type="text" name="hoVaTen" class="form-control" placeholder="Nhập họ tên của bạn" required value="<%= customer ? customer.hoVaTen : '' %>" />
           </div>
 
           <!-- CCCD -->
           <div class="mb-3">
             <label class="form-label">CCCD</label>
-            <input type="text" name="cccd" class="form-control" placeholder="Nhập số CCCD/CMND" required />
+            <input type="text" name="cccd" class="form-control" placeholder="Nhập số CCCD/CMND" required  value="<%= customer ? customer.cccd : '' %>" />
           </div>
 
           <!-- Số điện thoại -->
           <div class="mb-3">
             <label class="form-label">Số Điện Thoại</label>
-            <input type="text" name="soDienThoai" class="form-control" required pattern="[0-9]{9,15}" title="Vui lòng nhập số điện thoại hợp lệ"/>
+          <input type="text" name="soDienThoai" class="form-control"
+              required pattern="[0-9]{9,15}"
+              title="Vui lòng nhập số điện thoại hợp lệ"
+              value="<%= customer ? customer.soDienThoai : '' %>" />
           </div>
 
           <!-- Email (tuỳ chọn) -->
           <div class="mb-3">
             <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Nhập email nếu có" />
+            <input type="email" name="email" class="form-control"
+            placeholder="Nhập email nếu có"
+            value="<%= customer ? customer.email : '' %>" />
           </div>
 
           <!-- Địa chỉ -->
           <div class="mb-3">
             <label class="form-label">Địa Chỉ</label>
-            <textarea name="diaChi" class="form-control" rows="2" placeholder="Nhập địa chỉ liên hệ" required ></textarea>
+           <textarea name="diaChi" class="form-control" rows="2"
+            placeholder="Nhập địa chỉ liên hệ" required><%= customer ? customer.diaChi : '' %></textarea>
           </div>
 
           <!-- Quốc tịch -->
