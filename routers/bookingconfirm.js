@@ -66,9 +66,13 @@ router.post("/confirm", async (req, res) => {
     });
 
     await newBooking.save();
+
     await Room.findByIdAndUpdate(roomId, { trangThai: "Đã đặt" });
     console.log("Đã lưu booking:", newBooking);
+  
     res.redirect(`/booking/confirm/${newBooking._id}`);
+    
+
   } catch (error) {
     console.error(error);
   }
@@ -84,6 +88,7 @@ router.get("/confirm/:bookingId", async (req, res) => {
       return res.status(404).send("Lỗi");
     }
     res.render("bookingsuccess", { booking });
+    
   } catch (error) {
     console.error(error);
     res.status(500).send("Lỗi server");
