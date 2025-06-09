@@ -67,7 +67,7 @@ router.post("/confirm", async (req, res) => {
 
     await newBooking.save();
 
-    await Room.findByIdAndUpdate(roomId, { trangThai: "Đã đặt" });
+    await Room.findByIdAndUpdate(roomId, { trangThai: "Đang chờ" });
     console.log("Đã lưu booking:", newBooking);
   
     res.redirect(`/booking/confirm/${newBooking._id}`);

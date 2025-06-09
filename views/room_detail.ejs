@@ -72,13 +72,11 @@
                       </span>
                       <span class="text-muted fs-5"> VND/đêm</span>
                     </div>
-                    <% if (!room.trangThai ) { %>
+                    <% if (room.trangThai !=="Đã đặt") { %>
                       <a href="/confirm-room/<%= room._id %>" class="btn btn-success btn-book w-100">
                         <i class="bi bi-calendar-check me-2"></i>Đặt Ngay
                       </a>
                     <% } %>
-
-
                   </div>
                 </div>
               </div>
