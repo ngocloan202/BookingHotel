@@ -25,6 +25,8 @@ const indexRouter = require('./routers/index');
 const roomRouter = require('./routers/room');
 const contactRouter = require('./routers/contact');
 const infoRouter = require('./routers/info');
+const bookingRouter = require('./routers/bookingroom');
+const confirmRouter = require('./routers/bookingConfirm');
 const serviceRouter = require('./routers/service');
 
 // Static folder
@@ -65,6 +67,8 @@ app.use('/', indexRouter);
 app.use('/room', roomRouter);
 app.use('/contact', contactRouter);
 app.use('/info', infoRouter);
+app.use('/confirm-room', bookingRouter);
+app.use('/booking', confirmRouter);
 app.use('/service', serviceRouter);
 
 // Connect to MongoDB
