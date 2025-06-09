@@ -38,17 +38,24 @@
               </ul>
             </details>
           </li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Khách Hàng</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Phản Hồi</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Đánh Giá</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Phòng</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Cơ Sở và Thiết Bị</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Thiết Lập</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/managecustomer">Khách Hàng</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/feedback">Phản Hồi</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/reviews">Đánh Giá</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/manageroom">Phòng</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/manageequipment">Cơ Sở và Thiết Bị</a></li>
+          <!--li class="nav-item"><a class="nav-link text-white" href="#">Thiết Lập</a></li-->
         </ul>
       </aside>
 
       <main class="col-md-10 p-4">
         <h2 class="mb-4">Thanh Toán Trả Phòng</h2>
+        <% if (success_msg && success_msg.length > 0) { %>
+          <div class="alert alert-success"><%= success_msg[0] %></div>
+        <% } %>
+        <% if (error_msg && error_msg.length > 0) { %>
+          <div class="alert alert-danger"><%= error_msg[0] %></div>
+        <% } %>
+        
         <div class="table-responsive">
           <table class="table table-bordered align-middle text-center">
             <thead class="table-dark">
@@ -61,36 +68,34 @@
               </tr>
             </thead>
             <tbody>
-              <!--<% /* Bổ sung code: render danh sách cần xác nhận thanh toán */ %>
-              
-              <tr>
-                <td>1</td>
-                <td>
-                  <span class="badge bg-primary">ID Đặt Phòng: ORD_XXXX</span><br>
-                  <strong>Tên:</strong> Quang Huy<br>
-                  <strong>Điện Thoại:</strong> 0888131067
-                </td>
-                <td>
-                  <strong>Phòng:</strong> Phòng VIP 3<br>
-                  <strong>Giá:</strong> 1500000 vnd<br>
-                  <strong>Tổng:</strong> 4500000 vnd
-                </td>
-                <td>
-                  <strong>Ngày Vào:</strong> 10-05-2023<br>
-                  <strong>Ngày Trả:</strong> 14-05-2023<br>
-                  <strong>Thời Gian:</strong> 4 ngày<br>
-                  <strong>Thời Gian Còn Lại:</strong> <span class="badge text-bg-warning">Đã Hết Hạn</span>
-                </td>
-                -->
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="#" class="btn btn-outline-success btn-sm mb-1">Xác Nhận Thanh Toán</a>
-                  <a href="#" class="btn btn-outline-danger btn-sm">Huỷ Đặt Phòng</a>
-                </td>
-              </tr>
+              <% bookings.forEach((booking, index) => { %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td>
+                    <strong><%= booking.customer?.hoVaTen %></strong><br>
+                    Email: <%= booking.customer?.email %><br>
+                    SĐT: <%= booking.customer?.soDienThoai %>
+                  </td>
+                  <td>
+                    <%= booking.room?.tenPhong %><br>
+                    Giá: <%= booking.room?.giaPhong?.toLocaleString() || 0 %> VNĐ<br>
+                    Tổng: <%= booking.tongTien?.toLocaleString() %> VNĐ
+                  </td>
+                  <td>
+                    Ngày đến: <%= booking.ngayNhanPhong.toISOString().split('T')[0] %><br>
+                    Ngày đi: <%= booking.ngayTraPhong.toISOString().split('T')[0] %><br>
+                    Số ngày: <%= booking.soNgayThue %><br>
+                  </td>
+                  <td>
+                    <form action="/payment/confirm/<%= booking._id %>" method="POST" style="display:inline;">
+                      <button class="btn btn-outline-success btn-sm mb-1" type="submit">Xác Nhận Thanh Toán</button>
+                    </form>
+                    <form action="/payment/cancel/<%= booking._id %>" method="POST" style="display:inline;" onsubmit="return confirm('Bạn chắc muốn huỷ đơn này?');">
+                      <button class="btn btn-outline-danger btn-sm">Huỷ Đặt Phòng</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>

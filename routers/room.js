@@ -96,5 +96,16 @@ router.get('/:id', async (req, res) => {
     });
   }
 });
+  // Xoá phòng
+router.post('/delete/:id', async (req, res) => {
+  try {
+    await Room.findByIdAndDelete(req.params.id);
+    res.redirect('/manageroom');
+  } catch (err) {
+    console.error('Lỗi xoá phòng:', err);
+    res.redirect('/manageroom');
+  }
+});
+
 
 module.exports = router;
